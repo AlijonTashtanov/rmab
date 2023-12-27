@@ -6,7 +6,7 @@
 ## Usage <br>
 Setup your coding environment <br>
 ```
-git clone https://github.com/abdurashid-dev/adminlte.git
+git clone https://github.com/iTeach-uz/rmab-backend.git
 cd adminlte
 composer install
 npm install
