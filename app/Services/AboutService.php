@@ -29,26 +29,26 @@ class AboutService extends AbstractService
 
         $titles = [
             'uz' => $data['title_uz'],
-            'en' => $data['title_ru'],
-            'ru' => $data['title_en']
+            'ru' => $data['title_ru'],
+            'en' => $data['title_en'],
         ];
 
         $descriptions = [
             'uz' => $data['description_uz'],
-            'en' => $data['description_ru'],
-            'ru' => $data['description_en']
+            'ru' => $data['description_ru'],
+            'en' => $data['description_en'],
         ];
 
         $contents = [
             'uz' => $data['content_uz'],
-            'en' => $data['content_ru'],
-            'ru' => $data['content_en']
+            'ru' => $data['content_ru'],
+            'en' => $data['content_en'],
         ];
 
         $address = [
             'uz' => $data['address_uz'],
-            'en' => $data['address_ru'],
-            'ru' => $data['address_en'],
+            'ru' => $data['address_ru'],
+            'en' => $data['address_en'],
         ];
         $item->setTranslations('title', $titles);
         $item->setTranslations('description', $descriptions);
