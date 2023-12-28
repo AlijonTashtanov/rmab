@@ -44,10 +44,11 @@ class AboutService extends AbstractService
             'en' => $data['content_ru'],
             'ru' => $data['content_en']
         ];
+
         $address = [
             'uz' => $data['address_uz'],
             'en' => $data['address_ru'],
-            'ru' => $data['address_en']
+            'ru' => $data['address_en'],
         ];
         $item->setTranslations('title', $titles);
         $item->setTranslations('description', $descriptions);

@@ -111,14 +111,6 @@
                 @enderror
             </div>
             <div class="form-group">
-                <label for="nameInput" class="form-label">Qisqa tavsif [En]</label>
-                <textarea class="form-control" id="nameInput"
-                          name="description_en">{{old("description_en") ?? $response->getTranslation('description','en')}}</textarea>
-                @error('description_en')
-                <span class="text-danger">{{$message}}</span>
-                @enderror
-            </div>
-            <div class="form-group">
                 <label for="summernote" class="form-label">Kontent [en]</label>
                 <textarea id="summernoteEn"
                           name="content_en">{{old("content_en") ?? $response->getTranslation('content','en')}}</textarea>
