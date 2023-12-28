@@ -21,6 +21,15 @@ class AbstractService
     /**
      * @return mixed
      */
+    public function orderBy($column = 'id', $type = 'desc')
+    {
+        return $this->model::orderBy($column, $type)->get();
+    }
+
+
+    /**
+     * @return mixed
+     */
     public function activeIndex()
     {
         return $this->model::where('status', Status::$status_active)->get();

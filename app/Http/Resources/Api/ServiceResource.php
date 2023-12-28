@@ -19,7 +19,7 @@ class ServiceResource extends JsonResource
     {
         return [
             'id' => $this->id,
-            'name' => $this->name,
+            'name' => $this->getTranslation('name', app()->getLocale()),
             'imageUrl' => $this->getImageUrl(),
         ];
     }

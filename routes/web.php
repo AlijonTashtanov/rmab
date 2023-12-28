@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AboutController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\FaqController;
 use App\Http\Controllers\ServiceController;
@@ -45,15 +46,10 @@ Route::prefix('admin')->name('admin.')->middleware(['auth', 'admin'])->group(fun
     Route::post('/changeData', [AdminController::class, 'data'])->name('data');
     Route::get('/password/index', [AdminController::class, 'password'])->name('profile.password');
     Route::post('/password/index', [AdminController::class, 'passwordChange'])->name('password.change.index');
-// Useful Links
-    Route::get('/usefullinks/index', [UsefulLinkController::class, 'index'])->name('usefullinks.index');
-    Route::get('/usefullinks/create', [UsefulLinkController::class, 'create'])->name('usefullinks.create');
-    Route::post('/usefullinks/store', [UsefulLinkController::class, 'store'])->name('usefullinks.store');
-    Route::get('/usefullinks/show/{id}', [UsefulLinkController::class, 'show'])->name('usefullinks.show');
-    Route::delete('/usefullinks/destroy/{id}', [UsefulLinkController::class, 'destroy'])->name('usefullinks.destroy');
-    Route::get('/usefullinks/{id}', [UsefulLinkController::class, 'edit'])->name('usefullinks.edit');
-    Route::put('/usefullinks/{id}', [UsefulLinkController::class, 'update'])->name('usefullinks.update');
-//  FAQ
+
+    Route::resource('/usefullinks', UsefulLinkController::class);
     Route::resource('/faqs', FaqController::class);
     Route::resource('/services', ServiceController::class);
+    Route::resource('/abouts', AboutController::class);
+
 });
