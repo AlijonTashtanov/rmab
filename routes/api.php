@@ -24,5 +24,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::get('/useful-links', [UsefulLinkController::class, 'index']);
 Route::get('/faqs', [FaqController::class, 'index']);
-Route::get('/faqs', [FaqController::class, 'index']);
+Route::get('/services', [ServiceController::class, 'index']);
 Route::get('/abouts', [AboutController::class, 'index']);
