@@ -38,7 +38,7 @@
                     </tr>
                 @empty
                     <tr>
-                        <td colspan="3">No data found :(</td>
+                        <td colspan="5">No data found :(</td>
                     </tr>
                 @endforelse
             </table>
