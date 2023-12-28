@@ -22,6 +22,11 @@
                     <td>{{$response->id}}</td>
                 </tr>
                 <tr>
+                    <th>Rasm</th>
+                    <td><img src="{{ $response->getImageUrl() }}"
+                             alt="" style="width: 60px;height: 60px"></td>
+                </tr>
+                <tr>
                     <th>Email</th>
                     <td>{{$response->email}}</td>
                 </tr>
