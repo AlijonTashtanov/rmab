@@ -23,7 +23,7 @@ class AbstractService
      */
     public function orderBy($column = 'id', $type = 'desc')
     {
-        return $this->model::orderBy($column, $type)->get();
+        return $this->model::orderBy($column, $type)->first();
     }
 
 

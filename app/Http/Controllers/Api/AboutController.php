@@ -19,9 +19,9 @@ class AboutController extends AbstractController
      */
     public function index()
     {
-        $items = $this->resource::collection($this->service->orderBy());
+        $items = $this->resource::make($this->service->orderBy());
 
-        if ($items->isNotEmpty()) {
+        if ($items) {
             return $this->sendResponse(true, 'success', 200, $items);
         }
         return $this->sendResponse(false, 'Data not found', 200, $items);
