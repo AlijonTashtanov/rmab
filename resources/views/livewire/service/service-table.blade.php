@@ -7,7 +7,7 @@
             <table class="table table-bordered table-hover">
                 <tr>
                     <th>ID</th>
-                    <th>Name [uz]</th>
+                    <th>Nomi [uz]</th>
                     <th>Rasm</th>
                     <th>Holati</th>
                     <th>Actions</th>
@@ -20,20 +20,18 @@
                             <img src="{{ $item->getImageUrl() }}"
                                  alt="" style="width: 60px;height: 60px">
                         </td>
+                        <td>{!! $item->getStatusBadgeName() !!}</td>
                         <td>
-                            {!! $item->getStatusBadgeName() !!}
-                        </td>
-                        <td>
-                            <a href="{{route('admin.usefullinks.show',1)}}" class="btn btn-primary"><i
-                                        class="fas fa-eye"></i>  Batafsil</a>
+                            <a href="{{route('admin.'.$this->route.'.show', $item->id)}}" class="btn btn-primary"><i
+                                    class="fas fa-eye"></i> Ko'rish</a>
                             <a href="{{route('admin.'.$this->route.'.edit', $item->id)}}" class="btn btn-success"><i
-                                        class="fas fa-pencil-alt"></i>  Tahrirlash</a>
+                                    class="fas fa-pencil-alt"></i> Tahrirlash</a>
                             <form action="{{route('admin.'.$this->route.'.destroy', $item->id)}}" method="POST"
                                   class="d-inline-block">
                                 @csrf
                                 @method('DELETE')
                                 <button class="btn btn-danger" type="submit" onclick="return confirm('Are you sure?')">
-                                    <i class="fas fa-trash"></i>  O'chirish
+                                    <i class="fas fa-trash"></i> O'chirish
                                 </button>
                             </form>
                         </td>

@@ -24,6 +24,15 @@
         </p>
     </a>
 </li>
+<li class="nav-item">
+    <a href="{{route('admin.services.index')}}"
+       class="nav-link @if (request()->is('admin/services')) active @endif">
+        <i class="nav-icon fas fa-circle"></i>
+        <p>
+            Xizmatlar
+        </p>
+    </a>
+</li>
 {{-- <li class="nav-item menu-open">
     <a href="#" class="nav-link active">
         <i class="nav-icon fas fa-tachometer-alt"></i>

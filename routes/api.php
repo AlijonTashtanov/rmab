@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Api\FaqController;
+use App\Http\Controllers\Api\ServiceController;
 use App\Http\Controllers\Api\UsefulLinkController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -22,3 +23,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::get('/useful-links', [UsefulLinkController::class, 'index']);
 Route::get('/faqs', [FaqController::class, 'index']);
+Route::get('/services', [ServiceController::class, 'index']);
