@@ -7,6 +7,7 @@
             <table class="table table-bordered table-hover">
                 <tr>
                     <th>ID</th>
+                    <th>Rasm</th>
                     <th>Sarlavha [uz]</th>
                     <th>Holati</th>
                     <th>Actions</th>
@@ -14,13 +15,16 @@
                 @forelse($items as $item)
                     <tr>
                         <td>{{ (($items->currentpage()-1)*$items->perpage()+($loop->index+1)) }}</td>
+
+                        <td><img src="{{ $item->getImageUrl() }}" alt="" style="width: 60px;height: 60px"></td>
+
                         <td>{{$item->getTranslation('title','uz')}}</td>
                         <td>{!! $item->getStatusBadgeName() !!}</td>
                         <td>
                             <a href="{{route('admin.'.$this->route.'.show', $item->id)}}" class="btn btn-primary"><i
-                                        class="fas fa-eye"></i> Ko'rish</a>
+                                    class="fas fa-eye"></i> Ko'rish</a>
                             <a href="{{route('admin.'.$this->route.'.edit', $item->id)}}" class="btn btn-success"><i
-                                        class="fas fa-pencil-alt"></i> Tahrirlash</a>
+                                    class="fas fa-pencil-alt"></i> Tahrirlash</a>
                             <form action="{{route('admin.'.$this->route.'.destroy', $item->id)}}" method="POST"
                                   class="d-inline-block">
                                 @csrf
@@ -33,7 +37,7 @@
                     </tr>
                 @empty
                     <tr>
-                        <td colspan="4">No data found :(</td>
+                        <td colspan="5">No data found :(</td>
                     </tr>
                 @endforelse
             </table>
