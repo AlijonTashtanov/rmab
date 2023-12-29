@@ -3,6 +3,7 @@
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\FaqController;
+use App\Http\Controllers\PostController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\UsefulLinkController;
 use App\Http\Livewire\Admin\UserProfile;
@@ -51,5 +52,6 @@ Route::prefix('admin')->name('admin.')->middleware(['auth', 'admin'])->group(fun
     Route::resource('/faqs', FaqController::class);
     Route::resource('/services', ServiceController::class);
     Route::resource('/abouts', AboutController::class);
+    Route::resource('/posts', PostController::class);
 
 });

@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Api\AboutController;
 use App\Http\Controllers\Api\FaqController;
+use App\Http\Controllers\Api\PostController;
 use App\Http\Controllers\Api\ServiceController;
 use App\Http\Controllers\Api\UsefulLinkController;
 use Illuminate\Http\Request;
@@ -26,3 +27,4 @@ Route::get('/useful-links', [UsefulLinkController::class, 'index']);
 Route::get('/faqs', [FaqController::class, 'index']);
 Route::get('/services', [ServiceController::class, 'index']);
 Route::get('/abouts', [AboutController::class, 'index']);
+Route::get('/latest-news', [PostController::class, 'latestNews']);
