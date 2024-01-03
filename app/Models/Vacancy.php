@@ -2,15 +2,15 @@
 
 namespace App\Models;
 
+use App\Traits\HasTranslations;
 use App\Traits\Status;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
 use Spatie\Permission\Traits\HasRoles;
-use App\Traits\HasTranslations;
 
-class UsefulLink extends Model implements HasMedia
+class Vacancy extends Model implements HasMedia
 {
     use HasRoles;
     use HasTranslations;
@@ -25,7 +25,7 @@ class UsefulLink extends Model implements HasMedia
     /**
      * @var string[]
      */
-    public $translatable = ['name'];
+    public $translatable = ['title', 'description', 'content'];
 
     /**
      * @param $search
@@ -35,7 +35,7 @@ class UsefulLink extends Model implements HasMedia
     {
         return empty($search)
             ? static::query()
-            : static::query()->where('name->uz', 'like', '%' . $search . '%');
+            : static::query()->where('title->name', 'like', '%' . $search . '%');
     }
 
     /**

@@ -8,7 +8,7 @@
 </li>
 <li class="nav-item">
     <a href="{{route('admin.usefullinks.index')}}"
-       class="nav-link @if (request()->is('admin/usefullinks/index')) active @endif">
+       class="nav-link @if (request()->is('admin/usefullinks')) active @endif">
         <i class="nav-icon fas fa-link"></i>
         <p>
             Foydali havolalar
@@ -48,6 +48,15 @@
         <i class="nav-icon fas fa-newspaper"></i>
         <p>
             Yangiliklar
+        </p>
+    </a>
+</li>
+<li class="nav-item">
+    <a href="{{route('admin.vacancies.index')}}"
+       class="nav-link @if (request()->is('admin/vacancies')) active @endif">
+        <i class="nav-icon fas fa-user-circle"></i>
+        <p>
+            Vakansiyalar
         </p>
     </a>
 </li>

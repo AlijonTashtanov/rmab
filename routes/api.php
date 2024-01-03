@@ -5,6 +5,7 @@ use App\Http\Controllers\Api\FaqController;
 use App\Http\Controllers\Api\PostController;
 use App\Http\Controllers\Api\ServiceController;
 use App\Http\Controllers\Api\UsefulLinkController;
+use App\Http\Controllers\Api\VacancyController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -31,6 +32,12 @@ Route::get('/abouts', [AboutController::class, 'index']);
 Route::group(['prefix' => 'news'], function () {
     Route::get('/latest-news', [PostController::class, 'latestNews']);
     Route::get('/all', [PostController::class, 'all']);
+    Route::get('/detail/{id}', [PostController::class, 'show']);
+});
+
+Route::group(['prefix' => 'vacancy'], function () {
+    Route::get('/all', [VacancyController::class, 'index']);
+    Route::get('/detail/{id}', [VacancyController::class, 'show']);
 });
 
 

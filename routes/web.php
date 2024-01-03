@@ -6,6 +6,7 @@ use App\Http\Controllers\FaqController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\UsefulLinkController;
+use App\Http\Controllers\VacancyController;
 use App\Http\Livewire\Admin\UserProfile;
 use Illuminate\Support\Facades\Route;
 
@@ -53,5 +54,6 @@ Route::prefix('admin')->name('admin.')->middleware(['auth', 'admin'])->group(fun
     Route::resource('/services', ServiceController::class);
     Route::resource('/abouts', AboutController::class);
     Route::resource('/posts', PostController::class);
+    Route::resource('/vacancies', VacancyController::class);
 
 });

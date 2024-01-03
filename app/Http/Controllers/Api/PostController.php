@@ -54,4 +54,18 @@ class PostController extends AbstractController
         }
         return $this->sendResponse(false, 'Data not found', 200, $items);
     }
+
+    /**
+     * @param $id
+     * @return array|JsonResponse
+     */
+    public function show($id)
+    {
+        $items = $this->resource::make($this->service->show($id));
+
+        if ($items) {
+            return $this->sendResponse(true, 'success', 200, $items);
+        }
+        return $this->sendResponse(false, 'Data not found', 200, $items);
+    }
 }
