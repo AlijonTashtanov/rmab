@@ -26,4 +26,26 @@ class PostResource extends JsonResource
             'imageUrl' => $this->getImageUrl()
         ];
     }
+
+    /**
+     * Customize the pagination information.
+     *
+     * @param Request $request
+     * @return array
+     */
+    public function with($request)
+    {
+        return [
+            'meta' => [
+                'pagination' => [
+                    'total' => $this->total(),
+                    'per_page' => $this->perPage(),
+                    'current_page' => $this->currentPage(),
+                    'last_page' => $this->lastPage(),
+                    'from' => $this->firstItem(),
+                    'to' => $this->lastItem(),
+                ],
+            ],
+        ];
+    }
 }

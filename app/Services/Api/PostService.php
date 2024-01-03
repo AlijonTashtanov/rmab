@@ -16,4 +16,9 @@ class PostService extends AbstractService
     {
         return $this->model::where('status', Status::$status_active)->orderBy('created_at', 'desc')->limit(12)->get();
     }
+
+    public function all()
+    {
+        return $this->model::where('status', Status::$status_active)->orderBy('created_at', 'desc')->paginate(20);
+    }
 }

@@ -27,4 +27,10 @@ Route::get('/useful-links', [UsefulLinkController::class, 'index']);
 Route::get('/faqs', [FaqController::class, 'index']);
 Route::get('/services', [ServiceController::class, 'index']);
 Route::get('/abouts', [AboutController::class, 'index']);
-Route::get('/latest-news', [PostController::class, 'latestNews']);
+
+Route::group(['prefix' => 'news'], function () {
+    Route::get('/latest-news', [PostController::class, 'latestNews']);
+    Route::get('/all', [PostController::class, 'all']);
+});
+
+

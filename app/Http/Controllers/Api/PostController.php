@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers\Api;
 
-use App\Http\Controllers\Controller;
 use App\Http\Resources\Api\PostResource;
+use App\Models\Post;
 use App\Services\Api\PostService;
-use Illuminate\Http\Request;
+use App\Traits\Status;
+use Illuminate\Http\JsonResponse;
 
 class PostController extends AbstractController
 {
@@ -21,6 +22,35 @@ class PostController extends AbstractController
         $items = $this->resource::collection($this->service->latestActiveLimitIndex());
         if ($items->isNotEmpty()) {
             return $this->sendResponse(true, 'success', 200, $items);
+        }
+        return $this->sendResponse(false, 'Data not found', 200, $items);
+    }
+
+    /**
+     * @return array|JsonResponse
+     */
+    public function all()
+    {
+        $items = $this->resource::collection($this->service->all());
+
+        if ($items->isNotEmpty()) {
+
+            return $this->sendResponse(true, 'success', 200, [
+                'status' => true,
+                'message' => 'success',
+                'statusCode' => 200,
+                'data' => [
+                    'data' => $items,
+                    'pagination' => [
+                        'total' => $items->total(),
+                        'per_page' => $items->perPage(),
+                        'current_page' => $items->currentPage(),
+                        'last_page' => $items->lastPage(),
+                        'from' => $items->firstItem(),
+                        'to' => $items->lastItem(),
+                    ],
+                ]
+            ]);
         }
         return $this->sendResponse(false, 'Data not found', 200, $items);
     }
