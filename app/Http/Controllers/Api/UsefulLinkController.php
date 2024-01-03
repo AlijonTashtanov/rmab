@@ -10,8 +10,14 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 
 class UsefulLinkController extends AbstractController
 {
+    /**
+     * @var string
+     */
     protected $service = UsefulLinkService::class;
 
+    /**
+     * @var string
+     */
     protected $resource = UsefulLinksResource::class;
 
     /**

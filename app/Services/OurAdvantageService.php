@@ -2,17 +2,14 @@
 
 namespace App\Services;
 
-use App\Models\Vacancy;
+use App\Models\OurAdvantage;
 use App\Traits\Status;
 
-class VacancyService extends AbstractService
+class OurAdvantageService extends AbstractService
 {
-    /**
-     * @param Vacancy $vacancy
-     */
-    public function __construct(Vacancy $vacancy)
+    public function __construct(OurAdvantage $ouradvantage)
     {
-        $this->model = $vacancy;
+        $this->model = $ouradvantage;
     }
 
     /**
@@ -25,7 +22,7 @@ class VacancyService extends AbstractService
     public function storeWithFile(array $data)
     {
 
-        $item = new Vacancy();
+        $item = new OurAdvantage();
 
         $titles = [
             'uz' => $data['title_uz'],
@@ -33,23 +30,15 @@ class VacancyService extends AbstractService
             'en' => $data['title_en'],
         ];
 
+
         $descriptions = [
             'uz' => $data['description_uz'],
             'ru' => $data['description_ru'],
             'en' => $data['description_en'],
         ];
 
-        $contents = [
-            'uz' => $data['content_uz'],
-            'ru' => $data['content_ru'],
-            'en' => $data['content_en'],
-        ];
-
-
         $item->setTranslations('title', $titles);
         $item->setTranslations('description', $descriptions);
-        $item->setTranslations('content', $contents);
-        $item->salary = $data['salary'] ?? '';
         $item->status = isset($data['status']) ? Status::$status_active : Status::$status_inactive;
         $item->save();
 
@@ -83,16 +72,8 @@ class VacancyService extends AbstractService
             'en' => $data['description_en'],
         ];
 
-        $contents = [
-            'uz' => $data['content_uz'],
-            'ru' => $data['content_ru'],
-            'en' => $data['content_en'],
-        ];
-
         $item->setTranslations('title', $titles);
         $item->setTranslations('description', $descriptions);
-        $item->setTranslations('content', $contents);
-        $item->salary = $data['salary'] ?? '';
         $item->status = isset($data['status']) ? Status::$status_active : Status::$status_inactive;
         $item->save();
 

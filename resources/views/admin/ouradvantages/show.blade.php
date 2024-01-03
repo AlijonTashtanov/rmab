@@ -3,14 +3,14 @@
     {{$response->getTranslation('title','uz')}}
 @endsection
 @section('content')
-    <x-headers title="{{$response->getTranslation('title','uz')}}" icon="fas fa-circle" parent="Vakansiyalar"
-               parent-route="admin.vacancies.index"
+    <x-headers title="{{$response->getTranslation('title','uz')}}" icon="fas fa-circle" parent="Bizning avfzalliklar"
+               parent-route="admin.ouradvantages.index"
                parent-icon=""/>
     <div class="card card-outline card-primary">
         <div class="card-header">
             <div class="card-tools">
                 <button type="button" class="btn btn-tool" data-card-widget="maximize"><i
-                            class="fas fa-expand"></i></button>
+                        class="fas fa-expand"></i></button>
                 <button type="button" class="btn btn-tool" data-card-widget="collapse">
                     <i class="fas fa-plus"></i>
                 </button>
@@ -40,10 +40,6 @@
                     <td>{{$response->getTranslation('title','en')}}</td>
                 </tr>
                 <tr>
-                    <th>Taklif qilinayotgan maosh</th>
-                    <td>{{$response->salary}}</td>
-                </tr>
-                <tr>
                     <th>Qisqa tavsif [uz]</th>
                     <td>{{$response->getTranslation('title','uz')}}</td>
                 </tr>
@@ -54,18 +50,6 @@
                 <tr>
                     <th>Qisqa tavsif [en]</th>
                     <td>{{$response->getTranslation('title','en')}}</td>
-                </tr>
-                <tr>
-                    <th>Kontent [uz]</th>
-                    <td>{!!$response->getTranslation('content','uz') !!}</td>
-                </tr>
-                <tr>
-                    <th>Kontent [ru]</th>
-                    <td>{!!$response->getTranslation('content','ru')!!}</td>
-                </tr>
-                <tr>
-                    <th>Kontent [en]</th>
-                    <td>{!!$response->getTranslation('content','en')!!}</td>
                 </tr>
                 <tr>
                     <th>Holati</th>

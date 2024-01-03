@@ -3,6 +3,7 @@
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\FaqController;
+use App\Http\Controllers\OurAdvantageController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\UsefulLinkController;
@@ -55,5 +56,6 @@ Route::prefix('admin')->name('admin.')->middleware(['auth', 'admin'])->group(fun
     Route::resource('/abouts', AboutController::class);
     Route::resource('/posts', PostController::class);
     Route::resource('/vacancies', VacancyController::class);
+    Route::resource('/ouradvantages', OurAdvantageController::class);
 
 });

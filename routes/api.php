@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Api\AboutController;
 use App\Http\Controllers\Api\FaqController;
+use App\Http\Controllers\Api\OurAdvantageController;
 use App\Http\Controllers\Api\PostController;
 use App\Http\Controllers\Api\ServiceController;
 use App\Http\Controllers\Api\UsefulLinkController;
@@ -40,4 +41,5 @@ Route::group(['prefix' => 'vacancy'], function () {
     Route::get('/detail/{id}', [VacancyController::class, 'show']);
 });
 
+Route::get('/our-advantages', [OurAdvantageController::class, 'index']);
 
