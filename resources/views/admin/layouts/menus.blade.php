@@ -69,6 +69,15 @@
         </p>
     </a>
 </li>
+<li class="nav-item">
+    <a href="{{route('admin.props.index')}}"
+       class="nav-link @if (request()->is('admin/props')) active @endif">
+        <i class="nav-icon fas fa-circle"></i>
+        <p>
+            Rekvizitlar
+        </p>
+    </a>
+</li>
 {{-- <li class="nav-item menu-open">
     <a href="#" class="nav-link active">
         <i class="nav-icon fas fa-tachometer-alt"></i>
