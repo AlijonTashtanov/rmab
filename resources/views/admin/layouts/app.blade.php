@@ -20,6 +20,9 @@
     <link rel="stylesheet" href="{{ asset('includes/plugins/toastr/toastr.min.css') }}">
     <!-- overlayScrollbars -->
     <link rel="stylesheet" href="{{asset('includes/plugins/overlayScrollbars/css/OverlayScrollbars.min.css')}}">
+
+    {{--    Select2--}}
+    <link rel="stylesheet" href="{{asset('includes/plugins/select2/css/select2.min.css')}}">
     @livewireStyles
     @yield('styles')
     @stack('styles')
@@ -176,6 +179,8 @@
 <script src="{{asset('includes/dist/js/adminlte.js')}}"></script>
 <script src="{{asset('js/custom.js')}}"></script>
 <script src="{{asset('includes/plugins/bootstrap-switch/js/bootstrap-switch.min.js')}}"></script>
+
+<script src="{{asset('includes/plugins/select2/js/select2.full.min.js')}}"></script>
 @livewireScripts
 @if(session()->has('success'))
     <script>

@@ -2,10 +2,12 @@
 
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\BranchController;
 use App\Http\Controllers\FaqController;
 use App\Http\Controllers\OurAdvantageController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\PropController;
+use App\Http\Controllers\RegionController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\UsefulLinkController;
 use App\Http\Controllers\VacancyController;
@@ -59,5 +61,7 @@ Route::prefix('admin')->name('admin.')->middleware(['auth', 'admin'])->group(fun
     Route::resource('/vacancies', VacancyController::class);
     Route::resource('/ouradvantages', OurAdvantageController::class);
     Route::resource('/props', PropController::class);
+    Route::resource('/regions', RegionController::class);
+    Route::resource('/branches', BranchController::class);
 
 });

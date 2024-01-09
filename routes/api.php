@@ -5,6 +5,7 @@ use App\Http\Controllers\Api\FaqController;
 use App\Http\Controllers\Api\OurAdvantageController;
 use App\Http\Controllers\Api\PostController;
 use App\Http\Controllers\Api\PropsController;
+use App\Http\Controllers\Api\RegionController;
 use App\Http\Controllers\Api\ServiceController;
 use App\Http\Controllers\Api\UsefulLinkController;
 use App\Http\Controllers\Api\VacancyController;
@@ -45,3 +46,9 @@ Route::group(['prefix' => 'vacancy'], function () {
 Route::get('/our-advantages', [OurAdvantageController::class, 'index']);
 Route::get('/props', [PropsController::class, 'index']);
 
+
+Route::group(['prefix' => 'region'], function () {
+    Route::get('/', [RegionController::class, 'index']);
+    Route::get('/region-branch/{region_id}', [RegionController::class, 'regionBranch']);
+    Route::get('/region-branches/{region_id}', [RegionController::class, 'regionBranches']);
+});
