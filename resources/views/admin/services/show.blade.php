@@ -1,9 +1,10 @@
 @extends('admin.layouts.app')
 @section('title')
-    Xizmatlar
+    {{$response->getTranslation('name','uz')}}
 @endsection
 @section('content')
-    <x-headers title="Xizmatlar" icon="fas fa-circle" parent="Xizmatlar" parent-route="admin.services.index"
+    <x-headers title="{{$response->getTranslation('name','uz')}}" icon="fas fa-circle" parent="Xizmatlar"
+               parent-route="admin.services.index"
                parent-icon=""/>
     <div class="card card-outline card-primary">
         <div class="card-header">
@@ -32,6 +33,18 @@
                 <tr>
                     <th>Nomi [en]</th>
                     <td>{{$response->getTranslation('name','en')}}</td>
+                </tr>
+                <tr>
+                    <th>Kontent [uz]</th>
+                    <td>{!!$response->getTranslation('content','uz') !!}</td>
+                </tr>
+                <tr>
+                    <th>Kontent [ru]</th>
+                    <td>{!!$response->getTranslation('content','ru')!!}</td>
+                </tr>
+                <tr>
+                    <th>Kontent [en]</th>
+                    <td>{!!$response->getTranslation('content','en')!!}</td>
                 </tr>
                 <tr>
                     <th>Rasm</th>

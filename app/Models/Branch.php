@@ -32,11 +32,19 @@ class Branch extends Model
      */
     public static function search($search)
     {
-        return empty($search)
-            ? static::query()
-            : static::query()->where('branches.name->uz', 'like', '%' . $search . '%')
-                ->join('regions', 'branches.region_id', '=', 'regions.id')
-                ->where('regions.name->uz', 'like', '%' . $search . '%');
+//        return empty($search)
+//            ? static::query()
+//            : static::query()->where('branches.name->uz', 'like', '%' . $search . '%')
+//                ->join('regions', 'branches.region_id', '=', 'regions.id')
+//                ->where('regions.name->uz', 'like', '%' . $search . '%');
+
+        return empty($search) ? static::query() : static::query()
+            ->where('name->uz', 'like', '%' . $search . '%')
+            ->where(static function ($query) use ($search) {
+                $query
+                    ->whereIn('id', Branch::query()->select('id')->where('name->uz', 'like', '%' . $search . '%'))
+                    ->orWhereIn('region_id', Region::query()->select('id')->where('name->uz', 'like', '%' . $search . '%'));
+            });
     }
 
     /**

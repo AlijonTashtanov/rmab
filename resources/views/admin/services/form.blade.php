@@ -24,6 +24,36 @@
         @enderror
     </div>
     <div class="form-group">
+        <label for="floatingTextarea2">Ma'lumot Uz</label>
+        <div class="form-floating">
+                                <textarea id="noImage1" class="form-control" name="content_uz" required
+                                          style="height: 100px">{{old("content_uz") ?? $response->getTranslation('content','uz')}}</textarea>
+            @error ('content_uz')
+            <p class="text-danger">* {{$message}}</p>
+            @enderror
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="floatingTextarea2">Ma'lumot Ru</label>
+        <div class="form-floating mt-3">
+                                <textarea id="noImage3" class="form-control" name="content_ru" required
+                                          style="height: 100px">{{old("content_ru") ?? $response->getTranslation('content','ru')}}</textarea>
+            @error ('content_ru')
+            <p class="text-danger">* {{$message}}</p>
+            @enderror
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="floatingTextarea2">Ma'lumot En</label>
+        <div class="form-floating mt-3">
+                                <textarea id="noImage2" class="form-control" name="content_en" required
+                                          style="height: 100px">{{old("content_en") ?? $response->getTranslation('content','en')}}</textarea>
+            @error ('content_en')
+            <p class="text-danger">* {{$message}}</p>
+            @enderror
+        </div>
+    </div>
+    <div class="form-group">
         <label for="nameInput" class="form-label">Rasmi</label>
         <input type="file" name="image"
                class="form-control  @error('image') is-invalid @enderror"
@@ -56,11 +86,28 @@
 <button type="submit" class="btn btn-primary float-right">Saqlash</button>
 
 @push('scripts')
+    <script src="https://cdn.ckeditor.com/4.16.2/full/ckeditor.js"></script>
+
     <script>
         $(function () {
             $("input[data-bootstrap-switch]").each(function () {
                 $(this).bootstrapSwitch('state', $(this).prop('checked'));
             })
         })
+    </script>
+
+    <script>
+        CKEDITOR.replace('content_uz', {
+            'filebrowserImageBrowseUrl': '/elfinder/ckeditor',
+            'filebrowserBrowseUrl': '/elfinder/ckeditor',
+        });
+        CKEDITOR.replace('content_en', {
+            'filebrowserImageBrowseUrl': '/elfinder/ckeditor',
+            'filebrowserBrowseUrl': '/elfinder/ckeditor',
+        });
+        CKEDITOR.replace('content_ru', {
+            'filebrowserImageBrowseUrl': '/elfinder/ckeditor',
+            'filebrowserBrowseUrl': '/elfinder/ckeditor',
+        });
     </script>
 @endpush

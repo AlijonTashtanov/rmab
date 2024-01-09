@@ -20,6 +20,9 @@ class ServiceController extends AbstractController
                 'name_uz' => "required|string|max:2056",
                 'name_ru' => 'required|string|max:2056',
                 'name_en' => 'required|string|max:2056',
+                'content_uz' => '',
+                'content_ru' => '',
+                'content_en' => '',
                 'image' => '',
                 'status' => '',
             ]

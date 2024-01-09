@@ -23,4 +23,15 @@ class ServiceController extends AbstractController
         }
         return $this->sendResponse(false, 'Data not found', 200, $items);
     }
+
+    /**
+     * @param $id
+     * @return array|JsonResponse
+     */
+    public function show($id)
+    {
+        $item = $this->service->detail($id);
+
+        return $this->sendResponse(true, 'success', 200, $item);
+    }
 }

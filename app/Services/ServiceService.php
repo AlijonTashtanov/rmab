@@ -31,9 +31,17 @@ class ServiceService extends AbstractService
             'en' => $data['name_en'],
             'ru' => $data['name_ru']
         ];
+
+        $contents = [
+            'uz' => $data['content_uz'],
+            'en' => $data['content_en'],
+            'ru' => $data['content_ru']
+        ];
+
         $item->status = isset($data['status']) ? Status::$status_active : Status::$status_inactive;
 
         $item->setTranslations('name', $translations);
+        $item->setTranslations('content', $contents);
         $item->save();
 
         if (isset($data['image'])) {
@@ -59,8 +67,16 @@ class ServiceService extends AbstractService
             'en' => $data['name_en'],
             'ru' => $data['name_ru'],
         ];
+
+        $contents = [
+            'uz' => $data['content_uz'],
+            'en' => $data['content_en'],
+            'ru' => $data['content_ru']
+        ];
+
         $item->status = isset($data['status']) ? Status::$status_active : Status::$status_inactive;
         $item->setTranslations('name', $translations);
+        $item->setTranslations('content', $contents);
         $item->save();
 
         if (isset($data['image'])) {

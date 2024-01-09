@@ -29,7 +29,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::get('/useful-links', [UsefulLinkController::class, 'index']);
 Route::get('/faqs', [FaqController::class, 'index']);
-Route::get('/services', [ServiceController::class, 'index']);
 Route::get('/abouts', [AboutController::class, 'index']);
 
 Route::group(['prefix' => 'news'], function () {
@@ -46,9 +45,13 @@ Route::group(['prefix' => 'vacancy'], function () {
 Route::get('/our-advantages', [OurAdvantageController::class, 'index']);
 Route::get('/props', [PropsController::class, 'index']);
 
-
 Route::group(['prefix' => 'region'], function () {
     Route::get('/', [RegionController::class, 'index']);
     Route::get('/region-branch/{region_id}', [RegionController::class, 'regionBranch']);
     Route::get('/region-branches/{region_id}', [RegionController::class, 'regionBranches']);
+});
+
+Route::group(['prefix' => 'services'], function () {
+    Route::get('/', [ServiceController::class, 'index']);
+    Route::get('/detail/{id}', [ServiceController::class, 'show']);
 });
