@@ -36,7 +36,7 @@ class Branch extends Model
             ? static::query()
             : static::query()->where('branches.name->uz', 'like', '%' . $search . '%')
                 ->join('regions', 'branches.region_id', '=', 'regions.id')
-                ->where('regions.name->uz', 'like', '%' . $search . '%');
+                ->whereOr('regions.name->uz', 'like', '%' . $search . '%');
     }
 
     /**
