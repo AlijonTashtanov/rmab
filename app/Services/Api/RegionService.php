@@ -24,7 +24,7 @@ class RegionService extends AbstractService
 
         $branch = Branch::where(['region_id' => $region->id])
             ->orderBy('created_at', 'desc')
-            ->first();
+            ->firstOrFail();
 
         return BranchResource::make($branch);
     }
