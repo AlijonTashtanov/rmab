@@ -15,7 +15,7 @@ return new class extends Migration {
         Schema::create('articles', function (Blueprint $table) {
             $table->id();
             $table->json('title')->nullable();
-            $table->json('comment')->nullable();
+            $table->json('content')->nullable();
             $table->tinyInteger('status')->default(0);
             $table->timestamps();
         });

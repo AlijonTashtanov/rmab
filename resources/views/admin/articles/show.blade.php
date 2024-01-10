@@ -1,9 +1,10 @@
 @extends('admin.layouts.app')
 @section('title')
-    Articles
+    {{$response->getTranslation('title','uz')}}
 @endsection
 @section('content')
-    <x-headers title="Articles" icon="fas fa-circle" parent="parent" parent-route="admin.articles.index"
+    <x-headers title="{{$response->getTranslation('title','uz')}}" icon="fas fa-circle" parent="Maqolalar"
+               parent-route="admin.articles.index"
                parent-icon=""/>
     <div class="card card-outline card-primary">
         <div class="card-header">
@@ -20,6 +21,41 @@
                 <tr>
                     <th>ID</th>
                     <td>{{$response->id}}</td>
+                </tr>
+                <tr>
+                    <th>Rasm</th>
+                    <td><img src="{{ $response->getImageUrl() }}"
+                             alt="" style="width: 60px;height: 60px"></td>
+                </tr>
+                <tr>
+                    <th>Sarlavha [uz]</th>
+                    <td>{{$response->getTranslation('title','uz')}}</td>
+                </tr>
+                <tr>
+                    <th>Sarlavha [ru]</th>
+                    <td>{{$response->getTranslation('title','ru')}}</td>
+                </tr>
+                <tr>
+                    <th>Sarlavha [en]</th>
+                    <td>{{$response->getTranslation('title','en')}}</td>
+                </tr>
+                <tr>
+                    <th>Kontent [uz]</th>
+                    <td>{!!$response->getTranslation('content','uz') !!}</td>
+                </tr>
+                <tr>
+                    <th>Kontent [ru]</th>
+                    <td>{!!$response->getTranslation('content','ru')!!}</td>
+                </tr>
+                <tr>
+                    <th>Kontent [en]</th>
+                    <td>{!!$response->getTranslation('content','en')!!}</td>
+                </tr>
+                <tr>
+                    <th>Holati</th>
+                    <td>
+                        {!! $response->getStatusBadgeName() !!}
+                    </td>
                 </tr>
             </table>
         </div>

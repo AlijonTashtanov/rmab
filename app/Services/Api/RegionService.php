@@ -31,7 +31,7 @@ class RegionService extends AbstractService
 
     /**
      * @param $id
-     * @return AnonymousResourceCollection
+     * @return array|AnonymousResourceCollection
      */
     public function regionBranches($key)
     {
@@ -40,8 +40,13 @@ class RegionService extends AbstractService
         $branches = Branch::where(['region_id' => $region->id])
             ->orderBy('created_at', 'desc')
             ->get();
+        $data = [
+            'title' => __('branches.title'),
+            'content' => __('branches.content'),
+            'branches' => BranchResource::collection($branches)
+        ];
 
-        return BranchResource::collection($branches);
+        return $data;
     }
 
     /**

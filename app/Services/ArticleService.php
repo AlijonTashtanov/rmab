@@ -3,7 +3,6 @@
 namespace App\Services;
 
 use App\Models\Article;
-use App\Models\Post;
 use App\Traits\Status;
 
 class ArticleService extends AbstractService
@@ -23,7 +22,7 @@ class ArticleService extends AbstractService
     public function storeWithFile(array $data)
     {
 
-        $item = new Post();
+        $item = new Article();
 
         $titles = [
             'uz' => $data['title_uz'],

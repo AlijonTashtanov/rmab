@@ -62,3 +62,9 @@ Route::group(['prefix' => 'local-documents'], function () {
     Route::get('/', [LocalDocumentController::class, 'index']);
     Route::get('/detail/{id}', [LocalDocumentController::class, 'show']);
 });
+
+Route::group(['prefix' => 'local-documents'], function () {
+    Route::get('/', [LocalDocumentController::class, 'index']);
+    Route::get('/detail/{id}', [LocalDocumentController::class, 'show']);
+});
+
