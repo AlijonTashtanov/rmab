@@ -2,8 +2,10 @@
 
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\BranchController;
 use App\Http\Controllers\FaqController;
+use App\Http\Controllers\LocalDocumentController;
 use App\Http\Controllers\OurAdvantageController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\PropController;
@@ -63,5 +65,7 @@ Route::prefix('admin')->name('admin.')->middleware(['auth', 'admin'])->group(fun
     Route::resource('/props', PropController::class);
     Route::resource('/regions', RegionController::class);
     Route::resource('/branches', BranchController::class);
+    Route::resource('/localdocuments', LocalDocumentController::class);
+    Route::resource('/articles', ArticleController::class);
 
 });

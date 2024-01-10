@@ -15,12 +15,12 @@ class RegionService extends AbstractService
     protected $model = Region::class;
 
     /**
-     * @param $id
+     * @param $key
      * @return BranchResource
      */
-    public function regionBranch($id)
+    public function regionBranch($key)
     {
-        $region = $this->show($id);
+        $region = $this->showKey($key);
 
         $branch = Branch::where(['region_id' => $region->id])
             ->orderBy('created_at', 'desc')
@@ -33,14 +33,23 @@ class RegionService extends AbstractService
      * @param $id
      * @return AnonymousResourceCollection
      */
-    public function regionBranches($id)
+    public function regionBranches($key)
     {
-        $region = $this->show($id);
+        $region = $this->showKey($key);
 
         $branches = Branch::where(['region_id' => $region->id])
             ->orderBy('created_at', 'desc')
             ->get();
 
         return BranchResource::collection($branches);
+    }
+
+    /**
+     * @param $id
+     * @return mixed
+     */
+    public function showKey($key)
+    {
+        return $this->model::where('key', $key)->firstOrFail();
     }
 }

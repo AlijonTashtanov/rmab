@@ -96,6 +96,24 @@
         </p>
     </a>
 </li>
+<li class="nav-item">
+    <a href="{{route('admin.localdocuments.index')}}"
+       class="nav-link @if (request()->is('admin/localdocuments')) active @endif">
+        <i class="nav-icon fas fa-file"></i>
+        <p>
+            Ichki hujjatlar
+        </p>
+    </a>
+</li>
+<li class="nav-item">
+    <a href="{{route('admin.articles.index')}}"
+       class="nav-link @if (request()->is('admin/articles')) active @endif">
+        <i class="nav-icon fas fa-newspaper"></i>
+        <p>
+            Maqolalar
+        </p>
+    </a>
+</li>
 {{-- <li class="nav-item menu-open">
     <a href="#" class="nav-link active">
         <i class="nav-icon fas fa-tachometer-alt"></i>

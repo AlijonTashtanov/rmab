@@ -38,9 +38,9 @@ class RegionController extends AbstractController
      * @param $region_id
      * @return mixed
      */
-    public function regionBranch($region_id)
+    public function regionBranch($key)
     {
-        $item = $this->service->regionBranch($region_id);
+        $item = $this->service->regionBranch($key);
 
         return $this->sendResponse(true, 'success', 200, $item);
     }
@@ -49,10 +49,10 @@ class RegionController extends AbstractController
      * @param $region_id
      * @return mixed
      */
-    public function regionBranches($region_id)
+    public function regionBranches($key)
     {
 
-        $items = $this->service->regionBranches($region_id);
+        $items = $this->service->regionBranches($key);
 
         return $this->sendResponse(true, 'success', 200, $items);
 

@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Api\AboutController;
 use App\Http\Controllers\Api\FaqController;
+use App\Http\Controllers\Api\LocalDocumentController;
 use App\Http\Controllers\Api\OurAdvantageController;
 use App\Http\Controllers\Api\PostController;
 use App\Http\Controllers\Api\PropsController;
@@ -47,11 +48,17 @@ Route::get('/props', [PropsController::class, 'index']);
 
 Route::group(['prefix' => 'region'], function () {
     Route::get('/', [RegionController::class, 'index']);
-    Route::get('/region-branch/{region_id}', [RegionController::class, 'regionBranch']);
-    Route::get('/region-branches/{region_id}', [RegionController::class, 'regionBranches']);
+    Route::get('/region-branch/{key}', [RegionController::class, 'regionBranch']);
+    Route::get('/region-branches/{key}', [RegionController::class, 'regionBranches']);
 });
 
 Route::group(['prefix' => 'services'], function () {
     Route::get('/', [ServiceController::class, 'index']);
     Route::get('/detail/{id}', [ServiceController::class, 'show']);
+});
+
+
+Route::group(['prefix' => 'local-documents'], function () {
+    Route::get('/', [LocalDocumentController::class, 'index']);
+    Route::get('/detail/{id}', [LocalDocumentController::class, 'show']);
 });
