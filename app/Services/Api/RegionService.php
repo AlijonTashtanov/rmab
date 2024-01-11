@@ -3,8 +3,11 @@
 namespace App\Services\Api;
 
 use App\Http\Resources\Api\BranchResource;
+use App\Http\Resources\Api\DistrictResource;
 use App\Models\Branch;
+use App\Models\District;
 use App\Models\Region;
+use App\Traits\Status;
 use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
 
 class RegionService extends AbstractService
@@ -56,5 +59,21 @@ class RegionService extends AbstractService
     public function showKey($key)
     {
         return $this->model::where('key', $key)->firstOrFail();
+    }
+
+    /**
+     * @param $id
+     * @return AnonymousResourceCollection
+     */
+    public function districts($id)
+    {
+        $region = $this->show($id);
+
+        $districts = District::where(['region_id' => $region->id])
+            ->where('status', Status::$status_active)
+            ->orderBy('created_at', 'desc')
+            ->get();
+
+        return DistrictResource::collection($districts);
     }
 }

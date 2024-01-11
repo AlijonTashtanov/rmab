@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 use JsonSerializable;
 
-class BranchResource extends JsonResource
+class CorruptionTypeResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -20,12 +20,6 @@ class BranchResource extends JsonResource
         return [
             'id' => $this->id,
             'name' => $this->getTranslation('name', app()->getLocale()),
-            'description' => $this->getTranslation('description', app()->getLocale()),
-            'address' => $this->getTranslation('address', app()->getLocale()),
-            'phone' => $this->phone,
-            'email' => $this->email,
-            'leadership' => $this->leadership,
-            'region' => RegionResource::make($this->region)
         ];
     }
 }

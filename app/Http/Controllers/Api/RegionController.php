@@ -57,4 +57,15 @@ class RegionController extends AbstractController
         return $this->sendResponse(true, 'success', 200, $items);
 
     }
+
+    /**
+     * @param $id
+     * @return array
+     */
+    public function districts($id)
+    {
+        $items = $this->service->districts($id);
+
+        return $this->sendResponse(true, 'success', 200, $items);
+    }
 }

@@ -68,6 +68,12 @@ class AbstractService
         return $object;
     }
 
+
+    /**
+     * @param array $data
+     * @param $id
+     * @return JsonResponse|mixed
+     */
     public function update(array $data, $id)
     {
         $item = $this->show($id);
@@ -90,6 +96,10 @@ class AbstractService
         return $item;
     }
 
+    /**
+     * @param $id
+     * @return mixed
+     */
     public function destroy($id)
     {
         $item = $this->show($id);

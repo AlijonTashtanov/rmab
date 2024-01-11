@@ -78,14 +78,33 @@
         </p>
     </a>
 </li>
-<li class="nav-item">
-    <a href="{{route('admin.regions.index')}}"
-       class="nav-link @if (request()->is('admin/regions')) active @endif">
+<li class="nav-item @if(request()->is('admin/districts') || request()->is('admin/regions')) menu-is-opening menu-open @endif ">
+    <a href="#" class="nav-link">
         <i class="nav-icon fas fa-globe"></i>
         <p>
-            Viloyatlar
+            Hudud sozlamalari
+            <i class="right fas fa-angle-left"></i>
         </p>
     </a>
+    <ul class="nav nav-treeview"
+        style="@if(request()->is('admin/districts') || request()->is('admin/regions')) display: block; @else display: none; @endif">
+        <li class="nav-item">
+            <a href="{{route('admin.regions.index')}}"
+               class="nav-link @if (request()->is('admin/regions')) active @endif">
+                <i class="nav-icon fas fa-globe"></i>
+                <p>
+                    Viloyatlar
+                </p>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href="{{route('admin.districts.index')}}"
+               class="nav-link  @if (request()->is('admin/districts')) active @endif">
+                <i class="fas fa-globe nav-icon"></i>
+                <p>Tuman / Shaharlar</p>
+            </a>
+        </li>
+    </ul>
 </li>
 <li class="nav-item">
     <a href="{{route('admin.branches.index')}}"
@@ -123,6 +142,38 @@
         </p>
     </a>
 </li>
+<li class="nav-item">
+    <a href="{{route('admin.corruptiontypes.index')}}"
+       class="nav-link @if (request()->is('admin/corruptiontypes')) active @endif">
+        <i class="nav-icon fas fa-circle"></i>
+        <p>
+            Korrupsiya turlari
+        </p>
+    </a>
+</li>
+
+<li class="nav-item @if(request()->is('admin/applicationapplicants')) menu-is-opening menu-open @endif ">
+    <a href="#" class="nav-link">
+        <i class="nav-icon fas fa-sms"></i>
+        <p>
+            Kelgan xabarlar
+            <i class="right fas fa-angle-left"></i>
+        </p>
+    </a>
+    <ul class="nav nav-treeview"
+        style="@if(request()->is('admin/applicationapplicants')) display: block; @else display: none; @endif">
+        <li class="nav-item">
+            <a href="{{route('admin.applicationapplicants.index')}}"
+               class="nav-link @if (request()->is('admin/applicationapplicants')) active @endif">
+                <i class="nav-icon fas fa-circle"></i>
+                <p>
+                    Ariza va murojaatlar
+                </p>
+            </a>
+        </li>
+    </ul>
+</li>
+
 {{-- <li class="nav-item menu-open">
     <a href="#" class="nav-link active">
         <i class="nav-icon fas fa-tachometer-alt"></i>

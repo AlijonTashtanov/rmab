@@ -32,9 +32,7 @@
         @enderror
     </div>
 </div>
-@error('name')
-<span class="text-danger">{{$message}}</span>
-@enderror
+
 <button type="submit" class="btn btn-primary float-right">Saqlash!</button>
 <br><br><br>
 <div class="row">

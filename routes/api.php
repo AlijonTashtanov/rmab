@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Api\AboutController;
+use App\Http\Controllers\Api\ApplicationApplicantController;
 use App\Http\Controllers\Api\ArticleController;
 use App\Http\Controllers\Api\FaqController;
 use App\Http\Controllers\Api\InformationController;
@@ -52,6 +53,7 @@ Route::group(['prefix' => 'region'], function () {
     Route::get('/', [RegionController::class, 'index']);
     Route::get('/region-branch/{key}', [RegionController::class, 'regionBranch']);
     Route::get('/region-branches/{key}', [RegionController::class, 'regionBranches']);
+    Route::get('/districts/{id}', [RegionController::class, 'districts']);
 });
 
 Route::group(['prefix' => 'services'], function () {
@@ -79,4 +81,7 @@ Route::group(['prefix' => 'information'], function () {
     Route::get('/index', [InformationController::class, 'index']);
     Route::get('/detail/{id}', [InformationController::class, 'show']);
 });
+
+Route::post('/send-application-applicant', [ApplicationApplicantController::class, 'store']);
+    Route::get('/corruption-types', [ApplicationApplicantController::class, 'corruptionTypes']);
 

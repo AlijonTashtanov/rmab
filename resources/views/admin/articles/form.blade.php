@@ -121,13 +121,6 @@
     </script>
     <script src="https://cdn.ckeditor.com/4.16.2/full/ckeditor.js"></script>
 
-    <script>
-        $(function () {
-            $("input[data-bootstrap-switch]").each(function () {
-                $(this).bootstrapSwitch('state', $(this).prop('checked'));
-            })
-        })
-    </script>
 
     <script>
         CKEDITOR.replace('content_uz', {

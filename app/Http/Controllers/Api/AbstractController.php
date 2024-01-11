@@ -59,12 +59,14 @@ class AbstractController extends Controller
      */
     public function store()
     {
-        $item = $this->resource::collection($item = $this->service->store(request()->all()));
+        $item = $this->service->store(request()->all());
 
-        if ($item->isNotEmpty()) {
-            return $this->sendResponse(true, 'success', 200, $item);
+        if (isset($item['errors'])) {
+
+            return $this->sendResponse(false, 'Validate error', 422, $item['errors']);
         }
-        return $this->sendResponse(false, 'Data not found', 200, $item);
+        return $this->sendResponse(true, 'success', 200, $item);
+
     }
 
     /**

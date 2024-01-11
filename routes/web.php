@@ -2,8 +2,11 @@
 
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\ApplicationApplicantController;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\BranchController;
+use App\Http\Controllers\CorruptionTypeController;
+use App\Http\Controllers\DistrictController;
 use App\Http\Controllers\FaqController;
 use App\Http\Controllers\InformationController;
 use App\Http\Controllers\LocalDocumentController;
@@ -69,5 +72,8 @@ Route::prefix('admin')->name('admin.')->middleware(['auth', 'admin'])->group(fun
     Route::resource('/localdocuments', LocalDocumentController::class);
     Route::resource('/articles', ArticleController::class);
     Route::resource('/information', InformationController::class);
+    Route::resource('/districts', DistrictController::class);
+    Route::resource('/corruptiontypes', CorruptionTypeController::class);
+    Route::resource('/applicationapplicants', ApplicationApplicantController::class);
 
 });
