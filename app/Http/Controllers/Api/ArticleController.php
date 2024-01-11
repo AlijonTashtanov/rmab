@@ -28,22 +28,19 @@ class ArticleController extends AbstractController
 
         if ($items->isNotEmpty()) {
 
-            return $this->sendResponse(true, 'success', 200, [
-                'status' => true,
-                'message' => 'success',
-                'statusCode' => 200,
-                'data' => [
-                    'data' => $items,
-                    'pagination' => [
-                        'total' => $items->total(),
-                        'per_page' => $items->perPage(),
-                        'current_page' => $items->currentPage(),
-                        'last_page' => $items->lastPage(),
-                        'from' => $items->firstItem(),
-                        'to' => $items->lastItem(),
-                    ],
-                ]
-            ]);
+            $data = [
+                'articles' => $items,
+                'pagination' => [
+                    'total' => $items->total(),
+                    'per_page' => $items->perPage(),
+                    'current_page' => $items->currentPage(),
+                    'last_page' => $items->lastPage(),
+                    'from' => $items->firstItem(),
+                    'to' => $items->lastItem(),
+                ],
+            ];
+
+            return $this->sendResponse(true, 'success', 200, $data);
         }
         return $this->sendResponse(false, 'Data not found', 200, $items);
     }
