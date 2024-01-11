@@ -5,6 +5,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\BranchController;
 use App\Http\Controllers\FaqController;
+use App\Http\Controllers\InformationController;
 use App\Http\Controllers\LocalDocumentController;
 use App\Http\Controllers\OurAdvantageController;
 use App\Http\Controllers\PostController;
@@ -67,5 +68,6 @@ Route::prefix('admin')->name('admin.')->middleware(['auth', 'admin'])->group(fun
     Route::resource('/branches', BranchController::class);
     Route::resource('/localdocuments', LocalDocumentController::class);
     Route::resource('/articles', ArticleController::class);
+    Route::resource('/information', InformationController::class);
 
 });

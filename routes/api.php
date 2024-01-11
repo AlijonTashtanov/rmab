@@ -3,6 +3,7 @@
 use App\Http\Controllers\Api\AboutController;
 use App\Http\Controllers\Api\ArticleController;
 use App\Http\Controllers\Api\FaqController;
+use App\Http\Controllers\Api\InformationController;
 use App\Http\Controllers\Api\LocalDocumentController;
 use App\Http\Controllers\Api\OurAdvantageController;
 use App\Http\Controllers\Api\PostController;
@@ -72,5 +73,10 @@ Route::group(['prefix' => 'local-documents'], function () {
 Route::group(['prefix' => 'article'], function () {
     Route::get('/all', [ArticleController::class, 'all']);
     Route::get('/detail/{id}', [ArticleController::class, 'show']);
+});
+
+Route::group(['prefix' => 'information'], function () {
+    Route::get('/index', [InformationController::class, 'index']);
+    Route::get('/detail/{id}', [InformationController::class, 'show']);
 });
 

@@ -46,9 +46,9 @@ class AbstractController extends Controller
      */
     public function show($id)
     {
-        $item = $this->resource::collection($this->service->show($id));
+        $item = $this->resource::make($this->service->show($id));
 
-        if ($item->isNotEmpty()) {
+        if ($item) {
             return $this->sendResponse(true, 'success', 200, $item);
         }
         return $this->sendResponse(false, 'Data not found', 200, $item);
