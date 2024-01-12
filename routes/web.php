@@ -75,5 +75,4 @@ Route::prefix('admin')->name('admin.')->middleware(['auth', 'admin'])->group(fun
     Route::resource('/districts', DistrictController::class);
     Route::resource('/corruptiontypes', CorruptionTypeController::class);
     Route::resource('/applicationapplicants', ApplicationApplicantController::class);
-
 });

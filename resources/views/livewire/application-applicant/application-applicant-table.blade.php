@@ -14,6 +14,7 @@
                     <th>Familyasi</th>
                     <th>Viloyat</th>
                     <th>Telefon raqami</th>
+                    <th>Holati</th>
                     <th>Kelgan vaqti</th>
                     <th>Actions</th>
                 </tr>
@@ -24,20 +25,21 @@
                         <td>{{$item->last_name}}</td>
                         <td>{{$item->region?->getTranslation('name','uz')}}</td>
                         <td>{{$item->phone}}</td>
+                        <td>{!! $item->getStatusBadgeName() !!}</td>
                         <td>{{$item->created_at}}</td>
                         <td>
                             <a href="{{route('admin.'.$this->route.'.show', $item->id)}}" class="btn btn-primary"><i
-                                        class="fas fa-eye"></i> Show</a>
+                                    class="fas fa-eye"></i> Batafsil</a>
                             @if($item->status == Status::$status_inactive)
                                 <a href="{{route('admin.'.$this->route.'.edit', $item->id)}}" class="btn btn-success"><i
-                                            class="fas fa-check-circle"></i> O'qildi</a>
+                                        class="fas fa-check-circle"></i> O'qildi</a>
                             @endif
                             <form action="{{route('admin.'.$this->route.'.destroy', $item->id)}}" method="POST"
                                   class="d-inline-block">
                                 @csrf
                                 @method('DELETE')
                                 <button class="btn btn-danger" type="submit" onclick="return confirm('Are you sure?')">
-                                    <i class="fas fa-trash"></i> Delete
+                                    <i class="fas fa-trash"></i> O'chirish
                                 </button>
                             </form>
                         </td>
