@@ -68,4 +68,14 @@ class RegionController extends AbstractController
 
         return $this->sendResponse(true, 'success', 200, $items);
     }
+
+    /**
+     * @return array
+     */
+    public function allBranches()
+    {
+        $items = $this->service->allBranches();
+
+        return $this->sendResponse(true, 'success', 200, $items);
+    }
 }

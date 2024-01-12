@@ -54,6 +54,7 @@ Route::group(['prefix' => 'region'], function () {
     Route::get('/region-branch/{key}', [RegionController::class, 'regionBranch']);
     Route::get('/region-branches/{key}', [RegionController::class, 'regionBranches']);
     Route::get('/districts/{id}', [RegionController::class, 'districts']);
+    Route::get('/all-branches', [RegionController::class, 'allBranches']);
 });
 
 Route::group(['prefix' => 'services'], function () {
@@ -83,5 +84,5 @@ Route::group(['prefix' => 'information'], function () {
 });
 
 Route::post('/send-application-applicant', [ApplicationApplicantController::class, 'store']);
-    Route::get('/corruption-types', [ApplicationApplicantController::class, 'corruptionTypes']);
+Route::get('/corruption-types', [ApplicationApplicantController::class, 'corruptionTypes']);
 

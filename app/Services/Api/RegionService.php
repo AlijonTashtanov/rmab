@@ -8,6 +8,7 @@ use App\Models\Branch;
 use App\Models\District;
 use App\Models\Region;
 use App\Traits\Status;
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
 
 class RegionService extends AbstractService
@@ -75,5 +76,13 @@ class RegionService extends AbstractService
             ->get();
 
         return DistrictResource::collection($districts);
+    }
+
+    /**
+     * @return Collection|AnonymousResourceCollection
+     */
+    public function allBranches()
+    {
+        return BranchResource::collection(Branch::all());
     }
 }

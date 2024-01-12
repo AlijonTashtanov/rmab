@@ -4,6 +4,7 @@ namespace App\Models;
 
 use App\Traits\HasTranslations;
 use App\Traits\Status;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
@@ -24,6 +25,10 @@ class OurAdvantage extends Model implements HasMedia
     public $translatable = ['title', 'description'];
 
 
+    /**
+     * @param $search
+     * @return Builder
+     */
     public static function search($search)
     {
         return empty($search)
