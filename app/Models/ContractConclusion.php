@@ -6,25 +6,23 @@ use App\Traits\Status;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Spatie\MediaLibrary\HasMedia;
-use Spatie\MediaLibrary\InteractsWithMedia;
 
 /** @var District[] $district */
 /** @var Region[] $region */
-class ApplicationApplicant extends Model implements HasMedia
+/** @var Service[] $service */
+/** @var DispatchGeography[] $dispatchGeography */
+class ContractConclusion extends Model
 {
     use Status;
-    use InteractsWithMedia;
 
     /**
-     * @var array
+     * @var string[]
      */
     protected $fillable = [
-        'id', 'first_name', 'last_name', 'region_id', 'district_id',
-        'address', 'corruption_type_id', 'address_where_corruption_occurred',
-        'name_person_suspected_corruption', 'phone', 'comment'
+        'region_id', 'district_id', 'full_name',
+        'phone', 'email', 'company_name',
+        'service_id', 'dispatch_geography_id', 'status'
     ];
-
 
     /**
      * @param $search
@@ -34,7 +32,7 @@ class ApplicationApplicant extends Model implements HasMedia
     {
         return empty($search)
             ? static::query()
-            : static::query()->where('first_name', 'like', '%' . $search . '%');
+            : static::query()->where('full_name', 'like', '%' . $search . '%');
     }
 
     /**
@@ -56,10 +54,19 @@ class ApplicationApplicant extends Model implements HasMedia
     /**
      * @return BelongsTo
      */
-    public function corruptionType()
+    public function dispatchGeography()
     {
-        return $this->belongsTo(CorruptionType::class, 'corruption_type_id', 'id');
+        return $this->belongsTo(DispatchGeography::class, 'dispatch_geography_id', 'id');
     }
+
+    /**
+     * @return BelongsTo
+     */
+    public function service()
+    {
+        return $this->belongsTo(Service::class, 'service_id', 'id');
+    }
+
 
     /**
      * @return string[]

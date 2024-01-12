@@ -3,20 +3,20 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
-use App\Services\Api\ApplicationApplicantService;
+use App\Services\Api\ContractConclusionService;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 
-class ApplicationApplicantController extends AbstractController
+class ContractConclusionController extends AbstractController
 {
-    protected $service = ApplicationApplicantService::class;
+    protected $service = ContractConclusionService::class;
 
     /**
      * @return array|JsonResponse
      */
     public function store()
     {
-        $item = $this->service->storeWithFile(request()->all());
+        $item = $this->service->store(request()->all());
 
         if (isset($item['errors'])) {
 
@@ -29,9 +29,19 @@ class ApplicationApplicantController extends AbstractController
     /**
      * @return array
      */
-    public function corruptionTypes()
+    public function pageInfo()
     {
-        $item = $this->service->corruptionTypes();
+        $item = $this->service->pageInfo();
+
+        return $this->sendResponse(true, 'success', 200, $item);
+    }
+
+    /**
+     * @return array
+     */
+    public function dispatchGeography()
+    {
+        $item = $this->service->dispatchGeography();
 
         return $this->sendResponse(true, 'success', 200, $item);
     }

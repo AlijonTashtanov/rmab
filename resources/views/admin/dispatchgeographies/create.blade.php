@@ -1,9 +1,9 @@
 @extends('admin.layouts.app')
 @section('title')
-    DispatchGeographies
+   Qo'shish
 @endsection
 @section('content')
-    <x-headers icon="fas fa-circle" title="DispatchGeographies" parent="" parent-icon="" parent-route="admin.dispatchgeographies.index"/>
+    <x-headers icon="fas fa-circle" title="Qo'shish" parent="Yuboruvchi geografiyalari" parent-icon="" parent-route="admin.dispatchgeographies.index"/>
     <div class="card">
         <div class="card-body">
             <form action="{{route('admin.dispatchgeographies.store')}}" method="POST">

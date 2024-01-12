@@ -3,6 +3,7 @@
 use App\Http\Controllers\Api\AboutController;
 use App\Http\Controllers\Api\ApplicationApplicantController;
 use App\Http\Controllers\Api\ArticleController;
+use App\Http\Controllers\Api\ContractConclusionController;
 use App\Http\Controllers\Api\FaqController;
 use App\Http\Controllers\Api\InformationController;
 use App\Http\Controllers\Api\LocalDocumentController;
@@ -81,6 +82,12 @@ Route::group(['prefix' => 'article'], function () {
 Route::group(['prefix' => 'information'], function () {
     Route::get('/index', [InformationController::class, 'index']);
     Route::get('/detail/{id}', [InformationController::class, 'show']);
+});
+
+Route::group(['prefix' => 'contract-conclusions'], function () {
+    Route::get('/page-info', [ContractConclusionController::class, 'pageInfo']);
+    Route::get('/dispatch-geography', [ContractConclusionController::class, 'dispatchGeography']);
+    Route::post('/send-contract', [ContractConclusionController::class, 'store']);
 });
 
 Route::post('/send-application-applicant', [ApplicationApplicantController::class, 'store']);

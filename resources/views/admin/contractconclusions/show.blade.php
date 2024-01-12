@@ -1,10 +1,9 @@
 @extends('admin.layouts.app')
 @section('title')
-    {{$response->getTranslation('name','uz')}}
+    ContractConclusions
 @endsection
 @section('content')
-    <x-headers title=" {{$response->getTranslation('name','uz')}}" icon="fas fa-circle"
-               parent="Yuboruvchi geografiyalari" parent-route="admin.dispatchgeographies.index"
+    <x-headers title="ContractConclusions" icon="fas fa-circle" parent="parent" parent-route="admin.contractconclusions.index"
                parent-icon=""/>
     <div class="card card-outline card-primary">
         <div class="card-header">
@@ -21,22 +20,6 @@
                 <tr>
                     <th>ID</th>
                     <td>{{$response->id}}</td>
-                </tr>
-                <tr>
-                    <th>Nomi [uz]</th>
-                    <td>{{$response->getTranslation('name','uz')}}</td>
-                </tr>
-                <tr>
-                    <th>Nomi [ru]</th>
-                    <td>{{$response->getTranslation('name','ru')}}</td>
-                </tr>
-                <tr>
-                    <th>Nomi [en]</th>
-                    <td>{{$response->getTranslation('name','en')}}</td>
-                </tr>
-                <tr>
-                    <th>Holati</th>
-                    <td>{!! $response->getStatusBadgeName() !!}</td>
                 </tr>
             </table>
         </div>
