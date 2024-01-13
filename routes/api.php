@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Api\AboutController;
 use App\Http\Controllers\Api\ApplicationApplicantController;
+use App\Http\Controllers\Api\ApplicationUseServiceController;
 use App\Http\Controllers\Api\ArticleController;
 use App\Http\Controllers\Api\ContractConclusionController;
 use App\Http\Controllers\Api\FaqController;
@@ -100,6 +101,11 @@ Route::group(['prefix' => 'quality-control'], function () {
 Route::group(['prefix' => 'information-about-shipment'], function () {
     Route::get('/page-info', [InformationAboutShipmentController::class, 'pageInfo']);
     Route::post('/send', [InformationAboutShipmentController::class, 'store']);
+});
+
+Route::group(['prefix' => 'application-use-service'], function () {
+    Route::get('/page-info', [ApplicationUseServiceController::class, 'pageInfo']);
+    Route::post('/send', [ApplicationUseServiceController::class, 'store']);
 });
 
 Route::post('/send-application-applicant', [ApplicationApplicantController::class, 'store']);
