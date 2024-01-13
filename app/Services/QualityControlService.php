@@ -2,17 +2,17 @@
 
 namespace App\Services;
 
-use App\Models\ContractConclusion;
+use App\Models\QualityControl;
 use App\Traits\Status;
 
-class ContractConclusionService extends AbstractService
+class QualityControlService extends AbstractService
 {
     /**
-     * @param ContractConclusion $contractconclusion
+     * @param QualityControl $qualitycontrol
      */
-    public function __construct(ContractConclusion $contractconclusion)
+    public function __construct(QualityControl $qualitycontrol)
     {
-        $this->model = $contractconclusion;
+        $this->model = $qualitycontrol;
     }
 
     /**

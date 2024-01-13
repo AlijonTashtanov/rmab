@@ -10,6 +10,7 @@ use App\Http\Controllers\Api\LocalDocumentController;
 use App\Http\Controllers\Api\OurAdvantageController;
 use App\Http\Controllers\Api\PostController;
 use App\Http\Controllers\Api\PropsController;
+use App\Http\Controllers\Api\QualityControlController;
 use App\Http\Controllers\Api\RegionController;
 use App\Http\Controllers\Api\ServiceController;
 use App\Http\Controllers\Api\UsefulLinkController;
@@ -88,6 +89,11 @@ Route::group(['prefix' => 'contract-conclusions'], function () {
     Route::get('/page-info', [ContractConclusionController::class, 'pageInfo']);
     Route::get('/dispatch-geography', [ContractConclusionController::class, 'dispatchGeography']);
     Route::post('/send-contract', [ContractConclusionController::class, 'store']);
+});
+
+Route::group(['prefix' => 'quality-control'],function (){
+    Route::post('/send', [QualityControlController::class, 'store']);
+    Route::get('/page-info', [QualityControlController::class, 'pageInfo']);
 });
 
 Route::post('/send-application-applicant', [ApplicationApplicantController::class, 'store']);

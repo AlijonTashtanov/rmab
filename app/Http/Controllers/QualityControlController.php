@@ -2,16 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use App\Services\ContractConclusionService;
+use App\Services\QualityControlService;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
 
-class ContractConclusionController extends AbstractController
+class QualityControlController extends AbstractController
 {
-    protected $dir = 'contractconclusions';
+    protected $dir = 'qualitycontrols';
 
-    protected $serviceClass = ContractConclusionService::class;
+    protected $serviceClass = QualityControlService::class;
 
     protected $permissionCheck = false;
 

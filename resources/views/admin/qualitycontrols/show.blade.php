@@ -3,14 +3,14 @@
     {{$response->full_name}}
 @endsection
 @section('content')
-    <x-headers title="{{$response->full_name}}" icon="fas fa-circle" parent="Shartnoma tuzuvchilar"
-               parent-route="admin.contractconclusions.index"
+    <x-headers title="{{$response->full_name}}" icon="fas fa-circle" parent="Sifat nazorati"
+               parent-route="admin.qualitycontrols.index"
                parent-icon=""/>
     <div class="card card-outline card-primary">
         <div class="card-header">
             <div class="card-tools">
                 <button type="button" class="btn btn-tool" data-card-widget="maximize"><i
-                            class="fas fa-expand"></i></button>
+                        class="fas fa-expand"></i></button>
                 <button type="button" class="btn btn-tool" data-card-widget="collapse">
                     <i class="fas fa-plus"></i>
                 </button>
@@ -23,7 +23,7 @@
                     <td>{{$response->id}}</td>
                 </tr>
                 <tr>
-                    <th>F.I.SH</th>
+                    <th>F.I.Sh</th>
                     <td>{{$response->full_name}}</td>
                 </tr>
                 <tr>
@@ -31,32 +31,12 @@
                     <td>{{$response->phone}}</td>
                 </tr>
                 <tr>
-                    <th>Email</th>
-                    <td>{{$response->email}}</td>
-                </tr>
-                <tr>
-                    <th>Tashkilot nomi</th>
-                    <td>{{$response->company_name}}</td>
-                </tr>
-                <tr>
-                    <th>Viloyat nomi</th>
-                    <td>{{$response->region?->getTranslation('name','uz')}}</td>
-                </tr>
-                <tr>
-                    <th>Tuman/Shahar nomi</th>
-                    <td>{{$response->district?->getTranslation('name','uz')}}</td>
-                </tr>
-                <tr>
-                    <th>Xizmat nomi</th>
-                    <td>{{$response->service?->getTranslation('name','uz')}}</td>
+                    <th>Izoh</th>
+                    <td>{{$response->comment}}</td>
                 </tr>
                 <tr>
                     <th>Holati</th>
                     <td>{!! $response->getStatusBadgeName() !!}</td>
-                </tr>
-                <tr>
-                    <th>Yuboruv geografiyasi</th>
-                    <td>{{$response->dispatchGeography?->getTranslation('name','uz')}}</td>
                 </tr>
                 <tr>
                     <th>Yaratilgan vaqti</th>
@@ -66,6 +46,7 @@
                     <th>Tahrirlangan vaqti</th>
                     <td>{{$response->updated_at}}</td>
                 </tr>
+
             </table>
         </div>
     </div>

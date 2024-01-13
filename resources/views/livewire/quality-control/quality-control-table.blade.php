@@ -10,23 +10,21 @@
             <table class="table table-bordered table-hover">
                 <tr>
                     <th>ID</th>
-                    <th>Ismi</th>
-                    <th>Familyasi</th>
-                    <th>Viloyat</th>
+                    <th>F.I.Sh</th>
                     <th>Telefon raqami</th>
+                    <th>Izoh</th>
+                    <th>Yaratilgan vaqti</th>
                     <th>Holati</th>
-                    <th>Kelgan vaqti</th>
                     <th>Actions</th>
                 </tr>
                 @forelse($items as $item)
                     <tr>
                         <td>{{ (($items->currentpage()-1)*$items->perpage()+($loop->index+1)) }}</td>
-                        <td>{{$item->first_name}}</td>
-                        <td>{{$item->last_name}}</td>
-                        <td>{{$item->region?->getTranslation('name','uz')}}</td>
+                        <td>{{$item->full_name}}</td>
                         <td>{{$item->phone}}</td>
+                        <td>{{$item->comment}}</td>
+                        <td>{{$item->comment}}</td>
                         <td>{!! $item->getStatusBadgeName() !!}</td>
-                        <td>{{$item->created_at}}</td>
                         <td>
                             <a href="{{route('admin.'.$this->route.'.show', $item->id)}}" class="btn btn-primary"><i
                                     class="fas fa-eye"></i> Batafsil</a>
@@ -46,7 +44,7 @@
                     </tr>
                 @empty
                     <tr>
-                        <td colspan="8">No data found :(</td>
+                        <td colspan="7">No data found :(</td>
                     </tr>
                 @endforelse
             </table>

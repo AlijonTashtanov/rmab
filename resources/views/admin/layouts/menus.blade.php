@@ -152,7 +152,7 @@
     </a>
 </li>
 
-<li class="nav-item @if(request()->is('admin/applicationapplicants')) menu-is-opening menu-open @endif ">
+<li class="nav-item @if(request()->is('admin/applicationapplicants') || request()->is('admin/contractconclusions') || request()->is('admin/qualitycontrols')) menu-is-opening menu-open @endif ">
     <a href="#" class="nav-link">
         <i class="nav-icon fas fa-sms"></i>
         <p>
@@ -161,13 +161,31 @@
         </p>
     </a>
     <ul class="nav nav-treeview"
-        style="@if(request()->is('admin/applicationapplicants')) display: block; @else display: none; @endif">
+        style="@if(request()->is('admin/applicationapplicants') || request()->is('admin/contractconclusions') || request()->is('admin/qualitycontrols')) display: block; @else display: none; @endif">
         <li class="nav-item">
             <a href="{{route('admin.applicationapplicants.index')}}"
                class="nav-link @if (request()->is('admin/applicationapplicants')) active @endif">
                 <i class="nav-icon fas fa-circle"></i>
                 <p>
                     Ariza va murojaatlar
+                </p>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href="{{route('admin.contractconclusions.index')}}"
+               class="nav-link @if (request()->is('admin/contractconclusions')) active @endif">
+                <i class="nav-icon fas fa-circle"></i>
+                <p>
+                    Shartnoma tuzuvchilar
+                </p>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href="{{route('admin.qualitycontrols.index')}}"
+               class="nav-link @if (request()->is('admin/qualitycontrols')) active @endif">
+                <i class="nav-icon fas fa-circle"></i>
+                <p>
+                    Sifat nazoratil
                 </p>
             </a>
         </li>

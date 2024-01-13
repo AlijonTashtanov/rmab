@@ -1,11 +1,12 @@
 @extends('admin.layouts.app')
 @section('title')
-    ContractConclusions
+    Shartnoma tuzuvchilar
 @endsection
 @section('content')
-    <x-header icon="fas fa-circle" title="ContractConclusions"/>
-    <div class="d-flex justify-content-end py-2">
-        <a href="{{route('admin.contractconclusions.create')}}" class="btn btn-primary"><i class="fas fa-plus"></i> Create</a>
-    </div>
+    <x-header icon="fas fa-circle" title="Shartnoma tuzuvchilar"/>
+{{--    <div class="d-flex justify-content-end py-2">--}}
+{{--        <a href="{{route('admin.contractconclusions.create')}}" class="btn btn-primary"><i class="fas fa-plus"></i> Qo'shish</a>--}}
+{{--    </div>--}}
+    @livewire('contract-conclusion.contract-conclusion-table')
     {{-- use livewire table here --}}
 @endsection
