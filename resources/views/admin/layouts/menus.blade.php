@@ -152,7 +152,7 @@
     </a>
 </li>
 
-<li class="nav-item @if(request()->is('admin/applicationapplicants') || request()->is('admin/contractconclusions') || request()->is('admin/qualitycontrols')) menu-is-opening menu-open @endif ">
+<li class="nav-item @if(request()->is('admin/applicationapplicants') || request()->is('admin/contractconclusions') || request()->is('admin/qualitycontrols') || request()->is('admin/informationaboutshipments')) menu-is-opening menu-open @endif ">
     <a href="#" class="nav-link">
         <i class="nav-icon fas fa-sms"></i>
         <p>
@@ -161,7 +161,7 @@
         </p>
     </a>
     <ul class="nav nav-treeview"
-        style="@if(request()->is('admin/applicationapplicants') || request()->is('admin/contractconclusions') || request()->is('admin/qualitycontrols')) display: block; @else display: none; @endif">
+        style="@if(request()->is('admin/applicationapplicants') || request()->is('admin/contractconclusions') || request()->is('admin/qualitycontrols') || request()->is('admin/informationaboutshipments')) display: block; @else display: none; @endif">
         <li class="nav-item">
             <a href="{{route('admin.applicationapplicants.index')}}"
                class="nav-link @if (request()->is('admin/applicationapplicants')) active @endif">
@@ -185,7 +185,16 @@
                class="nav-link @if (request()->is('admin/qualitycontrols')) active @endif">
                 <i class="nav-icon fas fa-circle"></i>
                 <p>
-                    Sifat nazoratil
+                    Sifat nazorati
+                </p>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href="{{route('admin.informationaboutshipments.index')}}"
+               class="nav-link @if (request()->is('admin/informationaboutshipments')) active @endif">
+                <i class="nav-icon fas fa-circle"></i>
+                <p>
+                    Jo’natma haqida ma’lumot olish
                 </p>
             </a>
         </li>

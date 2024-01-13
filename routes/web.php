@@ -10,6 +10,7 @@ use App\Http\Controllers\CorruptionTypeController;
 use App\Http\Controllers\DispatchGeographyController;
 use App\Http\Controllers\DistrictController;
 use App\Http\Controllers\FaqController;
+use App\Http\Controllers\InformationAboutShipmentController;
 use App\Http\Controllers\InformationController;
 use App\Http\Controllers\LocalDocumentController;
 use App\Http\Controllers\OurAdvantageController;
@@ -83,4 +84,5 @@ Route::prefix('admin')->name('admin.')->middleware(['auth', 'admin'])->group(fun
     Route::resource('/dispatchgeographies', DispatchGeographyController::class);
     Route::resource('/contractconclusions', ContractConclusionController::class);
     Route::resource('/qualitycontrols', QualityControlController::class);
+    Route::resource('/informationaboutshipments', InformationAboutShipmentController::class);
 });

@@ -5,6 +5,7 @@ use App\Http\Controllers\Api\ApplicationApplicantController;
 use App\Http\Controllers\Api\ArticleController;
 use App\Http\Controllers\Api\ContractConclusionController;
 use App\Http\Controllers\Api\FaqController;
+use App\Http\Controllers\Api\InformationAboutShipmentController;
 use App\Http\Controllers\Api\InformationController;
 use App\Http\Controllers\Api\LocalDocumentController;
 use App\Http\Controllers\Api\OurAdvantageController;
@@ -91,9 +92,14 @@ Route::group(['prefix' => 'contract-conclusions'], function () {
     Route::post('/send-contract', [ContractConclusionController::class, 'store']);
 });
 
-Route::group(['prefix' => 'quality-control'],function (){
+Route::group(['prefix' => 'quality-control'], function () {
     Route::post('/send', [QualityControlController::class, 'store']);
     Route::get('/page-info', [QualityControlController::class, 'pageInfo']);
+});
+
+Route::group(['prefix' => 'information-about-shipment'], function () {
+    Route::get('/page-info', [InformationAboutShipmentController::class, 'pageInfo']);
+    Route::post('/send', [InformationAboutShipmentController::class, 'store']);
 });
 
 Route::post('/send-application-applicant', [ApplicationApplicantController::class, 'store']);
