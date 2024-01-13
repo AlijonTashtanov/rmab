@@ -1,3 +1,7 @@
+@php
+
+    use App\Traits\Status;
+@endphp
 <div>
     <div class="card">
         <div class="card-header">
@@ -7,31 +11,45 @@
             <table class="table table-bordered table-hover">
                 <tr>
                     <th>ID</th>
-                    <th>Name</th>
+                    <th>F.I.SH</th>
+                    <th>Telefon raqami</th>
+                    <th>Viloyat nomi</th>
+                    <th>Xizmat nomi</th>
+                    {{--                    <th>Yuboruv geografiyasi</th>--}}
+                    <th>Holati</th>
+                    <th>Yaratilgan vaqti</th>
                     <th>Actions</th>
                 </tr>
                 @forelse($items as $item)
                     <tr>
                         <td>{{ (($items->currentpage()-1)*$items->perpage()+($loop->index+1)) }}</td>
-                        <td>{{$item->name}}</td>
+                        <td>{{$item->full_name}}</td>
+                        <td>{{$item->phone}}</td>
+                        <td>{{$item->region?->getTranslation('name','uz')}}</td>
+                        <td>{{$item->service?->getTranslation('name','uz')}}</td>
+                        {{--                        <td>{{$item->dispatchGeography?->getTranslation('name','uz')}}</td>--}}
+                        <td>{!! $item->getStatusBadgeName() !!}</td>
+                        <td>{{$item->created_at}}</td>
                         <td>
-                        <a href="{{route('admin.'.$this->route.'.show', $item->id)}}" class="btn btn-primary"><i
-                                                            class="fas fa-eye"></i> Show</a>
-                            <a href="{{route('admin.'.$this->route.'.edit', $item->id)}}" class="btn btn-success"><i
-                                    class="fas fa-pencil-alt"></i> Edit</a>
+                            <a href="{{route('admin.'.$this->route.'.show', $item->id)}}" class="btn btn-primary"><i
+                                        class="fas fa-eye"></i> Batafsil</a>
+                            @if($item->status == Status::$status_inactive)
+                                <a href="{{route('admin.'.$this->route.'.edit', $item->id)}}" class="btn btn-success"><i
+                                            class="fas fa-check-circle"></i> O'qildi</a>
+                            @endif
                             <form action="{{route('admin.'.$this->route.'.destroy', $item->id)}}" method="POST"
                                   class="d-inline-block">
                                 @csrf
                                 @method('DELETE')
                                 <button class="btn btn-danger" type="submit" onclick="return confirm('Are you sure?')">
-                                    <i class="fas fa-trash"></i> Delete
+                                    <i class="fas fa-trash"></i> O'chirish
                                 </button>
                             </form>
                         </td>
                     </tr>
                 @empty
                     <tr>
-                        <td colspan="3">No data found :(</td>
+                        <td colspan="8">No data found :(</td>
                     </tr>
                 @endforelse
             </table>

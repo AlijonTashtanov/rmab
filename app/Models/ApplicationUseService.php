@@ -2,16 +2,66 @@
 
 namespace App\Models;
 
+use App\Traits\Status;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
+/** @var District[] $district */
+/** @var Region[] $region */
+
+/** @var Service[] $service */
 class ApplicationUseService extends Model
 {
+    use Status;
+
     protected $fillable = [];
 
+    /**
+     * @param $search
+     * @return Builder
+     */
     public static function search($search)
     {
         return empty($search)
             ? static::query()
-            : static::query()->where('name', 'like', '%' . $search . '%');
+            : static::query()->where('full_name', 'like', '%' . $search . '%');
     }
+
+    /**
+     * @return BelongsTo
+     */
+    public function region()
+    {
+        return $this->belongsTo(Region::class, 'region_id', 'id');
+    }
+
+    /**
+     * @return BelongsTo
+     */
+    public function district()
+    {
+        return $this->belongsTo(District::class, 'district_id', 'id');
+    }
+
+    /**
+     * @return BelongsTo
+     */
+    public function service()
+    {
+        return $this->belongsTo(Service::class, 'service_id', 'id');
+    }
+
+
+    /**
+     * @return string[]
+     */
+    public static function statuses()
+    {
+        return [
+            self::$status_active => "O'qildi",
+            self::$status_inactive => "O'qilmadi"
+        ];
+    }
+
 }
