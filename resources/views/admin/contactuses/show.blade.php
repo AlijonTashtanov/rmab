@@ -1,9 +1,10 @@
 @extends('admin.layouts.app')
 @section('title')
-    Contactuses
+    {{$response->full_name}}
 @endsection
 @section('content')
-    <x-headers title="Contactuses" icon="fas fa-circle" parent="parent" parent-route="admin.contactuses.index"
+    <x-headers title="{{$response->full_name}}" icon="fas fa-circle" parent="Savol va taklif qoldirganlar"
+               parent-route="admin.contactuses.index"
                parent-icon=""/>
     <div class="card card-outline card-primary">
         <div class="card-header">
@@ -20,6 +21,22 @@
                 <tr>
                     <th>ID</th>
                     <td>{{$response->id}}</td>
+                </tr>
+                <tr>
+                    <th>F.I.Sh</th>
+                    <td>{{$response->full_name}}</td>
+                </tr>
+                <tr>
+                    <th>Telefon raqami</th>
+                    <td>{{$response->phone}}</td>
+                </tr>
+                <tr>
+                    <th>Izoh</th>
+                    <td>{{$response->comment}}</td>
+                </tr>
+                <tr>
+                    <th>Holati</th>
+                    <td>{!! $response->getStatusBadgeName() !!}</td>
                 </tr>
             </table>
         </div>

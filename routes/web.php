@@ -6,6 +6,7 @@ use App\Http\Controllers\ApplicationApplicantController;
 use App\Http\Controllers\ApplicationUseServiceController;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\BranchController;
+use App\Http\Controllers\ContactUController;
 use App\Http\Controllers\ContractConclusionController;
 use App\Http\Controllers\CorruptionTypeController;
 use App\Http\Controllers\DispatchGeographyController;
@@ -87,4 +88,5 @@ Route::prefix('admin')->name('admin.')->middleware(['auth', 'admin'])->group(fun
     Route::resource('/qualitycontrols', QualityControlController::class);
     Route::resource('/informationaboutshipments', InformationAboutShipmentController::class);
     Route::resource('/applicationuseservices', ApplicationUseServiceController::class);
+    Route::resource('/contactuses', ContactUController::class);
 });
