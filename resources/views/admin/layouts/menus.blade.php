@@ -2,7 +2,7 @@
     <a href="{{route('admin.index')}}" class="nav-link @if (request()->is('admin')) active @endif">
         <i class="nav-icon fas fa-tachometer-alt"></i>
         <p>
-            Dashboard
+            Bosh sahifa
         </p>
     </a>
 </li>
