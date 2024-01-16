@@ -200,8 +200,6 @@ return [
         Spatie\Permission\PermissionServiceProvider::class,
         Barryvdh\Elfinder\ElfinderServiceProvider::class,
 
-        Barryvdh\TranslationManager\TranslationServiceProvider::class
-
     ],
 
     /*
