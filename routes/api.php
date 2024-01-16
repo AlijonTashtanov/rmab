@@ -4,6 +4,8 @@ use App\Http\Controllers\Api\AboutController;
 use App\Http\Controllers\Api\ApplicationApplicantController;
 use App\Http\Controllers\Api\ApplicationUseServiceController;
 use App\Http\Controllers\Api\ArticleController;
+use App\Http\Controllers\Api\BannerController;
+use App\Http\Controllers\Api\ContactController;
 use App\Http\Controllers\Api\ContactUsController;
 use App\Http\Controllers\Api\ContractConclusionController;
 use App\Http\Controllers\Api\FaqController;
@@ -111,4 +113,6 @@ Route::group(['prefix' => 'application-use-service'], function () {
 
 Route::post('/send-application-applicant', [ApplicationApplicantController::class, 'store']);
 Route::get('/corruption-types', [ApplicationApplicantController::class, 'corruptionTypes']);
+Route::get('/site-contact', [ContactController::class, 'index']);
 Route::post('/contact-us', [ContactUsController::class, 'store']);
+Route::get('/banners', [BannerController::class, 'index']);

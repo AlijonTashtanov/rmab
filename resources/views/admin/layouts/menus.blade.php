@@ -16,6 +16,24 @@
     </a>
 </li>
 <li class="nav-item">
+    <a href="{{route('admin.banners.index')}}"
+       class="nav-link @if (request()->is('admin/banners')) active @endif">
+        <i class="nav-icon fas fa-images"></i>
+        <p>
+            Bannerlar
+        </p>
+    </a>
+</li>
+<li class="nav-item">
+    <a href="{{route('admin.contacts.index')}}"
+       class="nav-link @if (request()->is('admin/contacts')) active @endif">
+        <i class="nav-icon fas fa-cog"></i>
+        <p>
+            Sayt ma'lumotlari
+        </p>
+    </a>
+</li>
+<li class="nav-item">
     <a href="{{route('admin.faqs.index')}}"
        class="nav-link @if (request()->is('admin/faqs')) active @endif">
         <i class="nav-icon fas fa-question"></i>

@@ -46,7 +46,6 @@
                     <th>Tahrirlangan vaqti</th>
                     <td>{{$response->updated_at}}</td>
                 </tr>
-
             </table>
         </div>
     </div>

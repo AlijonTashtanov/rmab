@@ -38,6 +38,14 @@
                     <th>Holati</th>
                     <td>{!! $response->getStatusBadgeName() !!}</td>
                 </tr>
+                <tr>
+                    <th>Yaratilgan vaqti</th>
+                    <td>{{$response->created_at}}</td>
+                </tr>
+                <tr>
+                    <th>Tahrirlangan vaqti</th>
+                    <td>{{$response->updated_at}}</td>
+                </tr>
             </table>
         </div>
     </div>

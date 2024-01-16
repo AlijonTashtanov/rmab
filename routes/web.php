@@ -5,7 +5,9 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ApplicationApplicantController;
 use App\Http\Controllers\ApplicationUseServiceController;
 use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\BannerController;
 use App\Http\Controllers\BranchController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ContactUController;
 use App\Http\Controllers\ContractConclusionController;
 use App\Http\Controllers\CorruptionTypeController;
@@ -89,4 +91,6 @@ Route::prefix('admin')->name('admin.')->middleware(['auth', 'admin'])->group(fun
     Route::resource('/informationaboutshipments', InformationAboutShipmentController::class);
     Route::resource('/applicationuseservices', ApplicationUseServiceController::class);
     Route::resource('/contactuses', ContactUController::class);
+    Route::resource('/contacts', ContactController::class);
+    Route::resource('/banners', BannerController::class);
 });

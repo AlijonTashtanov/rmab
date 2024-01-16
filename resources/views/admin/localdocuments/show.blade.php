@@ -25,7 +25,8 @@
                 <tr>
                     <th>Fayl</th>
                     <td>
-                        <a href="{{ $response->getFileUrl() }}" download=""><i class="fas fa-arrow-down"></i> Yuklab olish ({{$response->getFileSize()}})</a>
+                        <a href="{{ $response->getFileUrl() }}" download=""><i class="fas fa-arrow-down"></i> Yuklab
+                            olish ({{$response->getFileSize()}})</a>
                     </td>
                 </tr>
                 <tr>
@@ -57,6 +58,14 @@
                     <td>
                         {!! $response->getStatusBadgeName() !!}
                     </td>
+                </tr>
+                <tr>
+                    <th>Yaratilgan vaqti</th>
+                    <td>{{$response->created_at}}</td>
+                </tr>
+                <tr>
+                    <th>Tahrirlangan vaqti</th>
+                    <td>{{$response->updated_at}}</td>
                 </tr>
             </table>
         </div>

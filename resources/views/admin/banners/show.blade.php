@@ -3,14 +3,14 @@
     {{$response->getTranslation('title','uz')}}
 @endsection
 @section('content')
-    <x-headers title="{{$response->getTranslation('title','uz')}}" icon="fas fa-circle" parent="Sahifalar"
-               parent-route="admin.pages.index"
+    <x-headers title="{{$response->getTranslation('title','uz')}}" icon="fas fa-circle" parent="Bannerlar"
+               parent-route="admin.banners.index"
                parent-icon=""/>
     <div class="card card-outline card-primary">
         <div class="card-header">
             <div class="card-tools">
                 <button type="button" class="btn btn-tool" data-card-widget="maximize"><i
-                        class="fas fa-expand"></i></button>
+                            class="fas fa-expand"></i></button>
                 <button type="button" class="btn btn-tool" data-card-widget="collapse">
                     <i class="fas fa-plus"></i>
                 </button>
@@ -28,8 +28,16 @@
                              alt="" style="width: 60px;height: 60px"></td>
                 </tr>
                 <tr>
-                    <th>Sahifa turi</th>
-                    <td>{{$response->getPageTypeName()}}</td>
+                    <th>Tugma nomi [uz]</th>
+                    <td>{{$response->getTranslation('button_label','uz')}}</td>
+                </tr>
+                <tr>
+                    <th>Tugma nomi [ru]</th>
+                    <td>{{$response->getTranslation('button_label','ru')}}</td>
+                </tr>
+                <tr>
+                    <th>Tugma nomi [en]</th>
+                    <td>{{$response->getTranslation('button_label','en')}}</td>
                 </tr>
                 <tr>
                     <th>Sarlavha [uz]</th>
@@ -44,16 +52,30 @@
                     <td>{{$response->getTranslation('title','en')}}</td>
                 </tr>
                 <tr>
-                    <th>Qisqa tavsif [uz]</th>
-                    <td>{{$response->getTranslation('title','uz')}}</td>
+                    <th>Kontent [uz]</th>
+                    <td>{!!$response->getTranslation('content','uz') !!}</td>
                 </tr>
                 <tr>
-                    <th>Qisqa tavsif [ru]</th>
-                    <td>{{$response->getTranslation('title','ru')}}</td>
+                    <th>Kontent [ru]</th>
+                    <td>{!!$response->getTranslation('content','ru')!!}</td>
                 </tr>
                 <tr>
-                    <th>Qisqa tavsif [en]</th>
-                    <td>{{$response->getTranslation('title','en')}}</td>
+                    <th>Kontent [en]</th>
+                    <td>{!!$response->getTranslation('content','en')!!}</td>
+                </tr>
+                <tr>
+                    <th>Tugma manzili</th>
+                    <td>{!!$response->button_url!!}</td>
+                </tr>
+                <tr>
+                    <th>Savol va takliflar bo'yicha	 telefon raqam</th>
+                    <td>{!!$response->question_suggestion!!}</td>
+                </tr>
+                <tr>
+                    <th>Holati</th>
+                    <td>
+                        {!! $response->getStatusBadgeName() !!}
+                    </td>
                 </tr>
                 <tr>
                     <th>Yaratilgan vaqti</th>

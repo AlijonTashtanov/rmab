@@ -3,7 +3,8 @@
     {{$response->getTranslation('name','uz')}}
 @endsection
 @section('content')
-    <x-headers title="{{$response->getTranslation('name','uz')}}" icon="fas fa-circle" parent="Koruppsiya turlari" parent-route="admin.corruptiontypes.index"
+    <x-headers title="{{$response->getTranslation('name','uz')}}" icon="fas fa-circle" parent="Koruppsiya turlari"
+               parent-route="admin.corruptiontypes.index"
                parent-icon=""/>
     <div class="card card-outline card-primary">
         <div class="card-header">
@@ -39,7 +40,14 @@
                         {!! $response->getStatusBadgeName() !!}
                     </td>
                 </tr>
-
+                <tr>
+                    <th>Yaratilgan vaqti</th>
+                    <td>{{$response->created_at}}</td>
+                </tr>
+                <tr>
+                    <th>Tahrirlangan vaqti</th>
+                    <td>{{$response->updated_at}}</td>
+                </tr>
             </table>
         </div>
     </div>

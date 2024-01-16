@@ -3,13 +3,14 @@
     Ko'p beriladigan savollar
 @endsection
 @section('content')
-    <x-headers title="Ko'p beriladigan savollar" icon="fas fa-circle" parent="Ko'p beriladigan savollar" parent-route="admin.faqs.index"
+    <x-headers title="Ko'p beriladigan savollar" icon="fas fa-circle" parent="Ko'p beriladigan savollar"
+               parent-route="admin.faqs.index"
                parent-icon=""/>
     <div class="card card-outline card-primary">
         <div class="card-header">
             <div class="card-tools">
                 <button type="button" class="btn btn-tool" data-card-widget="maximize"><i
-                            class="fas fa-expand"></i></button>
+                        class="fas fa-expand"></i></button>
                 <button type="button" class="btn btn-tool" data-card-widget="collapse">
                     <i class="fas fa-plus"></i>
                 </button>
@@ -50,6 +51,14 @@
                     <td>
                         {!! $response->getStatusBadgeName() !!}
                     </td>
+                </tr>
+                <tr>
+                    <th>Yaratilgan vaqti</th>
+                    <td>{{$response->created_at}}</td>
+                </tr>
+                <tr>
+                    <th>Tahrirlangan vaqti</th>
+                    <td>{{$response->updated_at}}</td>
                 </tr>
             </table>
         </div>
