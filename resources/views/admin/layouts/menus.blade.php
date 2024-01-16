@@ -16,6 +16,15 @@
     </a>
 </li>
 <li class="nav-item">
+    <a href="{{route('admin.socials.index')}}"
+       class="nav-link @if (request()->is('admin/socials')) active @endif">
+        <i class="nav-icon fas fa-globe-asia"></i>
+        <p>
+            Ijtimoiy tarmoqlarimiz
+        </p>
+    </a>
+</li>
+<li class="nav-item">
     <a href="{{route('admin.banners.index')}}"
        class="nav-link @if (request()->is('admin/banners')) active @endif">
         <i class="nav-icon fas fa-images"></i>

@@ -24,6 +24,7 @@ use App\Http\Controllers\PropController;
 use App\Http\Controllers\QualityControlController;
 use App\Http\Controllers\RegionController;
 use App\Http\Controllers\ServiceController;
+use App\Http\Controllers\SocialController;
 use App\Http\Controllers\UsefulLinkController;
 use App\Http\Controllers\VacancyController;
 use App\Http\Livewire\Admin\UserProfile;
@@ -93,4 +94,5 @@ Route::prefix('admin')->name('admin.')->middleware(['auth', 'admin'])->group(fun
     Route::resource('/contactuses', ContactUController::class);
     Route::resource('/contacts', ContactController::class);
     Route::resource('/banners', BannerController::class);
+    Route::resource('/socials', SocialController::class);
 });

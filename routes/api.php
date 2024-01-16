@@ -18,6 +18,7 @@ use App\Http\Controllers\Api\PropsController;
 use App\Http\Controllers\Api\QualityControlController;
 use App\Http\Controllers\Api\RegionController;
 use App\Http\Controllers\Api\ServiceController;
+use App\Http\Controllers\Api\SocialController;
 use App\Http\Controllers\Api\UsefulLinkController;
 use App\Http\Controllers\Api\VacancyController;
 use Illuminate\Http\Request;
@@ -116,3 +117,4 @@ Route::get('/corruption-types', [ApplicationApplicantController::class, 'corrupt
 Route::get('/site-contact', [ContactController::class, 'index']);
 Route::post('/contact-us', [ContactUsController::class, 'store']);
 Route::get('/banners', [BannerController::class, 'index']);
+Route::get('/socials', [SocialController::class, 'index']);
