@@ -28,8 +28,8 @@ class OurAdvantageController extends AbstractController
         $items = $this->resource::collection($this->service->activeIndex());
 
         $data = [
-            'title' => __('our_advaour_advantage_contentntage_title'),
-            'content' => __(''),
+            'title' => lang('our_advaour_advantage_contentntage_title'),
+            'content' => lang('our_advaour_advantage_contentntage_content'),
             'data' => $items
         ];
 
