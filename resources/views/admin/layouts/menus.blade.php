@@ -34,6 +34,15 @@
     </a>
 </li>
 <li class="nav-item">
+    <a href="{{route('admin.partners.index')}}"
+       class="nav-link @if (request()->is('admin/partners')) active @endif">
+        <i class="nav-icon fas fa-circle"></i>
+        <p>
+            Bizning hamkorlar
+        </p>
+    </a>
+</li>
+<li class="nav-item">
     <a href="{{route('admin.contacts.index')}}"
        class="nav-link @if (request()->is('admin/contacts')) active @endif">
         <i class="nav-icon fas fa-cog"></i>

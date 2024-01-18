@@ -19,6 +19,7 @@ use App\Http\Controllers\InformationController;
 use App\Http\Controllers\LocalDocumentController;
 use App\Http\Controllers\OurAdvantageController;
 use App\Http\Controllers\PageController;
+use App\Http\Controllers\PartnerController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\PropController;
 use App\Http\Controllers\QualityControlController;
@@ -97,6 +98,7 @@ Route::prefix('admin')->name('admin.')->middleware(['auth', 'admin'])->group(fun
     Route::resource('/banners', BannerController::class);
     Route::resource('/socials', SocialController::class);
     Route::resource('/translations', TranslationController::class);
+    Route::resource('/partners', PartnerController::class);
 
 });
 
