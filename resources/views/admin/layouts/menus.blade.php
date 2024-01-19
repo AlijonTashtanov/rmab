@@ -34,8 +34,6 @@
     </a>
 </li>
 <li class="nav-item">
-<<<<<<< HEAD
-=======
     <a href="{{route('admin.homebanners.index')}}"
        class="nav-link @if (request()->is('admin/homebanners')) active @endif">
         <i class="nav-icon fas fa-images"></i>
@@ -45,7 +43,6 @@
     </a>
 </li>
 <li class="nav-item">
->>>>>>> 537f70b3f817087ac4e9868f4f578865d7be4eb0
     <a href="{{route('admin.partners.index')}}"
        class="nav-link @if (request()->is('admin/partners')) active @endif">
         <i class="nav-icon fas fa-circle"></i>
@@ -87,6 +84,15 @@
         <i class="nav-icon fas fa-info-circle"></i>
         <p>
             Biz haqimizda
+        </p>
+    </a>
+</li>
+<li class="nav-item">
+    <a href="{{route('admin.autoparks.index')}}"
+       class="nav-link @if (request()->is('admin/autoparks')) active @endif">
+        <i class="nav-icon fas fa-circle"></i>
+        <p>
+            Avto park
         </p>
     </a>
 </li>

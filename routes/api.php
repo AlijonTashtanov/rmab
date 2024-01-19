@@ -4,6 +4,7 @@ use App\Http\Controllers\Api\AboutController;
 use App\Http\Controllers\Api\ApplicationApplicantController;
 use App\Http\Controllers\Api\ApplicationUseServiceController;
 use App\Http\Controllers\Api\ArticleController;
+use App\Http\Controllers\Api\AutoParkController;
 use App\Http\Controllers\Api\BannerController;
 use App\Http\Controllers\Api\ContactController;
 use App\Http\Controllers\Api\ContactUsController;
@@ -124,4 +125,5 @@ Route::get('/socials', [SocialController::class, 'index']);
 Route::get('/partners', [PartnerController::class, 'index']);
 
 Route::get('/home-banners', [HomeBannerController::class, 'index']);
+Route::get('/auto-park', [AutoParkController::class, 'index']);
 

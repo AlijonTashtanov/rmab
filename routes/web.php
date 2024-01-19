@@ -5,6 +5,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ApplicationApplicantController;
 use App\Http\Controllers\ApplicationUseServiceController;
 use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\AutoParkController;
 use App\Http\Controllers\BannerController;
 use App\Http\Controllers\BranchController;
 use App\Http\Controllers\ContactController;
@@ -101,6 +102,7 @@ Route::prefix('admin')->name('admin.')->middleware(['auth', 'admin'])->group(fun
     Route::resource('/translations', TranslationController::class);
     Route::resource('/partners', PartnerController::class);
     Route::resource('/homebanners', HomeBannerController::class);
+    Route::resource('/autoparks', AutoParkController::class);
 
 
 });
