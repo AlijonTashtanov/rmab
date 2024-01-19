@@ -79,10 +79,15 @@ class RegionService extends AbstractService
     }
 
     /**
-     * @return Collection|AnonymousResourceCollection
+     * @return array|Collection|AnonymousResourceCollection
      */
     public function allBranches()
     {
-        return BranchResource::collection(Branch::all());
+        $data = [
+            'title' => lang('all_branch_page_title'),
+            'content' => lang('all_branch_page_content'),
+            'allBranches' => BranchResource::collection(Branch::all()),
+        ];
+        return $data;
     }
 }
