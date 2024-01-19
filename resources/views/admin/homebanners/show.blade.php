@@ -1,10 +1,10 @@
 @extends('admin.layouts.app')
 @section('title')
-    {{$response->name}}
+    {{$response->id}}
 @endsection
 @section('content')
-    <x-headers title="{{$response->name}}" icon="fas fa-circle" parent="Bizning hamkorlar"
-               parent-route="admin.partners.index"
+    <x-headers title="{{$response->id}}" icon="fas fa-circle" parent="O'rta qismi banneri"
+               parent-route="admin.homebanners.index"
                parent-icon=""/>
     <div class="card card-outline card-primary">
         <div class="card-header">
@@ -23,16 +23,8 @@
                     <td>{{$response->id}}</td>
                 </tr>
                 <tr>
-                    <th>Rasm</th>
-                    <td><img src="{{ $response->getImageUrl() }}" alt="" style="width: 60px;height: 60px"></td>
-                </tr>
-                <tr>
-                    <th>Nomi</th>
-                    <td>{{$response->name}}</td>
-                </tr>
-                <tr>
-                    <th>Url manzili</th>
-                    <td>{{$response->url}}</td>
+                    <th>Rasmi</th>
+                    <td>{{$response->getImageUrl()}}</td>
                 </tr>
                 <tr>
                     <th>Holati</th>

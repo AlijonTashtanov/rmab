@@ -14,6 +14,7 @@ use App\Http\Controllers\CorruptionTypeController;
 use App\Http\Controllers\DispatchGeographyController;
 use App\Http\Controllers\DistrictController;
 use App\Http\Controllers\FaqController;
+use App\Http\Controllers\HomeBannerController;
 use App\Http\Controllers\InformationAboutShipmentController;
 use App\Http\Controllers\InformationController;
 use App\Http\Controllers\LocalDocumentController;
@@ -99,6 +100,7 @@ Route::prefix('admin')->name('admin.')->middleware(['auth', 'admin'])->group(fun
     Route::resource('/socials', SocialController::class);
     Route::resource('/translations', TranslationController::class);
     Route::resource('/partners', PartnerController::class);
+    Route::resource('/homebanners', HomeBannerController::class);
 
 });
 
