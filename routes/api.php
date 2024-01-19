@@ -120,8 +120,8 @@ Route::get('/site-contact', [ContactController::class, 'index']);
 Route::post('/contact-us', [ContactUsController::class, 'store']);
 Route::get('/banners', [BannerController::class, 'index']);
 Route::get('/socials', [SocialController::class, 'index']);
-<<<<<<< HEAD
+
 Route::get('/partners', [PartnerController::class, 'index']);
-=======
+
 Route::get('/home-banners', [HomeBannerController::class, 'index']);
->>>>>>> 537f70b3f817087ac4e9868f4f578865d7be4eb0
+
