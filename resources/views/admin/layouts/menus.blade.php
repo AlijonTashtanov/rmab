@@ -34,6 +34,18 @@
     </a>
 </li>
 <li class="nav-item">
+<<<<<<< HEAD
+=======
+    <a href="{{route('admin.homebanners.index')}}"
+       class="nav-link @if (request()->is('admin/homebanners')) active @endif">
+        <i class="nav-icon fas fa-images"></i>
+        <p>
+            O'rta qismi banneri
+        </p>
+    </a>
+</li>
+<li class="nav-item">
+>>>>>>> 537f70b3f817087ac4e9868f4f578865d7be4eb0
     <a href="{{route('admin.partners.index')}}"
        class="nav-link @if (request()->is('admin/partners')) active @endif">
         <i class="nav-icon fas fa-circle"></i>

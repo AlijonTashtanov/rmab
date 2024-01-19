@@ -9,6 +9,7 @@ use App\Http\Controllers\Api\ContactController;
 use App\Http\Controllers\Api\ContactUsController;
 use App\Http\Controllers\Api\ContractConclusionController;
 use App\Http\Controllers\Api\FaqController;
+use App\Http\Controllers\Api\HomeBannerController;
 use App\Http\Controllers\Api\InformationAboutShipmentController;
 use App\Http\Controllers\Api\InformationController;
 use App\Http\Controllers\Api\LocalDocumentController;
@@ -119,4 +120,8 @@ Route::get('/site-contact', [ContactController::class, 'index']);
 Route::post('/contact-us', [ContactUsController::class, 'store']);
 Route::get('/banners', [BannerController::class, 'index']);
 Route::get('/socials', [SocialController::class, 'index']);
+<<<<<<< HEAD
 Route::get('/partners', [PartnerController::class, 'index']);
+=======
+Route::get('/home-banners', [HomeBannerController::class, 'index']);
+>>>>>>> 537f70b3f817087ac4e9868f4f578865d7be4eb0
