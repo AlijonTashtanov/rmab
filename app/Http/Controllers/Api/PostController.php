@@ -29,6 +29,33 @@ class PostController extends AbstractController
     /**
      * @return array|JsonResponse
      */
+    public function search()
+    {
+        $items = $this->resource::collection($this->service->search(request()->all()));
+
+        if ($items->isNotEmpty()) {
+
+            $data = [
+                'news' => $items,
+                'pagination' => [
+                    'total' => $items->total(),
+                    'per_page' => $items->perPage(),
+                    'current_page' => $items->currentPage(),
+                    'last_page' => $items->lastPage(),
+                    'from' => $items->firstItem(),
+                    'to' => $items->lastItem(),
+                ],
+            ];
+
+
+            return $this->sendResponse(true, 'success', 200, $data);
+        }
+        return $this->sendResponse(false, 'Data not found', 200, $items);
+    }
+
+    /**
+     * @return array|JsonResponse
+     */
     public function all()
     {
         $items = $this->resource::collection($this->service->all());

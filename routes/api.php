@@ -4,6 +4,7 @@ use App\Http\Controllers\Api\AboutController;
 use App\Http\Controllers\Api\ApplicationApplicantController;
 use App\Http\Controllers\Api\ApplicationUseServiceController;
 use App\Http\Controllers\Api\ArticleController;
+use App\Http\Controllers\Api\AuthController;
 use App\Http\Controllers\Api\AutoParkController;
 use App\Http\Controllers\Api\BannerController;
 use App\Http\Controllers\Api\ContactController;
@@ -17,6 +18,7 @@ use App\Http\Controllers\Api\LocalDocumentController;
 use App\Http\Controllers\Api\OurAdvantageController;
 use App\Http\Controllers\Api\PartnerController;
 use App\Http\Controllers\Api\PostController;
+use App\Http\Controllers\Api\ProfileController;
 use App\Http\Controllers\Api\PropsController;
 use App\Http\Controllers\Api\QualityControlController;
 use App\Http\Controllers\Api\RegionController;
@@ -50,6 +52,7 @@ Route::group(['prefix' => 'news'], function () {
     Route::get('/latest-news', [PostController::class, 'latestNews']);
     Route::get('/all', [PostController::class, 'all']);
     Route::get('/detail/{id}', [PostController::class, 'show']);
+    Route::get('/search', [PostController::class, 'search']);
 });
 
 Route::group(['prefix' => 'vacancy'], function () {
@@ -127,3 +130,12 @@ Route::get('/partners', [PartnerController::class, 'index']);
 Route::get('/home-banners', [HomeBannerController::class, 'index']);
 Route::get('/auto-park', [AutoParkController::class, 'index']);
 
+Route::group(['prefix' => 'auth'], function () {
+    Route::post('/login', [AuthController::class, 'login']);
+});
+
+Route::middleware(['auth:api', 'api_admin'])->group(function () {
+    Route::group(['prefix' => 'profile'], function () {
+        Route::get('/user/info', [ProfileController::class, 'info']);
+    });
+});

@@ -24,4 +24,18 @@ class PostService extends AbstractService
     {
         return $this->model::where('status', Status::$status_active)->orderBy('created_at', 'desc')->paginate(20);
     }
+
+    /**
+     * @return mixed
+     */
+    public function search(array $data)
+    {
+        $key = $data['key'] ?? '';
+
+        return $this->model::orWhere('title->'.app()->getLocale(), 'like', '%' . $key . '%')
+            ->orWhere('content->'.app()->getLocale(), 'like', '%' . $key . '%')
+            ->where('status', Status::$status_active)
+            ->orderBy('created_at', 'desc')
+            ->paginate(20);
+    }
 }

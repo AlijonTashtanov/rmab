@@ -6,9 +6,10 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Arr;
 use Laravel\Fortify\TwoFactorAuthenticatable;
 use Laravel\Jetstream\HasProfilePhoto;
-use Laravel\Sanctum\HasApiTokens;
+use Laravel\Passport\HasApiTokens;
 use Spatie\Permission\Traits\HasRoles;
 
 class User extends Authenticatable
@@ -20,6 +21,16 @@ class User extends Authenticatable
     use TwoFactorAuthenticatable;
     use HasRoles;
 
+
+    /**
+     * @var int
+     */
+    public static $role_superadmin = 1; // Admin panelga kirish uchun superadmin hisoblanadi
+
+    /**
+     * @var int
+     */
+    public static $role_user = 2;  // Profilga kirish uchun user hisoblanadi
 
     /**
      * The attributes that are mass assignable.
@@ -61,4 +72,31 @@ class User extends Authenticatable
     protected $appends = [
         'profile_photo_url',
     ];
+
+    /**
+     * @return array
+     */
+    public static function userRoles()
+    {
+        return [
+            self::$role_superadmin => 'Super Admin',
+            self::$role_user => 'User',
+        ];
+    }
+
+    /**
+     * @return array|\ArrayAccess|mixed
+     */
+    public function getUserRoleName()
+    {
+        return Arr::get(self::userRoles(), $this->role);
+    }
+
+    /**
+     * @return bool
+     */
+    public function isApiUser()
+    {
+        return $this->role == self::$role_user;
+    }
 }
