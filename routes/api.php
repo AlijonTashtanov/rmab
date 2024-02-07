@@ -137,5 +137,6 @@ Route::group(['prefix' => 'auth'], function () {
 Route::middleware(['auth:api', 'api_admin'])->group(function () {
     Route::group(['prefix' => 'profile'], function () {
         Route::get('/user/info', [ProfileController::class, 'info']);
+        Route::get('/user/log-out', [ProfileController::class, 'logout']);
     });
 });
