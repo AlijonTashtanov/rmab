@@ -45,8 +45,8 @@ class RegionService extends AbstractService
             ->orderBy('created_at', 'desc')
             ->get();
         $data = [
-            'title' => __('branches.title'),
-            'content' => __('branches.content'),
+            'title' => __('branches_title'),
+            'content' => __('branches_content'),
             'branches' => BranchResource::collection($branches)
         ];
 
