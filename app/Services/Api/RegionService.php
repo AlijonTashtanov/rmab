@@ -10,6 +10,7 @@ use App\Models\Region;
 use App\Traits\Status;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
+use function Symfony\Component\Translation\t;
 
 class RegionService extends AbstractService
 {
@@ -45,8 +46,8 @@ class RegionService extends AbstractService
             ->orderBy('created_at', 'desc')
             ->get();
         $data = [
-            'title' => __('branches_title'),
-            'content' => __('branches_content'),
+            'title' => lang('branches_title'),
+            'content' => lang('branches_content'),
             'branches' => BranchResource::collection($branches)
         ];
 
