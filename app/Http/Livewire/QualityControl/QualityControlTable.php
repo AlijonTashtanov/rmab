@@ -21,4 +21,11 @@ class QualityControlTable extends BaseLivewire
      * @var string
      */
     public $route = 'qualitycontrols'; // route for actions(CRUD)
+
+    public function render()
+    {
+
+        $items = $this->model::search($this->search)->orderByDesc('quality_controls.created_at')->paginate($this->perPage);
+        return view('livewire.' . $this->path, compact('items'));
+    }
 }

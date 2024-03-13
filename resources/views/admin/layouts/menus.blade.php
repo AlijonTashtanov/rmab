@@ -160,6 +160,39 @@
         </li>
     </ul>
 </li>
+
+
+<li class="nav-item @if(request()->is('admin/applicationuseservicetypes') || request()->is('admin/applicationuseservices')) menu-is-opening menu-open @endif ">
+    <a href="#" class="nav-link">
+        <i class="nav-icon fas fa-circle"></i>
+        <p>
+            Xiz. foylanaish uchun ariza
+            <i class="right fas fa-angle-left"></i>
+        </p>
+    </a>
+    <ul class="nav nav-treeview"
+        style="@if(request()->is('admin/applicationuseservicetypes') || request()->is('admin/applicationuseservices')) display: block; @else display: none; @endif">
+        <li class="nav-item">
+            <a href="{{route('admin.applicationuseservices.index')}}"
+               class="nav-link @if (request()->is('admin/applicationuseservices')) active @endif">
+                <i class="nav-icon fas fa-circle"></i>
+                <p>
+                    Arizalar
+                </p>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a href="{{route('admin.applicationuseservicetypes.index')}}"
+               class="nav-link @if (request()->is('admin/applicationuseservicetypes')) active @endif">
+                <i class="nav-icon fas fa-circle"></i>
+                <p>
+                    Turlari
+                </p>
+            </a>
+        </li>
+    </ul>
+</li>
+
 <li class="nav-item">
     <a href="{{route('admin.branches.index')}}"
        class="nav-link @if (request()->is('admin/branches')) active @endif">
@@ -206,7 +239,7 @@
     </a>
 </li>
 
-<li class="nav-item @if(request()->is('admin/applicationapplicants') || request()->is('admin/contractconclusions') || request()->is('admin/qualitycontrols') || request()->is('admin/informationaboutshipments') || request()->is('admin/applicationuseservices') || request()->is('admin/contactuses')) menu-is-opening menu-open @endif ">
+<li class="nav-item @if(request()->is('admin/applicationapplicants') || request()->is('admin/contractconclusions') || request()->is('admin/qualitycontrols') || request()->is('admin/informationaboutshipments')  || request()->is('admin/contactuses')) menu-is-opening menu-open @endif ">
     <a href="#" class="nav-link">
         <i class="nav-icon fas fa-sms"></i>
         <p>
@@ -215,7 +248,7 @@
         </p>
     </a>
     <ul class="nav nav-treeview"
-        style="@if(request()->is('admin/contactuses')||request()->is('admin/applicationapplicants') || request()->is('admin/contractconclusions') || request()->is('admin/qualitycontrols') || request()->is('admin/informationaboutshipments') || request()->is('admin/applicationuseservices')) display: block; @else display: none; @endif">
+        style="@if(request()->is('admin/contactuses')||request()->is('admin/applicationapplicants') || request()->is('admin/contractconclusions') || request()->is('admin/qualitycontrols') || request()->is('admin/informationaboutshipments')) display: block; @else display: none; @endif">
         <li class="nav-item">
             <a href="{{route('admin.applicationapplicants.index')}}"
                class="nav-link @if (request()->is('admin/applicationapplicants')) active @endif">
@@ -253,15 +286,6 @@
             </a>
         </li>
         <li class="nav-item">
-            <a href="{{route('admin.applicationuseservices.index')}}"
-               class="nav-link @if (request()->is('admin/applicationuseservices')) active @endif">
-                <i class="nav-icon fas fa-circle"></i>
-                <p>
-                    Xizmatdan foy. uchun ariza berganlar
-                </p>
-            </a>
-        </li>
-        <li class="nav-item">
             <a href="{{route('admin.contactuses.index')}}"
                class="nav-link @if (request()->is('admin/contactuses')) active @endif">
                 <i class="nav-icon fas fa-circle"></i>
@@ -281,15 +305,15 @@
         </p>
     </a>
 </li>
-<li class="nav-item">
-    <a href="{{route('admin.dispatchgeographies.index')}}"
-       class="nav-link @if (request()->is('admin/dispatchgeographies')) active @endif">
-        <i class="nav-icon fas fa-circle"></i>
-        <p>
-            Yuboruv geografiyalari
-        </p>
-    </a>
-</li>
+{{--<li class="nav-item">--}}
+{{--    <a href="{{route('admin.dispatchgeographies.index')}}"--}}
+{{--       class="nav-link @if (request()->is('admin/dispatchgeographies')) active @endif">--}}
+{{--        <i class="nav-icon fas fa-circle"></i>--}}
+{{--        <p>--}}
+{{--            Yuboruv geografiyalari--}}
+{{--        </p>--}}
+{{--    </a>--}}
+{{--</li>--}}
 <li class="nav-item">
     <a href="{{route('admin.translations.index')}}"
        class="nav-link @if (request()->is('admin/translations')) active @endif">

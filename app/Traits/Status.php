@@ -20,13 +20,20 @@ trait Status
 
 
     /**
+     * @var int
+     */
+    public static int $status_cancel = 2;
+
+
+    /**
      * @return string[]
      */
     public static function statuses()
     {
         return [
             self::$status_active => 'Faol',
-            self::$status_inactive => 'Nofaol'
+            self::$status_inactive => 'Nofaol',
+            self::$status_cancel => 'Bekor qilingan'
         ];
     }
 
@@ -46,6 +53,10 @@ trait Status
         if ($this->status == self::$status_inactive) {
 
             return "<span class='badge badge-danger'>{$this->getStatusName()}</span>";
+        }
+        if ($this->status == self::$status_cancel) {
+
+            return "<span class='badge badge-secondary'>{$this->getStatusName()}</span>";
         }
 
         return "<span class='badge badge-success'>{$this->getStatusName()}</span>";

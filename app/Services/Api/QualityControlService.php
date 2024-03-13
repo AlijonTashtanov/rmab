@@ -8,6 +8,7 @@ use App\Models\Page;
 use App\Models\QualityControl;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 
 class QualityControlService extends AbstractService
@@ -50,15 +51,10 @@ class QualityControlService extends AbstractService
         }
 
         $data = $validator->validated();
-
         $object = new $this->model;
-
-        foreach ($fields as $field) {
-
-            $field->fill($object, $data);
-
-        }
-
+        $object->comment = $data['comment'];
+        $object->user_id = Auth::user()->id;
+        $object->grade = $data['grade'];
         $object->save();
 
         return $object;
@@ -69,10 +65,13 @@ class QualityControlService extends AbstractService
      */
     public function getFields()
     {
+        $maxGrade = QualityControl::$max_grade;
+
         return [
-            TextField::make('full_name')->setRules('required|min:3|max:255'),
-            TextField::make('phone')->setRules('required|min:3|max:15'),
+//            TextField::make('full_name')->setRules('required|min:3|max:255'),
+//            TextField::make('phone')->setRules('required|min:3|max:15'),
             TextField::make('comment')->setRules('required'),
+            TextField::make('grade')->setRules("required|integer|max:{$maxGrade}"),
         ];
     }
 

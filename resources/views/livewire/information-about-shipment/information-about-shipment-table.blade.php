@@ -10,13 +10,11 @@
         <div class="card-body table-responsive">
             <table class="table table-bordered table-hover">
                 <tr>
-                    <th>ID</th>
+                    <th>№</th>
                     <th>F.I.SH</th>
-                    <th>Telefon raqami</th>
                     <th>Jo’natma raqami</th>
                     <th>Jo’natma kuni</th>
-                    <th>Viloyat nomi</th>
-                    <th>Xizmat nomi</th>
+                    <th>Javobni qabul qilish turi</th>
                     {{--                    <th>Yuboruv geografiyasi</th>--}}
                     <th>Holati</th>
                     <th>Yaratilgan vaqti</th>
@@ -25,27 +23,28 @@
                 @forelse($items as $item)
                     <tr>
                         <td>{{ (($items->currentpage()-1)*$items->perpage()+($loop->index+1)) }}</td>
-                        <td>{{$item->full_name}}</td>
-                        <td>{{$item->phone}}</td>
+                        <td>{{$item->user?->name}}</td>
                         <td>{{$item->shipment_number}}</td>
                         <td>{{$item->shipping_date}}</td>
-                        <td>{{$item->region?->getTranslation('name','uz')}}</td>
-                        <td>{{$item->service?->getTranslation('name','uz')}}</td>
+                        <td>{{$item->getWantTakeName()}}</td>
                         {{--                        <td>{{$item->dispatchGeography?->getTranslation('name','uz')}}</td>--}}
                         <td>{!! $item->getStatusBadgeName() !!}</td>
                         <td>{{$item->created_at}}</td>
                         <td>
-                            <a href="{{route('admin.'.$this->route.'.show', $item->id)}}" class="btn btn-primary"><i
+                            <a href="{{route('admin.'.$this->route.'.show', $item->id)}}" class="btn btn-primary btn-sm"><i
                                     class="fas fa-eye"></i> Batafsil</a>
                             @if($item->status == Status::$status_inactive)
-                                <a href="{{route('admin.'.$this->route.'.edit', $item->id)}}" class="btn btn-success"><i
-                                        class="fas fa-check-circle"></i> O'qildi</a>
+                                <a href="{{route('admin.'.$this->route.'.cancel', $item->id)}}"
+                                   class="btn btn-secondary btn-sm"><i
+                                        class="fas fa-times"></i> Bekor qilish</a>
+                                <a href="{{route('admin.'.$this->route.'.edit', $item->id)}}" class="btn btn-success btn-sm"><i
+                                        class="fas fa-check-circle"></i> Javob berish</a>
                             @endif
                             <form action="{{route('admin.'.$this->route.'.destroy', $item->id)}}" method="POST"
-                                  class="d-inline-block">
+                                  class="d-inline-block mt-1">
                                 @csrf
                                 @method('DELETE')
-                                <button class="btn btn-danger" type="submit" onclick="return confirm('Are you sure?')">
+                                <button class="btn btn-danger btn-sm" type="submit" onclick="return confirm('Are you sure?')">
                                     <i class="fas fa-trash"></i> O'chirish
                                 </button>
                             </form>
@@ -53,7 +52,7 @@
                     </tr>
                 @empty
                     <tr>
-                        <td colspan="10">No data found :(</td>
+                        <td colspan="7">No data found :(</td>
                     </tr>
                 @endforelse
             </table>

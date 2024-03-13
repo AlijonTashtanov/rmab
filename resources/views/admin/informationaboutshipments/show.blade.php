@@ -1,16 +1,16 @@
 @extends('admin.layouts.app')
 @section('title')
-    {{$response->full_name}}
+    {{$response->user?->name}}
 @endsection
 @section('content')
-    <x-headers title="{{$response->full_name}}" icon="fas fa-circle" parent="Jo’natma haqida ma’lumot olish"
+    <x-headers title="{{$response->user?->name}}" icon="fas fa-circle" parent="Jo’natma haqida ma’lumot olish"
                parent-route="admin.informationaboutshipments.index"
                parent-icon=""/>
     <div class="card card-outline card-primary">
         <div class="card-header">
             <div class="card-tools">
                 <button type="button" class="btn btn-tool" data-card-widget="maximize"><i
-                            class="fas fa-expand"></i></button>
+                        class="fas fa-expand"></i></button>
                 <button type="button" class="btn btn-tool" data-card-widget="collapse">
                     <i class="fas fa-plus"></i>
                 </button>
@@ -24,11 +24,11 @@
                 </tr>
                 <tr>
                     <th>F.I.SH</th>
-                    <td>{{$response->full_name}}</td>
+                    <td>{{$response->user?->name}}</td>
                 </tr>
                 <tr>
-                    <th>Telefon raqami</th>
-                    <td>{{$response->phone}}</td>
+                    <th>Javobni qabul qilish turi</th>
+                    <td>{{$response->getWantTakeName()}}</td>
                 </tr>
                 <tr>
                     <th>Jo’natma raqami</th>
@@ -39,24 +39,33 @@
                     <td>{{$response->shipping_date}}</td>
                 </tr>
                 <tr>
-                    <th>Viloyat nomi</th>
-                    <td>{{$response->region?->getTranslation('name','uz')}}</td>
-                </tr>
-                <tr>
-                    <th>Tuman/Shahar nomi</th>
-                    <td>{{$response->district?->getTranslation('name','uz')}}</td>
-                </tr>
-                <tr>
-                    <th>Xizmat nomi</th>
-                    <td>{{$response->service?->getTranslation('name','uz')}}</td>
+                    <th>Jo'natma qaysi shakl asosida topshirilgan</th>
+                    <td>{{$response->form1}}</td>
                 </tr>
                 <tr>
                     <th>Holati</th>
                     <td>{!! $response->getStatusBadgeName() !!}</td>
                 </tr>
+                @if($response->getFileUrl())
+                    <tr>
+                        <th>Yuborilgan fayl</th>
+                        <td>
+                            <a href="{{ $response->getFileUrl() }}" download=""><i class="fas fa-arrow-down"></i> Yuklab
+                                olish ({{$response->getFileSize()}})</a>
+                        </td>
+                    </tr>
+                @endif
                 <tr>
-                    <th>Yuboruv geografiyasi</th>
-                    <td>{{$response->dispatchGeography?->getTranslation('name','uz')}}</td>
+                    <th>Javob matni</th>
+                    <td>{!! $response->answer_text !!}</td>
+                </tr>
+                <tr>
+                    <th>Javob berilgan vaqti</th>
+                    <td>{{ $response->anwser_at }}</td>
+                </tr>
+                <tr>
+                    <th>Kim tomonidan javob berildi</th>
+                    <td>{{ $response->answerBy?->name }}</td>
                 </tr>
                 <tr>
                     <th>Yaratilgan vaqti</th>

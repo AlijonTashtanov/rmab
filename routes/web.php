@@ -4,6 +4,7 @@ use App\Http\Controllers\AboutController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ApplicationApplicantController;
 use App\Http\Controllers\ApplicationUseServiceController;
+use App\Http\Controllers\ApplicationUseServiceTypeController;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\AutoParkController;
 use App\Http\Controllers\BannerController;
@@ -103,7 +104,11 @@ Route::prefix('admin')->name('admin.')->middleware(['auth', 'admin'])->group(fun
     Route::resource('/partners', PartnerController::class);
     Route::resource('/homebanners', HomeBannerController::class);
     Route::resource('/autoparks', AutoParkController::class);
+    Route::resource('/applicationuseservicetypes', ApplicationUseServiceTypeController::class);
 
+
+    Route::get('/informationaboutshipments/{id}/cancel', [InformationAboutShipmentController::class, 'cancel'])->name('informationaboutshipments.cancel');
+    Route::put('/informationaboutshipments/cancel-store/{id}', [InformationAboutShipmentController::class, 'cancalStore'])->name('informationaboutshipments.cancel-store');
 
 });
 

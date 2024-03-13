@@ -29,7 +29,7 @@
 </head>
 
 <body class="hold-transition @if(Cookie::get('darkMode')) dark-mode @endif
-    sidebar-mini sidebar-collapse layout-fixed">
+    sidebar-mini sidebar-collapse layout-fixed text-sm">
 <div class="wrapper">
 
     <!-- Preloader -->

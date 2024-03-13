@@ -66,12 +66,14 @@ class ApplicationUseService extends AbstractService
     public function getFields()
     {
         return [
-            TextField::make('full_name')->setRules('required|min:3|max:255'),
-            TextField::make('region_id')->setRules('required|integer'),
-            TextField::make('district_id')->setRules('required|integer'),
+//            TextField::make('full_name')->setRules('required|min:3|max:255'),
+//            TextField::make('region_id')->setRules('required|integer'),
+//            TextField::make('district_id')->setRules('required|integer'),
             TextField::make('phone')->setRules('required|min:3|max:15'),
             TextField::make('service_id')->setRules('required'),
-            TextField::make('dispatch_geography_id')->setRules('required'),
+            TextField::make('date')->setRules('required|date_format:Y-m-d H:i:s'),
+            TextField::make('comment')->setRules('required'),
+//            TextField::make('dispatch_geography_id')->setRules('required'),
         ];
     }
 

@@ -103,21 +103,6 @@ Route::group(['prefix' => 'contract-conclusions'], function () {
     Route::post('/send-contract', [ContractConclusionController::class, 'store']);
 });
 
-Route::group(['prefix' => 'quality-control'], function () {
-    Route::post('/send', [QualityControlController::class, 'store']);
-    Route::get('/page-info', [QualityControlController::class, 'pageInfo']);
-});
-
-Route::group(['prefix' => 'information-about-shipment'], function () {
-    Route::get('/page-info', [InformationAboutShipmentController::class, 'pageInfo']);
-    Route::post('/send', [InformationAboutShipmentController::class, 'store']);
-});
-
-Route::group(['prefix' => 'application-use-service'], function () {
-    Route::get('/page-info', [ApplicationUseServiceController::class, 'pageInfo']);
-    Route::post('/send', [ApplicationUseServiceController::class, 'store']);
-});
-
 Route::post('/send-application-applicant', [ApplicationApplicantController::class, 'store']);
 Route::get('/corruption-types', [ApplicationApplicantController::class, 'corruptionTypes']);
 Route::get('/site-contact', [ContactController::class, 'index']);
@@ -135,8 +120,25 @@ Route::group(['prefix' => 'auth'], function () {
 });
 
 Route::middleware(['auth:api', 'api_admin'])->group(function () {
+
     Route::group(['prefix' => 'profile'], function () {
         Route::get('/user/info', [ProfileController::class, 'info']);
         Route::get('/user/log-out', [ProfileController::class, 'logout']);
+    });
+
+    Route::group(['prefix' => 'quality-control'], function () {
+        Route::post('/send', [QualityControlController::class, 'store']);
+        Route::get('/page-info', [QualityControlController::class, 'pageInfo']);
+    });
+
+    Route::group(['prefix' => 'information-about-shipment'], function () {
+        Route::get('/page-info', [InformationAboutShipmentController::class, 'pageInfo']);
+        Route::post('/send', [InformationAboutShipmentController::class, 'store']);
+        Route::get('/my-requests', [InformationAboutShipmentController::class, 'myRequests']);
+    });
+
+    Route::group(['prefix' => 'application-use-service'], function () {
+        Route::get('/page-info', [ApplicationUseServiceController::class, 'pageInfo']);
+        Route::post('/send', [ApplicationUseServiceController::class, 'store']);
     });
 });
