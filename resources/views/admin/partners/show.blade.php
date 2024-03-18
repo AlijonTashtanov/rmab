@@ -40,8 +40,6 @@
                         {!! $response->getStatusBadgeName() !!}
                     </td>
                 </tr>
-<<<<<<< HEAD
-=======
                 <tr>
                     <th>Yaratilgan vaqti</th>
                     <td>{{$response->created_at}}</td>
@@ -50,7 +48,7 @@
                     <th>Tahrirlangan vaqti</th>
                     <td>{{$response->updated_at}}</td>
                 </tr>
->>>>>>> 537f70b3f817087ac4e9868f4f578865d7be4eb0
+
             </table>
         </div>
     </div>
