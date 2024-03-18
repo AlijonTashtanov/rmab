@@ -17,7 +17,10 @@ class ApplicationUseServiceTypeController extends AbstractController
     {
         $this->config = [
             'rules' => [
-                //
+                'name_uz' => "required|string|max:2056",
+                'name_ru' => 'required|string|max:2056',
+                'name_en' => 'required|string|max:2056',
+                'status' => '',
             ]
         ];
     }

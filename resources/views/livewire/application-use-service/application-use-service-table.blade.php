@@ -12,10 +12,10 @@
                 <tr>
                     <th>ID</th>
                     <th>F.I.SH</th>
-                    <th>Telefon raqami</th>
-                    <th>Viloyat nomi</th>
+                    <th>Manzili</th>
+                    <th>Qachon borish kerak?</th>
                     <th>Xizmat nomi</th>
-                    {{--                    <th>Yuboruv geografiyasi</th>--}}
+                    <th>Tel</th>
                     <th>Holati</th>
                     <th>Yaratilgan vaqti</th>
                     <th>Actions</th>
@@ -23,25 +23,25 @@
                 @forelse($items as $item)
                     <tr>
                         <td>{{ (($items->currentpage()-1)*$items->perpage()+($loop->index+1)) }}</td>
-                        <td>{{$item->full_name}}</td>
-                        <td>{{$item->phone}}</td>
-                        <td>{{$item->region?->getTranslation('name','uz')}}</td>
+                        <td>{{$item->user?->name}}</td>
+                        <td>{{$item->user?->address}}</td>
+                        <td>{{$item->date}}</td>
                         <td>{{$item->service?->getTranslation('name','uz')}}</td>
-                        {{--                        <td>{{$item->dispatchGeography?->getTranslation('name','uz')}}</td>--}}
+                        <td>{{$item->phone}}</td>
                         <td>{!! $item->getStatusBadgeName() !!}</td>
                         <td>{{$item->created_at}}</td>
                         <td>
-                            <a href="{{route('admin.'.$this->route.'.show', $item->id)}}" class="btn btn-primary"><i
+                            <a href="{{route('admin.'.$this->route.'.show', $item->id)}}" class="btn btn-primary btn-sm"><i
                                         class="fas fa-eye"></i> Batafsil</a>
                             @if($item->status == Status::$status_inactive)
-                                <a href="{{route('admin.'.$this->route.'.edit', $item->id)}}" class="btn btn-success"><i
+                                <a href="{{route('admin.'.$this->route.'.edit', $item->id)}}" class="btn btn-success btn-sm"><i
                                             class="fas fa-check-circle"></i> O'qildi</a>
                             @endif
                             <form action="{{route('admin.'.$this->route.'.destroy', $item->id)}}" method="POST"
-                                  class="d-inline-block">
+                                  class="d-inline-block mt-1">
                                 @csrf
                                 @method('DELETE')
-                                <button class="btn btn-danger" type="submit" onclick="return confirm('Are you sure?')">
+                                <button class="btn btn-danger btn-sm" type="submit" onclick="return confirm('Are you sure?')">
                                     <i class="fas fa-trash"></i> O'chirish
                                 </button>
                             </form>
@@ -49,7 +49,7 @@
                     </tr>
                 @empty
                     <tr>
-                        <td colspan="8">No data found :(</td>
+                        <td colspan="7">No data found :(</td>
                     </tr>
                 @endforelse
             </table>

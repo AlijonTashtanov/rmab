@@ -1,15 +1,16 @@
 @extends('admin.layouts.app')
 @section('title')
-    {{$response->full_name}}
+    {{$response->user?->name}}
 @endsection
 @section('content')
-    <x-headers title="{{$response->full_name}}" icon="fas fa-circle" parent="Xizmatlardan foydalanish uchun ariza berganlar" parent-route="admin.applicationuseservices.index"
+    <x-headers title="{{$response->user?->name}}" icon="fas fa-circle"
+               parent="Xizmatlardan foydalanish uchun ariza berganlar" parent-route="admin.applicationuseservices.index"
                parent-icon=""/>
     <div class="card card-outline card-primary">
         <div class="card-header">
             <div class="card-tools">
                 <button type="button" class="btn btn-tool" data-card-widget="maximize"><i
-                        class="fas fa-expand"></i></button>
+                            class="fas fa-expand"></i></button>
                 <button type="button" class="btn btn-tool" data-card-widget="collapse">
                     <i class="fas fa-plus"></i>
                 </button>
@@ -23,23 +24,27 @@
                 </tr>
                 <tr>
                     <th>F.I.SH</th>
-                    <td>{{$response->full_name}}</td>
+                    <td>{{$response->user?->name}}</td>
+                </tr>
+                <tr>
+                    <th>Manzili</th>
+                    <td>{{$response->user?->address}}</td>
                 </tr>
                 <tr>
                     <th>Telefon raqami</th>
                     <td>{{$response->phone}}</td>
                 </tr>
                 <tr>
-                    <th>Viloyat nomi</th>
-                    <td>{{$response->region?->getTranslation('name','uz')}}</td>
-                </tr>
-                <tr>
-                    <th>Tuman/Shahar nomi</th>
-                    <td>{{$response->district?->getTranslation('name','uz')}}</td>
+                    <th>Qachon borish kerak?</th>
+                    <td>{{$response->date}}</td>
                 </tr>
                 <tr>
                     <th>Xizmat nomi</th>
                     <td>{{$response->service?->getTranslation('name','uz')}}</td>
+                </tr>
+                <tr>
+                    <th>Izoh</th>
+                    <td>{{$response->comment}}</td>
                 </tr>
                 <tr>
                     <th>Holati</th>

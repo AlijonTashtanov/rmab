@@ -88,4 +88,12 @@ class QualityControlService extends AbstractService
         }
         return PageResource::make($contractPage);
     }
+
+    /**
+     * @return mixed
+     */
+    public function all()
+    {
+        return $this->model::where('user_id', Auth::user()->id)->orderBy('created_at', 'desc')->paginate(20);
+    }
 }

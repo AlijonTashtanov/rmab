@@ -54,7 +54,7 @@ class InformationAboutShipmentController extends AbstractController
         if ($items->isNotEmpty()) {
 
             $data = [
-                'news' => $items,
+                'items' => $items,
                 'pagination' => [
                     'total' => $items->total(),
                     'per_page' => $items->perPage(),

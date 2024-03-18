@@ -7,31 +7,33 @@
             <table class="table table-bordered table-hover">
                 <tr>
                     <th>ID</th>
-                    <th>Name</th>
+                    <th>Nomi [uz]</th>
+                    <th>Holati</th>
                     <th>Actions</th>
                 </tr>
                 @forelse($items as $item)
                     <tr>
                         <td>{{ (($items->currentpage()-1)*$items->perpage()+($loop->index+1)) }}</td>
-                        <td>{{$item->name}}</td>
+                        <td>{{$item->getTranslation('name','uz')}}</td>
+                        <td>{!! $item->getStatusBadgeName() !!}</td>
                         <td>
-                        <a href="{{route('admin.'.$this->route.'.show', $item->id)}}" class="btn btn-primary"><i
-                                                            class="fas fa-eye"></i> Show</a>
+                            <a href="{{route('admin.'.$this->route.'.show', $item->id)}}" class="btn btn-primary"><i
+                                    class="fas fa-eye"></i> Ko'rish</a>
                             <a href="{{route('admin.'.$this->route.'.edit', $item->id)}}" class="btn btn-success"><i
-                                    class="fas fa-pencil-alt"></i> Edit</a>
+                                    class="fas fa-pencil-alt"></i> Tahrirlash</a>
                             <form action="{{route('admin.'.$this->route.'.destroy', $item->id)}}" method="POST"
                                   class="d-inline-block">
                                 @csrf
                                 @method('DELETE')
                                 <button class="btn btn-danger" type="submit" onclick="return confirm('Are you sure?')">
-                                    <i class="fas fa-trash"></i> Delete
+                                    <i class="fas fa-trash"></i> O'chirish
                                 </button>
                             </form>
                         </td>
                     </tr>
                 @empty
                     <tr>
-                        <td colspan="3">No data found :(</td>
+                        <td colspan="4">No data found :(</td>
                     </tr>
                 @endforelse
             </table>

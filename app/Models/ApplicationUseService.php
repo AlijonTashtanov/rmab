@@ -25,7 +25,14 @@ class ApplicationUseService extends Model
     {
         return empty($search)
             ? static::query()
-            : static::query()->where('full_name', 'like', '%' . $search . '%');
+            : static::query()
+                ->orWhere('comment', 'like', '%' . $search . '%')
+                ->orWhere('phone', 'like', '%' . $search . '%')
+                ->join('users', 'application_use_services.user_id', '=', 'users.id')
+                ->orWhere(function ($query) use ($search) {
+                    empty($search) ? $query : $query->orWhere('users.name', 'like', '%' . $search . '%')
+                        ->orWhere('users.address', 'like', '%' . $search . '%');
+                });
     }
 
     /**
@@ -49,9 +56,17 @@ class ApplicationUseService extends Model
      */
     public function service()
     {
-        return $this->belongsTo(Service::class, 'service_id', 'id');
+        return $this->belongsTo(ApplicationUseServiceTypes::class, 'service_id', 'id');
     }
 
+
+    /**
+     * @return BelongsTo
+     */
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'user_id', 'id');
+    }
 
     /**
      * @return string[]

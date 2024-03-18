@@ -1,12 +1,12 @@
 @extends('admin.layouts.app')
 @section('title')
-    {{$response->full_name}}
+    {{$response->user?->name}}
 @endsection
 @php
     use App\Models\QualityControl;
 @endphp
 @section('content')
-    <x-headers title="{{$response->full_name}}" icon="fas fa-circle" parent="Sifat nazorati"
+    <x-headers title="{{$response->user?->name}}" icon="fas fa-circle" parent="Sifat nazorati"
                parent-route="admin.qualitycontrols.index"
                parent-icon=""/>
     <div class="card card-outline card-primary">

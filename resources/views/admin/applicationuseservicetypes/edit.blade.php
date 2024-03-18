@@ -1,9 +1,10 @@
 @extends('admin.layouts.app')
 @section('title')
-    ApplicationUseServiceTypes
+    Tahrirlsh: {{$response->getTranslation('name','uz')}}
 @endsection
 @section('content')
-    <x-headers icon="fas fa-circle" title="ApplicationUseServiceTypes" parent="" parent-icon="" parent-route="admin.applicationuseservicetypes.index"/>
+    <x-headers icon="fas fa-circle" title="Tahrirlsh: {{$response->getTranslation('name','uz')}}" parent="Turlari"
+               parent-icon="" parent-route="admin.applicationuseservicetypes.index"/>
     <div class="card">
         <div class="card-body">
             <form action="{{route('admin.applicationuseservicetypes.update', $response->id)}}" method="POST">

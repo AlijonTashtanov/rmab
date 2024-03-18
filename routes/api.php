@@ -124,11 +124,13 @@ Route::middleware(['auth:api', 'api_admin'])->group(function () {
     Route::group(['prefix' => 'profile'], function () {
         Route::get('/user/info', [ProfileController::class, 'info']);
         Route::get('/user/log-out', [ProfileController::class, 'logout']);
+        Route::get('/home-info', [ProfileController::class, 'homeInfo']);
     });
 
     Route::group(['prefix' => 'quality-control'], function () {
         Route::post('/send', [QualityControlController::class, 'store']);
         Route::get('/page-info', [QualityControlController::class, 'pageInfo']);
+        Route::get('/my-quality-controls', [QualityControlController::class, 'myQualityControls']);
     });
 
     Route::group(['prefix' => 'information-about-shipment'], function () {
@@ -139,6 +141,10 @@ Route::middleware(['auth:api', 'api_admin'])->group(function () {
 
     Route::group(['prefix' => 'application-use-service'], function () {
         Route::get('/page-info', [ApplicationUseServiceController::class, 'pageInfo']);
+        Route::get('/types', [ApplicationUseServiceController::class, 'types']);
         Route::post('/send', [ApplicationUseServiceController::class, 'store']);
+        Route::get('/my-application-use-services', [ApplicationUseServiceController::class, 'myApplicationUseServices']);
     });
+
+
 });

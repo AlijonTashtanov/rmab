@@ -34,4 +34,14 @@ class ProfileController extends AbstractController
             return $this->sendResponse(true, 'Logged out successfully', 200, null);
         }
     }
+
+    /**
+     * @return array
+     */
+    public function homeInfo()
+    {
+        $item = $this->service->getHomeInfo();
+
+        return $this->sendResponse(true, 'Response successfully', 200, $item);
+    }
 }

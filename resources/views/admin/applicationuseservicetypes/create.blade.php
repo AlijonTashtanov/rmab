@@ -1,9 +1,9 @@
 @extends('admin.layouts.app')
 @section('title')
-    ApplicationUseServiceTypes
+    Qo'shish
 @endsection
 @section('content')
-    <x-headers icon="fas fa-circle" title="ApplicationUseServiceTypes" parent="" parent-icon="" parent-route="admin.applicationuseservicetypes.index"/>
+    <x-headers icon="fas fa-circle" title="Qo'shish" parent="Turlari" parent-icon="" parent-route="admin.applicationuseservicetypes.index"/>
     <div class="card">
         <div class="card-body">
             <form action="{{route('admin.applicationuseservicetypes.store')}}" method="POST">
