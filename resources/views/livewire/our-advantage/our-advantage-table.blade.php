@@ -7,8 +7,8 @@
             <table class="table table-bordered table-hover">
                 <tr>
                     <th>ID</th>
-                    <th>Rasm</th>
                     <th>Nomi [uz]</th>
+                    <th>Rasm</th>
                     <th>Holati</th>
                     <th>Actions</th>
                 </tr>

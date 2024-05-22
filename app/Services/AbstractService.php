@@ -17,6 +17,7 @@ class AbstractService
 
     public function show($id)
     {
+
         return $this->model::findOrFail($id);
     }
 
