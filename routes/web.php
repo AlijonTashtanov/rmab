@@ -16,6 +16,7 @@ use App\Http\Controllers\CorruptionTypeController;
 use App\Http\Controllers\DispatchGeographyController;
 use App\Http\Controllers\DistrictController;
 use App\Http\Controllers\FaqController;
+use App\Http\Controllers\Frontend\MainController;
 use App\Http\Controllers\HomeBannerController;
 use App\Http\Controllers\InformationAboutShipmentController;
 use App\Http\Controllers\InformationController;
@@ -46,9 +47,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return redirect('/admin');
-});
+Route::get('/lang/{locale}', function ($locale) {
+
+    session()->put('locale', $locale);
+
+    return back();
+})->name('locale');
 
 //Jetstream
 Route::middleware([
@@ -61,6 +65,14 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
 });
+
+//Frontend
+Route::group(['middleware' => [ 'setLocale']], function () {
+
+    Route::get('/', [MainController::class, 'index'])->name('index');
+});
+
+
 
 //Cookies
 Route::get('/set-cookie/{cookie}', [AdminController::class, 'setCookie'])->name('setCookie')->middleware('auth');

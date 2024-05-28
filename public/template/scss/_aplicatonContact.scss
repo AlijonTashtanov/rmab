@@ -1,0 +1,141 @@
+.aplication{
+    &-form{
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 24px;
+        @include media(700px){
+            flex-direction: column;
+        }
+        &__item{
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            position: relative;
+            width: 100%;
+            max-width: 421px;
+            @include media(1246px){
+                max-width: 400px;
+            }
+            @include media(1204px){
+                max-width: 350px;
+            }
+            @include media(803px){
+                max-width: 310px;
+            }
+            @include media(780px){
+                max-width: 310px;
+            }
+            @include media(724px){
+                max-width: 421px;
+            }
+            @include media(700px){
+                max-width: 100%;
+            }
+            
+        }
+        &__label{
+            color:#596375;
+        }
+        &__input{
+            height: 48px;
+            background: #F7FAFD;
+            // @include media(1220px){
+            //     width: 400px;
+            // }
+            // @include media(1204px){
+            //     width: 350px;
+            // }
+            // @include media(1100px){
+            //     width: 421px;
+            // }
+            // @include media(930px){
+            //     width: 400px;
+            // }
+            // @include media(880px){
+            //     width: 360px;
+            // }
+            // @include media(800px){
+            //     width: 310px;
+            // }
+            // @include media(700px){
+            //     width: 100%;
+            // }
+            
+            
+        }
+    }
+}
+.inputFile{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 5px;
+    width: 111px;
+    height: 38px;
+    background: #38434E;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    border-radius: 12px;
+    z-index: 2;
+}   
+.hidden-input{
+    pointer-events: none;
+    opacity: 0;
+    position: relative;
+}
+
+.file-name{
+    position: absolute;
+    // top: 50px;
+    top: 50%;
+    left:18px;
+    opacity: 0.4;
+    transform: translateY(-50%);
+
+    z-index: 1;
+}
+.input-textAre{
+    width:100%;
+    max-width: 870px;
+    @include media(1204px){
+        max-width: 730px;
+    }
+    @include media(780px){
+        max-width: 650px;
+    }
+    @include media(700px){
+        width: 100%;
+    }
+    &__item{
+    width: 100%;
+    height: 80px;
+    display: flex;
+    overflow: hidden;
+    // @include media(1220px){
+    //     width: 800px;
+    // }
+
+    // @include media(1100px){
+    //     width: 870px;
+    // }
+    // @include media(930px){
+    //     width: 830px;
+    // }
+    // @include media(880px){
+    //     width: 750px;
+    // }
+    // @include media(800px){
+    //     width: 650px;
+    // }
+    // @include media(700px){
+    //     width: 100%;
+    // }
+    }
+}
+
+#test{
+    position: relative;
+}

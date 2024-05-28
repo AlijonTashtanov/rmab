@@ -3,6 +3,7 @@
 namespace App\Http;
 
 use App\Http\Middleware\Api\ApiAdminMiddleware;
+use App\Http\Middleware\Locale;
 use App\Http\Middleware\LocaleMiddleware;
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 use Spatie\Permission\Middleware\PermissionMiddleware;
@@ -26,6 +27,7 @@ class Kernel extends HttpKernel
         \Illuminate\Foundation\Http\Middleware\ValidatePostSize::class,
         \App\Http\Middleware\TrimStrings::class,
         \Illuminate\Foundation\Http\Middleware\ConvertEmptyStringsToNull::class,
+        \App\Http\Middleware\Locale::class,
     ];
 
     /**
@@ -41,6 +43,7 @@ class Kernel extends HttpKernel
             \Illuminate\View\Middleware\ShareErrorsFromSession::class,
             \App\Http\Middleware\VerifyCsrfToken::class,
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
+            Locale::class,
         ],
 
         'api' => [
@@ -74,5 +77,6 @@ class Kernel extends HttpKernel
         'permission' => PermissionMiddleware::class,
         'role_or_permission' => RoleOrPermissionMiddleware::class,
         'api_admin' => ApiAdminMiddleware::class,
+        'setLocale' => Locale::class,
     ];
 }

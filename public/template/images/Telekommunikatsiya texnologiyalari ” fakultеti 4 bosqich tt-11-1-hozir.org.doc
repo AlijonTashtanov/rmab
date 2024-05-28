@@ -1,0 +1,179 @@
+<html xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns="http://www.w3.org/TR/REC-html40">
+<meta http-equiv="Content-Type" content="charset=utf-8" />Telekommunikatsiya texnologiyalari ” fakultеti 4 bosqich tt-11-18 guruh talabasi<br /> 
+<br /> <b>O’ZBEKISTON RESPUBLIKASI AXBOROT</b>
+<br /><b>TEXNOLOGIYALARI</b>
+<br /><b>VA KOMMUNIKATSIYALARINI RIVOJLANTIRISH VAZIRLIGI</b>
+<br /><b>MUHAMMAD AL-XORAZMIY NOMIDAGI</b>
+<br /><b>TOSHKЕNT AXBOROT TЕXNOLOGIYALARI UNIVЕRSITЕTI QARSHI FILIALI</b>
+<br /> 
+<br />“ <b>TELEKOMMUNIKATSIYA TEXNOLOGIYALARI ” FAKULTЕTI</b>
+<br /><b>4 - BOSQICH TT-11-18 GURUH TALABASI</b>
+<br />Nazarov Aktamning
+<br />“ Optik aloqa asoslari“ fanidan
+<br />
+<p>4-Mustaqil ishi</p>
+
+<br />Bajardi : A.Nazarov
+<br />
+<p>Qabul qildi: M.Rustamova</p>
+
+<p>Reja
+<br /><ol> <li/> 
+<br />Optik aloqa tizimlarining liniya kodlari
+<br /><li/> 
+<br />Optik kommutatorlar va modulyatorlar
+<br /><li/> 
+<br />Optik multipleksorlar va demultipleksorlar
+<br /></ol> 
+<br />
+<br /><ol> <li/> 
+<br /><b>Optik aloqa tizimlarining liniya kodlari</b>
+<br /></ol> 
+<br />
+<br /><b>Reja</b>
+<br /><ol> <li/> 
+<br />Liniya kodining parametrlari
+<br /><li/> 
+<br />2V4V kodini shakllanishi
+<br /><li/> 
+<br />5V6V sinfini kodli kombinatsiyalari
+<br /></ol> 
+</p>
+<p>Liniya kodining parametrlari optik tola parametrlari bilan moslashgan boʻlishi kerak. Raqamli elektr impulslar optik nurlanish (optik tashuvchi) jadalligi yoki quvvatini modulyatsiyalab, raqamli optic signallarning liniya kodini shakllantiradi. Optik liniya kodi elektr liniya kodlaridan farqli ravishda bir qutbli boʻladi.</p>
+
+<br />Optik liniya kodlariga bir qator talablar qoʻyiladi:
+<br />1. Raqamli TOA tizimlari liniya kodlarining tuzilishi taktli sinxronizatsiya impulslarini shakllantirish uchun raqamli signal tarkibidan taktli chastotani osongina ajratib olishni taʼminlashi kerak.
+<br />2. Liniya kodining tuzilishi aloqani uzmasdan liniya trakti qurilmalari sozligini nazorat qilishni, uzatish sifatini va yukori shovqin bardoshlilikni taʼminlashi kerak.
+<br />3. Shovqin va dispersiya buzilishlarini kamaytirish uchun optik liniya kodining energetik spektri iloji boricha tor boʻlishi kerak. Spektr orali½i qancha keng boʻlsa, shoqin sathi shuncha ortadi va aksincha.
+<br />4. Liniya kodining energetik spektri tarkibida doimiy tashkil topuvchilar boʻlmasligi kerak. Bu TOA tizimlari liniya trakti qurilmalarining kuchlanish taʼminotini yuqori aniqlikda oʻrnatish kerakligi bilan tushintiriladi. Simvollararo xalaqitlarni kamaytirish maqsadida past chastotali sohalarda chatota orali½i chegaralangan boʻlishi kerak.
+<br />5. Shuningdek, simvollararo xalaqitlarni kamaytirish uchun energetic spektri yuqoridan chegaralangan boʻlishi zarur.
+<br />6. Optik liniya kodi koder va dekoder qurilmalari soddalashuvini taʼminlashi kerak.
+<br />Yuqorida keltirilgan talablarning toʻliq hajmdagi yi½indisiga hech qaysi kod javob bermaydi. Shuning uchun qoʻyiladigan talablarga bo½liq holda TOA tizimlarida turli kodlardan foydalaniladi.
+<br />TOA tizimlari apparaturalarida qoʻllaniladigan boshlan½ich kod NRZ (non return to zero – nolga qaytmaslik) kodi hisoblanadi. NRZ kodining spektrida taktli chastotaning diskret tashkil etuvchilarini boʻlmasligi sababli taktli chastota ajratgich qurilmasi murakkablashadi va regeneratorning qabul qilish qurilmalarini sinxronizatsiyasi qiyinlashadi.
+<br />Barcha optik kodlar blok koʻrinishida boʻlib, ularda boshlan½ich NRZ kodining har bir “m” impulsidan liniya optik kodining “n” impulse shakllanadi. Bunda har doim n>m boʻlib, ortiqcha impulslar liniyaga uzatiladi. Bu liniya kodida ortiqlik deyiladi. Bunday kod mVnV deb belgilanadi, bu yerda “V” (Binary – ikkilik) boshlan½ich va liniyaga uzatiladigan kodlarni ikkilik kodi ekanligini bildiradi. Liniya kodi boshlan½ich kodni uzatishga ketadigan vaqtda uzatilishi kerak. Signallarni liniyaga uzatish tezligi
+<br />
+<br /> 
+<p>bu yerda f l – liniya kodi impulslarining ketma – ketlik chastotasi; fm-boshlan½ich kod impulslarining ketma–ketlik chastotasi.</p>
+
+<br />Bunda shuni alohida belgilab oʻtish kerakki, uzatish tezligi oshish bilan liniya kodi n impulslarining ortiqligi kamayishi kerak. Chunki uzatish tezligi ortishi bilan apparaturalar murakkablashadi va liniyada dispersiya oshadi. Turli optik kodlarni koʻrib chiqamiz. 1V2V kodlar. Bu sinfdagi kodlar sodda boʻlib, boshlan½ich kodlarga nisbatan liniyaga uzatiladigan impulslar soni 2-marta oshiq. BI-L (absolyut biimpuls) kodi ham 1V2V sinfidagi kodlarga kiradi. BI-L kodining shakllanishi 7.11–rasmda koʻrsatilgan. Rasmdan koʻrinib turibdiki, boshlan½ich NRZ kodidagi nollar oʻrniga BI-L kodida bir va nollar almashinib, ketma – ket uzatiladi. Bu bilan shovqindan himoyalanganlik ortadi. 1V2V kodlaridan eng koʻp qoʻllaniladigani CMI kodidir. CMI kodi filtr yordamida taktli chastotani ajratish imkoniyatiga ega boʻlgan oddiy koddir. Bunday imkoniyat yarim taktli 1,5*fm chatotada energetik spektrning maksimal ekanligiga bo½liq. Bunday kodlarda boshlan½ich “1” simvoli 11 va 00 bloki koʻrinishida, boshlan½ich “0” simvoli esa 01 (yoki 10) koʻrinishida kodlanadi. 11 va 00 navbatma – navbat oʻzgarishi xatoliklarni aniqlashga yordam beradi.
+<br />
+<br />
+<br /> 
+<p>NRZ dan BI-L kodiga oʻzgartirish</p>
+
+<br />2V4V kodlari. Bu sinfdagi kodga PIM pozitsion – impuls modulyatsiyali kod kiradi. Bunda boshlan½ich 00, 01, 10, 11 kodlardan mos ravishda 1000, 0100, 0010, 0001 liniya kodlari shakllanadi
+<br /><b>2V4V kodini shakllanishi</b>
+<br />
+<br /> 
+<br />PIM kodining shakllanishi
+<br />1V2V sinfidagi kodlardan PIM kodining afzalligi shundaki, unda “1” simvollarining soni 2-marta kam va mos ravishda liniyaga uzatishning oʻrtacha quvvati kamayadi. Bundan birinchi navbatda nurlanish manbalarining ishonchliligi oshadi va quvvat kam sarf etiladi.
+<br />Toʻrtta uzatilayotgan simvollardan faqat bittasi “1” simvoli boʻlganligi sababli sinxronizatsiya mukammallashadi.1V2V, 2V4V sinfdagi kodlarda m impulsga qaraganda n impulslari 2-marta koʻpligi sababli bunday kodlar tezligi 100 Mbit/s dan oshmaydigan tizimlarda qoʻllaniladi.
+<br />
+<br />
+<br /> 
+<br />PIM kodining shakllanishi
+<br />3V4V, 5V6V kodlari. Bu kodlarda bitta ortiqcha razryadning kiritilishi, kam razryadlar sonidan iborat boshlan½ich kombinatsiyalarni koʻp razryadlar sonidan iborat sinxronizatsiya uchun qulay nol va birlarning birikmasi koʻrinishidagi kombinatsiyalar bilan almashtirish imkonini yaratadi. Buni 5V6V kodi misolida koʻrib chiqamiz. Boshlan½ich bloki 5 razryaddan tashkil topgan. Bitta razryaddan mumkin boʻlgan kombinatsiyalar soni 25=32 ga teng. Bu kombinatsiyalar ichida sinxronizatsiya uchun unchalik samarali boʻlmagan nol yoki birlar seriyasi ketma–ket keluvchi (masalan 00000, 00001, 11111 va boshqa) kombinatsiyalar ham mavjud. Agar ularni 6 razryadli blokka almashtirsak, mumkin boʻlgan kombinatsiyalar 26=64 ta boʻladi va ulardan sinxronizatsiyani taʼminlash nuqtai nazaridan bir va nollar soni qulay boʻlgan 32 ta kombinatsiyani ajratib olish mumkin.
+<br />koʻrinib turibdiki, bir va nollar soni teng boʻlgan, 6 razryadli 20 ta kombinatsiya mavjud, qolgan 12 kombinatsiya ikkita bir va toʻrtta noldan yoki toʻrtta bir va ikkita noldan iborat kombinatsiyalar navbatma-navbat uzatiladi. Bu bilan birlar zichligining doimiyligi taʼminlanadi. Bu kodlarda xatoliklarni topish, 5V6V kodiga taʼluqli boʻlmagan 6 razryadli kombinatsiyalarni aniqlash bilan bo½liq.
+<br /><b>5V6V sinfini kodli kombinatsiyalari</b>
+<br />
+<br /> 
+<br /> 
+<br />1V2V, 2V4V kodlariga nisbatan 5V6V kodining energetik spektri tor, bu uning eng muhim afzalligi hisoblanadi. 5V6V, PIM, NRZ kodlarining energetik spektrlari 7.13-rasmda tasvirlangan.
+<br />
+<br /> 
+<br />Turli optik liniya kodlarni spektrlari
+<br />
+<br /><ol start="2"> <li/> 
+<br /><b>Optik kommutatorlar va modulyatorlar</b>
+<br /></ol> 
+<br />
+<br /><b>Reja</b>
+<br /><ol> <li/> 
+<br />Optik kalitlar
+<br /><li/> 
+<br />Optik kommutatorlar
+<br /><li/> 
+<br />Optik modulyatorlar
+<br /></ol> 
+<br />Optik kalitlar va modulyatorlar yangi avlod aloqa texnologiyalarining asosiy komponentlari hisoblanadi.
+<br />Kelajakda sekundiga terabitlik telekommunikatsiya tarmoqlari to'liq optik ishlashi kerak bo'ladi.
+<br />Hozirgi vaqtda signalni qayta yo'naltirish uchun zarur bo'lgan elektro-optik konversiyaning darbog'i. Elektr bir-biriga juda ko'p parallel ulangan ko'p yadroli kompyuter chiplari haddan tashqari ko'p quvvat sarflaydi. quvvat, chipdagi optik aloqani tobora jozibador muqobilga aylantiradi. Arzon, ishonchli, va ixcham chipdagi optik kalitlar va modulyatorlar ushbu texnologiyalar uchun asosiy shartlardir.
+<br />CMOS mosligi kremniyda ishlab chiqarishni talab qiladigan yana bir muhim muammodir III-V yarimo'tkazgichli tizimlarda va lityum niobatda katta elektro-optik koeffitsientlar ta'sir qiladi mavjud bo'lib, optik almashtirishni Beasy[ operatsiyasiga aylantiradi. Biroq, kremniyda mos keladi chiziqli bo'lmagan effektlar va sinishi indeksining o'zgarishi zaif yoki kichikdir, natijada kalitlar moyil bo'ladi juda uzun bo'lishi yoki ishlashi uchun yuqori quvvat talab qilishi [4].
+<br />Rezonansni kuchaytirishdan foydalanish yorug'likning kichikga nisbatan sezgirligini oshirish vositalaridan biridir sinishi indeksidagi o'zgarishlar mavjud [3]. Biroq, bo'shliqning rejimlaridan foydalanish kuchli tendentsiyaga ega qurilmaning tarmoqli kengligini cheklash va uni ishlab chiqarish kamchiliklariga juda sezgir qilish [10]. Sekin yorug'lik davriy tuzilmalarda, masalan, fotonik kristallarda hosil bo'ladigan rezonans effektidir. Qachon
+<br />Bragg sharti qondiriladi, tik turgan to'lqin hosil bo'ladi va qurilma yuqori aks ettiruvchi sifatida ishlaydi. oyna. Bu holatdan uzoqda, bu oyna tekisliklari tomonidan kogerent ravishda tarqalgan yorug'lik nurga xalaqit beradi kiruvchi yorug'lik, asta-sekin oldinga siljiydigan interferentsiya naqshini hosil qiladi. Bu ta'sir sifatida tanilgan sekin yorug'lik va o'tkazish qobiliyatini saqlab qolgan holda sinishi indeksining o'zgarishini kuchaytirish uchun ishlatilishi mumkin.
+<br />Chiroqni almashtirish yoki yo'nalishini o'zgartirish uchun ikkita optik yo'l yoki rejim o'rtasida faza o'zgarishi talab qilinadi, kL ¼ tenglamasi bilan qoplangan, bu erda L - kommutatsiya uzunligi va k - o'zgarish aktuator tomonidan yaratilgan ikkita yo'l/rejim orasidagi to'lqin vektori. L kamaytirish uchun, bu kichik sindirish ko'rsatkichi o'zgarishi uchun ham k katta bo'lgan qurilmani loyihalash maqsadga muvofiqdir. Bunday bir holat sekin yorug'lik hududi tomonidan ta'minlanadi  
+<br />Bu erda biz ikkita sekin yorug'lik bilan yaxshilangan optik qurilmani tasvirlaymiz: optik modulyator va optic almashtirish. Modulyator 3-bo'limda tasvirlangan va simmetrik Mach-Zehnderdan iborat sekin yorug'lik dispersiyasi bilan yaratilgan fotonik kristalli to'lqin o'tkazgichlarga ega interferometr (MZI). har bir qo'l. Kommutatsiya termo-optik effekt yordamida namoyish etiladi. MZI geometriyasi tabiiy katta ish o'tkazish qobiliyatini ta'minlaydi, ammo rezonansli yaxshilanishlar buni kamaytiradi. Biroq, katta guruh indeksli tarmoqli kengligi mahsulotiga ega bo'lish uchun mo'ljallangan bo'lsa, fotonik kristalli faza almashtirgich sezilarli o'tkazish qobiliyati bo'yicha modulyatsiyani ta'minlay oladi, bu erda biz 11 nmni ko'rsatamiz. Optik 4-bo'limda tasvirlangan kalit a da bir-biriga yaqin joylashgan ikkita fotonik kristalli to'lqin o'tkazgichga asoslangan yo'nalishli bog'lovchi geometriyasi [9]. Biz avvalroq termo-optik yordamida almashtirishni ko'rsatdik 20 s vaqt shkalasi bilan ta'sir qiladi [12]. Bu erda biz erkin tashuvchi effektidan foydalanadigan shunga o'xshash kalit haqida xabar beramiz kremniyning sinishi indeksini modulyatsiya qilish uchun (qarang. [13]). Nasos-zond eksperimental qurilmasidan foydalanib, biz 3 ps [14], [15] kabi qisqa almashtirish vaqtlarini ko'rsating va biz bu vaqt bilan cheklanmaganligini ko'rsatamiz. pulsning parvoz vaqti (bu subpikosekundlik vaqt shkalasiga ega). Aksincha, kalit tarmoqli kengligi cheklangan, ya'ni tezroq almashtirish vaqti faqat qisqaroq impuls bilan ko'rsatilishi mumkin.
+<br />Ushbu impulslarni qo'llab-quvvatlash uchun ushbu qurilmada mavjud bo'lganidan ko'ra ko'proq tarmoqli kengligi talab qilinadi.
+<br />Biz ikkita turli xil qurilma geometriyasini VMZI modulatori va Veach yo'nalishi bo'yicha ulashni taqdim etamiz o'zlarining afzalliklari. MZI geometriyasi uzunlik va faza siljishi o'rtasidagi muvozanatni ta'minlaydi,
+<br />Bu kremniyda muhim bo'lib, tez ta'sirlar, masalan, tashuvchining kamayishi [16] faqat kichik ta'sir qiladi
+<br />Sinishi indeksi moduli Bragg sharti qondiriladi, doimiy to'lqin hosil bo'ladi va qurilma yuqori aks ettiruvchi rolni bajaradi. oyna. Bu holatdan uzoqda, bu oyna tekisliklari tomonidan kogerent ravishda tarqalgan yorug'lik nurga xalaqit beradi kiruvchi yorug'lik, asta-sekin oldinga siljiydigan interferentsiya naqshini hosil qiladi. Bu ta'sir sifatida tanilgan sekin yorug'lik va o'tkazish qobiliyatini saqlab qolgan holda sinishi indeksining o'zgarishini kuchaytirish uchun ishlatilishi mumkin.
+<br />Chiroqni almashtirish yoki yo'nalishini o'zgartirish uchun ikkita optik yo'l yoki rejim o'rtasida faza o'zgarishi talab qilinadi, kL ¼ tenglamasi bilan qoplangan, bu erda L - kommutatsiya uzunligi va k - o'zgarish aktuator tomonidan yaratilgan ikkita yo'l/rejim orasidagi to'lqin vektori. L kamaytirish uchun, bu kichik sindirish ko'rsatkichi o'zgarishi uchun ham k katta bo'lgan qurilmani loyihalash maqsadga muvofiqdir. Bunday bir holat sekin yorug'lik hududi tomonidan ta'minlanadi  
+<br />Bu erda biz ikkita sekin yorug'lik bilan yaxshilangan optik qurilmani tasvirlaymiz: optik modulyator va optic almashtirish. Modulyator 3-bo'limda tasvirlangan va simmetrik Mach-Zehnderdan iborat sekin yorug'lik dispersiyasi bilan yaratilgan fotonik kristalli to'lqin o'tkazgichlarga ega interferometr (MZI). har bir qo'l. Kommutatsiya termo-optik effekt yordamida namoyish etiladi. MZI geometriyasi tabiiy katta ish o'tkazish qobiliyatini ta'minlaydi, ammo rezonansli yaxshilanishlar buni kamaytiradi. Biroq, katta guruh indeksli tarmoqli kengligi mahsulotiga ega bo'lish uchun mo'ljallangan bo'lsa, fotonik kristalli faza almashtirgich sezilarli o'tkazish qobiliyati bo'yicha modulyatsiyani ta'minlay oladi, bu erda biz 11 nmni ko'rsatamiz. Optik 4-bo'limda tasvirlangan kalit a da bir-biriga yaqin joylashgan ikkita fotonik kristalli to'lqin o'tkazgichga asoslangan yo'nalishli bog'lovchi geometriyasi [9]. Biz avvalroq termo-optik yordamida almashtirishni ko'rsatdik 20 s vaqt shkalasi bilan ta'sir qiladi [12]. Bu erda biz erkin tashuvchi effektidan foydalanadigan shunga o'xshash kalit haqida xabar beramiz kremniyning sinishi indeksini modulyatsiya qilish uchun (qarang. [13]). Nasos-zond eksperimental qurilmasidan foydalanib, biz
+<br />3 ps [14], [15] kabi qisqa almashtirish vaqtlarini ko'rsating va biz bu vaqt bilan cheklanmaganligini ko'rsatamiz. pulsning parvoz vaqti (bu subpikosekundlik vaqt shkalasiga ega). Aksincha, kalit tarmoqli kengligi cheklangan, ya'ni tezroq almashtirish vaqti faqat qisqaroq impuls bilan ko'rsatilishi mumkin.
+<br />Ushbu impulslarni qo'llab-quvvatlash uchun ushbu qurilmada mavjud bo'lganidan ko'ra ko'proq tarmoqli kengligi talab qilinadi.
+<br />Biz ikkita turli xil qurilma geometriyasini VMZI modulatori va Veach yo'nalishi bo'yicha ulashni taqdim etamiz
+<br />
+<br /><ol start="3"> <li/> 
+<br /><b>Optik multipleksorlar va demultipleksorlar</b>
+<br /></ol> 
+<br /><b>Reja</b>
+<br /><ol> <li/> 
+<br />Spektr bo‘yicha zichlashtirilgan tolali optik aloqa tizimlarida multiplekslash va demultiplekslash jarayonlari
+<br /><li/> 
+<br />Yupqa pardali filtrlar asosidagi optik multipleksorlar/ demultipleksorlar
+<br /></ol> 
+<br />
+<p>Spektr bo'yicha zichlashtirilgan (WDM) tolali optik aloqa tizimlarida har bir uzatuvchi modul lazeri muayyan chastotali signalni generatsiyalaydi. Bu signal (kanal)larni tolali optik liniya bo‘yicha uzatish uchun ulami yagona guruhiy signalga birlashtirish kerak. Bu vazifani bajaradigan qurilma <b>optik multipleksor (MUX) </b>deb ataladi. Optik aloqa liniyasining boshqa uchida shunga o‘xshash qurilma guruhiy signalni axborotdan foydalanuvchilarga yetkazish maqsadida alohida signal (kanal)larga ajratib beradi va bu qurilma <b>optik demultipleksor </b>deb ataladi. Kanallarni vaqt bo‘yicha zichlashtirish uchun mo‘ljal!angan va asosiy e’tibor uzatuvchi hamda qabul qiluvchi optoelektron modullarni sinxronlash aniqligiga qaratilgan TDM tizimlaridan farqli ravishda spektr bo‘yicha zichlashtirilgan tolali optik aloqa tizimlarida alohida signallaming parametrlari avvaldan aniq ma’lum bo‘lgan spektral tashkil etuvchilari bo‘yicha <b>multiplekslanadi </b>va <b>demultiplekslanadi </b>(9.1- rasm).</p>
+
+<br />Optik multiplekslash va demultiplekslash kombinatsiyalashgan yoki o‘zaro ketma-ket joylashgan tor oraliqli (polosali) filtrlardan foydalanishga asoslanadi. Optik signallarni filtrlash uchun, jumla- dan, yupqa pardali filtrlar, tolali yoki bregg difraksiya panjaralari, payvandlangan tolali shaxoblagichlar, suyuq kristallar asosidagi filtrlar, integral optik qurilmalari <b>(fazar </b>deb ataladigan fazali to‘lqin uzatkichli difraksiya panjaralari) dan foydalaniladi. .
+<br />Multipleksorlar tolali WDM optik aloqa tizimlaridan tashqari, shuningdek, tolali optik kuchaytirgichlarda, mahalliy tarmoqlarda signallami to‘lqin uzunhgi bo‘yicha marshmtlash chog'ida va boshqa ayrim hollarda ham qo‘llaniladi.
+<br />Multipleksorlar yig‘iluvchi va ajratiluvchi optik signallar (kanallar) soniga qarab ikki gumhga bo'linadi
+<br /> 
+<br /><b>Spektr bo‘yicha zichlashtirilgan tolali optik aloqa tizimlarida multiplekslash va demultiplekslash jarayonlari</b>
+<br />— to‘lqin uzunligi bo‘yicha kanallar orasidagi masofa 20 nm dan kam bo'lmagan bir necha (4 tagacha) spektral kanallarni birlashtiruvchi multipleksorlar;
+<br />— spektral kanallar orasidagi masofa 0,4, . . . , 1,6 nm oraliqda yotgan hamda 4 tadan ko‘p — 8 ta, 16 ta, 32 ta va undan ko‘p sondagi kanallarni birlashtiruvchi multipleksorlar.
+<br />Hozirgi vaqtda qo‘llaniladigan spektr bo‘yicha zichlashtirilgan (WDM) optik aloqa tizimlarida alohida kanallar orasidagi chasto- taviy oraliq 100 GHz (0,8 nm) ni tashkil etadigan optik multipleks- lovchi va demultiplekslovchi qurilmalar eng keng qo‘llaniladi. .So‘nggi yillarda yaratilgan multiplekslovchi qurilmalar 50 Hz va undan kichik chastotaviy oraliqda joylashgan kanallarni uzatishni ta’minlash imkonini beradi. Zamonaviy multipleksorlar, asosan, yupqa pardali flltrlar va biroz kamroq darajada to‘lqin uzatkichli difraksiya panjaralari matritsalari hamda bregg panjaralari asosida tayyorlanadi.
+<br />Spektr bo‘yicha zichlashtirilgan optik aloqa tizimlarida kanallar joylashuvi zichhgini yanada oshirish, multiplekslovchi optik quril- malarga qo‘yiladigan talablarning qafiylashuvi jarayonida foydala- niladigan texnologiyalarning turi o‘zgarishi mumkin.
+<br />Quyida kanallarni to'lqin uzunligi bo‘yicha ajratish maqsadida cng ko‘p qo‘llaniladigan multiplekslovchi va demultiplekslovchi qurilmalarning tuzilishi va ish mexanizmlari haqida qisqacha to‘xtalib o‘tamiz.
+<br />
+<br /><b>Yupqa pardali filtrlar asosidagi optik multipleksorlar/ demultipleksorlar</b>
+<br />
+<p>Yupqa pardali filtrlar, awal ko‘rib o‘tilganidek, optik taglikka ustma-ust joylashtirilgan va sindirish ko‘rsatkichi har xil bo‘lgan shaffof dielektrik modaning bir necha qatlamlaridan tashkil topadi (9.2-rasm).</p>
+
+<br />Sindirish ko‘rsatkichlarining farqi tufayli qatlamlar orasidagi har bir ajratuvchi chegarada tushayotgan yorug‘lik oqimining bir qismi orqaga qaytadi.
+<br />Qaytgan bu yorug‘lik to‘lqin uzunligiga bog‘liq ravishda interferensiya hodisasi tufayli tushayotgan yorug‘lik nurlanishini kuchaytiradi yoki susaytiradi.
+<br />Sindirish ko‘rsatkichi va har bir qatlam qalinligini tegishli tarzda tanlab olish yo‘li bilan to‘lqin uzunligining istalgan diapazonini
+<br /> 
+<br /><b>Yupqa pardali filtrning tuzilishi va ish jarayoni:</b>
+<br /><i>Ii — tushuvchi to'lqin; h — qaytuvchi to'lqin; h </i><b>— </b><i>o'tuvchi to'lqin</i>
+<br />o‘tkazadigan va qolgan barcha to‘lqin uzunliklarini qaytaradigan filtrlar tayyorlash mumkin.
+<br />Parametrlarni tanlash va dielektrik qatlamlarni olish usullari optik sanoatda yaxshi ma’lum. Yaxshi optik xossalarga ega bo‘lgan ko‘p modalarning fizik sifati talab darajasida bo‘lmaganligi uchun dielektrik materiallarni tanlash imkoniyati cheklangan.
+<br />Umumiy hollarda filtrga bo‘lgan talab qanchalik yuqori bo‘lsa, taglikda hosil qilinadigan qatlamlaming soni shunchalik ko‘p bo‘ladi. Mavjud murakkabliklarga qaramay, bu texnologiya ishlab chiqarish jarayonini biroz o‘zgartirib, turli maxsus spektral xossali unchalik qimmat bo‘lmagan filtrlar yaratish imkonini beradi.
+<br />Bu turdagi mavjud multipleksorlarda ko‘p qatlamli plastina sifatida optik tolaning 30 — 45° burchak ostida qiya qilib yedirilgan va qatlamlar bilan qoplangan uchidan foydalaniladi. Bu turdagi multipleksorlarning asosiy texnik tafsivlari quyidagicha; ishchi to‘lqin uzunliklari 1305±0,005 nm va 1552±0,005 nm yoki 980 nm va 1552 nm, yuz beradigan yo'qotishlar — 0,4 dB, kesishuvchi so‘nish ~30 dB.
+<br />Multpleksorlar va demultpleksorlarda, odatda, guruhiy sig- naldan bitta kanalni ajratadigan bir pog‘onali yupqa pardali filtrlardan foydalaniladi. Qaytgan yomg‘lik qaytadan tizimga tushmasligi uchun filtrlar optik o‘qqa qiya og‘dirilgan holda joylashtiriladi. Filtrlaming bunday joylashuvi qatlamlarning effektiv qalinligini va shu tariqa o‘tkazish oralig‘i (polosasi)ni o‘zgartiradi. Filtrlarni loyihalashda bu holatni hisobga olish zamr. Ko‘p to'lqinli signallarga ishlov berish uchun bir qator filtrlarning ko‘p pog‘onali tizimidan foydalaniladi. .
+<br />Bu turdagi filtrlarda har bir filtrdan qaytgan yomg‘lik keyingi filtming kirishiga tushadi. Natijada filtr orqali o‘tgan alohida to'lqin uzunliklariga tegishli yomg‘lik intensivligini tekislashtirish masalasi yuzaga keladi (9.3-rasm). •
+<br />Yupqa pardali filtrlar asosidagi multpleksorlar yetarli darajada tor o‘tkazish oralig‘i (polosasi)ga ega va ular 16 yoki 32 kanalli zichlashtirilgan optik aloqa tizimlarida qo‘llaniladi. Kanallarning bunga qaraganda zichroq joylashuviga asoslangan zamonaviy optik tizimlarda multpleksorlarni tayyorlashning boshqa xil texnolo- giyalaridan foydalaniladi.
+<br /> 
+<br /><b>Difraksiya panjaralaridan foydalanishga asoslangan optik multipleksor/demultipleksorlar</b>
+<br />Katta tezlikli DWDM turidagi spektr bo£yicha zichlashtirilgan tolali optik aloqa tizimlarida difraksiya fazaviy panjaralaridan foydalanishga asoslangan multipleksorlar keng ishlatiladi.
+<br />Bu turdagi multipleksorlarda difraksiya fazaviy panjarasi sifatida uning <b>Maykelson esheloni </b>deb atalgan xilidan foydalaniladi. Maykelson esheloni turli xil uzunlikdagi, bir-birining ustiga qat’iy tarzda parallel qilib joylashtirilgan shaffof plastinalardan iborat bo‘lib, bu plastina bir tomoni yassi, qarama-qarshi tomoni esa zinasimon tuzilishga ega bo‘lgan va zinalarining o'lchamlari bir xil bo'lgan prizmani tashkil etadi. Yorug'lik nurlari prizmadan o‘tib, mana shu zinalarda difraksiyalanadi. Difraksiyalanish burchagi to‘lqin uzunligiga bog'liq. Tolali optik tizimlarda Maykelson eshelonli plastina vazifasini planar yoki tolali to‘lqin uzatkichlar bajaradi. ■
+<br />Fazaviy panjaralardan foydalanishga asoslangan multiplek- sorlami <b>to‘lqin uzatkichli spektral multipleksorlar (TUSM) yoki to‘lqin uzatkichli spektral tahlillagich </b>(analizator)lar (TUST) deb ataladi. ' '
+<br />Maykelson eshelonining tolali to'lqin uzatkichli nusxasi tasvirlangan. Rasmdan ko'rinadiki, har bir yorug‘lik oqimi
+<br />to‘lqin uzatkichlarning barcha uchlariga tushishi kerak. Buning uchun yorug‘lik oqimini yig'uvchi (fokuslovchi) maxsus optik elementlardan foydalaniladi.
+<br />9.4-rasmda muitipleksorning tuzilishi ko‘rsatilgan. li, <i>12, </i>. . . . <i>Xn </i>to'lqin uzunlikli alohida oqimlarning yig'indisidan iborat yorug‘lik oqimi yig‘uvchi elementga (1-plastinaga) tushadi va unda matritsa (Maykelson eshelonini) hosil qiluvchi to‘lqin uzatkichlarning barcha uchlarida energiya taqsimoti yuz beradi. Uning chiqishida yorug‘lik oqimi har birining to‘lqin uzunligi <i>1\, 12, .... Xn </i>bo'lgan alohida oqimlarni tegishli tolalarning uchiga taqsimlovchi ikkinchi plastinaga tushadi. Barcha sanab o‘tilgan elementlar kvars taglikka joylashtiriladi.
+<br />Rasmdan ko‘rinadiki, bunday multipleksorda energetik yo‘qo- tishlar nurlanishni 1-va 2-to‘lqin uzatkich plastinalarga kiritish yoki ulardan chiqarishda (bu plastinalarning to'lqin uzatkichlar matritsasi bilan ulangan joyida) hamda matritsani tashkil etuvchi to‘lqin uzatkichlarning bukilgan joylarida ro‘y beradi.
+<br />Rasmdan va tolali optik multipleksor ish mexanizmining tavsifidan ko‘rinadiki, bu qurilma qaytarlik — o‘zaro almashuv- chanlik xossasiga ega, boshqacha aytilganida, bitta qurilmaning o‘zi <i><b>h, h, . . . . h </b></i>to'lqin uzunlikli fazoviy ajratilgan yorug‘lik oqimlarni bitta oqimga birlashtirish (multipleksor) yoki aksincha, bitta yorug‘lik oqimini tegishli to‘lqin uzunlikli alohida oqimlarga fazoviy ajratish (demultipieksor) vazifalarini bajarishi mumkin
+<br /> 
+<br />Maykelson eshelonining tolali turi
+<br />WDM tizimlari uchun tolali optik multipleksorlar bir qator horijiy firmalar tomonidan ishlab chiqariladi. 9.1-jadvalda NEL firmasi (Yaponiya) tomonidan, 9.2-jadvalda esa ECI TELECOM Ltd PROPRIATY firmasi tomonidan ishlab chiqilgan multiplek- sorlarning asosiy texnik ko'rsatkichlari keltirilgan
+<br /> 
+<br /><b>Tolali optik multipleksorning tuzilishi</b>
+<br /><b>Foydalanilgan adabiyotlar</b>
+<br /><b>1. </b><i>Ctawpoe O.K. </i><b>CoBpeweHHbie BOJioKoniio-onTHHecKne chctcmbi nepe-</b>
+<br /><b>naHH. AnnapaTypa h ojieMCHTbi. — M.: SOLON-R, 2001. 238 c.</b>
+<br /><b>2. </b><i>Nakatsuhara K., Hisain S. </i><b>i dr. All — opnical switching in a nonlinear directicnol coupler loaded with Bragg reflection ECOC’99, v.2, Nice, 1999.</b>
+<br /><b>3. </b><i>Poustie A.J., Blow K.J., Kelly A.E. </i><b>and Manning R.J. All-optical binary counter. TuC3.1, ECOC’99, Nice, 1999.</b>
+<br /><b>4. </b><i>Sklyarov O.K. </i><b>Formirovatel opticheskix impulsov. Patent N21802418, prioritet ot 08.01.1991, zaregistrirovan 13.10.1993.</b>
+<br /><b>5. </b><i><b>HeHamoe </b>A.H. </i>OnToojieicrpoHHbie npn6opbi <b>h </b>ycTpoflCTBa <b>— M.: EKOTRENDZ. 2006. - 270 </b>c.<br />http://hozir.org</html>
