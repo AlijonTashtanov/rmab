@@ -35,6 +35,7 @@ use App\Http\Controllers\UsefulLinkController;
 use App\Http\Controllers\VacancyController;
 use App\Http\Livewire\Admin\UserProfile;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Frontend\NewsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -70,6 +71,7 @@ Route::middleware([
 Route::group(['middleware' => [ 'setLocale']], function () {
 
     Route::get('/', [MainController::class, 'index'])->name('index');
+    Route::get('/news', [NewsController::class, 'index'])->name('news');
 });
 
 

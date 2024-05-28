@@ -52,6 +52,7 @@ class BannerController extends AbstractController
      */
     public function store(Request $request)
     {
+
         $data = $request->validate($this->config['rules']);
         $this->service->storeWithFile($data);
         return redirect()->route('admin.' . $this->dir . '.index')->with('success', 'Created!');

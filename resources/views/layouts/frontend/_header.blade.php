@@ -184,7 +184,7 @@
             <div class="my-menus">
                 <ul>
                     <li>
-                        <a href="#">
+                        <a href="{{route('index')}}">
                             <p class="txt-16">Asosiy</p>
                         </a>
                     </li>
@@ -212,7 +212,7 @@
                         </a>
                         <ul class="drop-menu">
                             <li>
-                                <a href="#">
+                                <a href="{{route('news')}}">
                                     <p class="txt-16">
                                         <span>Yangiliklar</span>
                                     </p>
