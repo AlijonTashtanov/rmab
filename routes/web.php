@@ -72,6 +72,12 @@ Route::group(['middleware' => [ 'setLocale']], function () {
 
     Route::get('/', [MainController::class, 'index'])->name('index');
     Route::get('/news', [NewsController::class, 'index'])->name('news');
+    Route::get('/vacancy', [\App\Http\Controllers\Frontend\VacancyFrontendController::class, 'index'])->name('vacancy-front');
+    Route::get('/our-advantages', [\App\Http\Controllers\Frontend\OurAdvantageFrontendController::class, 'index'])->name('our-advantages');
+    Route::get('/prop', [\App\Http\Controllers\Frontend\PropFrontendController::class, 'index'])->name('prop');
+    Route::get('/autopark', [\App\Http\Controllers\Frontend\AutoparkFrontendController::class, 'index'])->name('autopark');
+    Route::get('/partner', [\App\Http\Controllers\Frontend\PartnerFrontendController::class, 'index'])->name('partner');
+    Route::get('/branch', [\App\Http\Controllers\Frontend\BranchFrontendController::class, 'index'])->name('branch');
 });
 
 

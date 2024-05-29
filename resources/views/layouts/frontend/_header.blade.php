@@ -25,7 +25,7 @@
                         fill="#000"
                     />
                 </svg>
-                <a href="#">
+                <a href="{{route('index')}}">
                     <div>
                         <img
                             class="w-[180px]"
@@ -219,42 +219,42 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="#">
+                                <a href="{{route('vacancy-front')}}">
                                     <p class="txt-16">
                                         <span>Vakansiyalar</span>
                                     </p>
                                 </a>
                             </li>
                             <li>
-                                <a href="#">
+                                <a href="{{'our-advantages'}}">
                                     <p class="txt-16">
                                         <span>bizning afzalliklarimiz</span>
                                     </p>
                                 </a>
                             </li>
                             <li>
-                                <a href="#">
+                                <a href="{{route('prop')}}">
                                     <p class="txt-16">
                                         <span>Rekvizitlar</span>
                                     </p>
                                 </a>
                             </li>
                             <li>
-                                <a href="#">
+                                <a href="{{route('autopark')}}">
                                     <p class="txt-16">
                                         <span>Autopark</span>
                                     </p>
                                 </a>
                             </li>
                             <li>
-                                <a href="#">
+                                <a href="{{route('partner')}}">
                                     <p class="txt-16">
                                         <span>Hamkorlar</span>
                                     </p>
                                 </a>
                             </li>
                             <li>
-                                <a href="#">
+                                <a href="{{route('branch')}}">
                                     <p class="txt-16">
                                         <span>Filiallar</span>
                                     </p>

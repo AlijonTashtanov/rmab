@@ -38,9 +38,36 @@
 @include('frontend.main._contact')
     <!-- CONTACT END -->
 
-    <!-- FAQS -->
-@include('frontend.main._faqs')
-<!-- FAQS END -->
-
 @stop
 
+{{--<script src="./js/swiper-bundle.min.js"></script>--}}
+{{--<script src="./js/app.js"></script>--}}
+
+{{--<script>--}}
+{{--    setTimeout(() => {--}}
+{{--        document.querySelectorAll(".accordion-header").forEach((button) => {--}}
+{{--            button.addEventListener("click", () => {--}}
+{{--                const accordionContent = button.nextElementSibling;--}}
+
+{{--                button.classList.toggle("active");--}}
+
+{{--                if (button.classList.contains("active")) {--}}
+{{--                    accordionContent.style.maxHeight =--}}
+{{--                        accordionContent.scrollHeight + "px";--}}
+{{--                } else {--}}
+{{--                    accordionContent.style.maxHeight = 0;--}}
+{{--                }--}}
+
+{{--                // Close other open accordion items--}}
+{{--                document--}}
+{{--                    .querySelectorAll(".accordion-header")--}}
+{{--                    .forEach((otherButton) => {--}}
+{{--                        if (otherButton !== button) {--}}
+{{--                            otherButton.classList.remove("active");--}}
+{{--                            otherButton.nextElementSibling.style.maxHeight = 0;--}}
+{{--                        }--}}
+{{--                    });--}}
+{{--            });--}}
+{{--        });--}}
+{{--    }, 2000);--}}
+{{--</script>--}}

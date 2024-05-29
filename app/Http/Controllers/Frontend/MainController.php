@@ -38,7 +38,6 @@ class MainController extends Controller
 
         $activeLinks = UsefulLink::where('status', UsefulLink::$status_active)->get();
 
-        $activeFaqs = Faq::where('status', Faq::$status_active)->get();
 
 
         return view('frontend.main.index',
@@ -49,7 +48,7 @@ class MainController extends Controller
                 'activeAbout',
                 'activeNews',
                 'activeLinks',
-                'activeFaqs',
+
             ));
     }
 }
