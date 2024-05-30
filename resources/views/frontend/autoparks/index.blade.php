@@ -6,7 +6,7 @@
  */
 
 ?>
-@extends('layouts.frontend.vacancy')
+@extends('layouts.frontend.main')
 @section('content')
 
 <div class="detail-page">
@@ -19,7 +19,7 @@
                     <h1 class="txt-33 nav-text">
                         {{ $auto->getTranslation('title', app()->getLocale()) }}
                     </h1>
-                    <img src="{{$auto->getImageUrl()}}" alt="" class="base-img">
+                    <img src="{{ asset($auto->getImageUrl())}}" alt="" class="base-img">
                     <div>{!!  $auto->getTranslation('content', app()->getLocale())  !!}</div>
                 </div>
                 @endforeach

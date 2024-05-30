@@ -7,7 +7,7 @@
 ?>
 
 
-@extends('layouts.frontend.news')
+@extends('layouts.frontend.main')
 <!-- MY NAVIGATION END -->
 
 @section('content')
