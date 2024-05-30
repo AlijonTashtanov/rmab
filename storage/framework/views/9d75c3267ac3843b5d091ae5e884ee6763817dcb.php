@@ -6,6 +6,7 @@
  */
 ?>
 
+
 <?php $__env->startSection('content'); ?>
     <!-- BANNERS -->
 <?php echo $__env->make('frontend.main._banners', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>

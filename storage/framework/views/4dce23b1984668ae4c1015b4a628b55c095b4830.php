@@ -4,7 +4,12 @@
  * @link https://t.me/U_Muhammadjonov
  * @date 27-May-24, 23:48
  */
-$activeServices = \App\Models\Service::where('status', \App\Models\Service::$status_active)->get();
+
+use App\Models\Information;
+use App\Models\Service;
+
+$activeServices = Service::where('status', Service::$status_active)->get();
+$activeData = Information::where('status', Information::$status_active)->get();
 ?>
 
     <!-- NAVIGATION -->
@@ -29,7 +34,7 @@ $activeServices = \App\Models\Service::where('status', \App\Models\Service::$sta
                     <div>
                         <img
                             class="w-[180px]"
-                            src="template/images/logo-white.svg"
+                            src="/template/images/logo-white.svg"
                             alt="logo"
                         />
                     </div>
@@ -192,7 +197,7 @@ $activeServices = \App\Models\Service::where('status', \App\Models\Service::$sta
                 </ul>
                 <ul>
                     <li>
-                        <a href="#">
+                        <a href="<?php echo e(route('about')); ?>">
                             <p class="txt-16">
                                 aboutUs
                                 <svg
@@ -266,9 +271,9 @@ $activeServices = \App\Models\Service::where('status', \App\Models\Service::$sta
                 </ul>
                 <ul>
                     <li>
-                        <a href="#">
+                        <a href="javascript:void(0)">
                             <p class="txt-16">
-                                Bizning xizmarlar
+                                Bizning xizmatlar
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
                                     width="24"
@@ -291,7 +296,7 @@ $activeServices = \App\Models\Service::where('status', \App\Models\Service::$sta
                                 <?php $__currentLoopData = $activeServices; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $service): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                     <a href="<?php echo e(route('express-detail',['id'=>$service->id])); ?>">
                                         <p class="txt-16">
-                                            <span><?php echo e($service->getTranslation('name', app()->getLocale())); ?></span>
+                                            <span><?php echo e($service?->getTranslation('name', app()->getLocale())); ?></span>
                                         </p>
                                     </a>
                                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
@@ -301,7 +306,7 @@ $activeServices = \App\Models\Service::where('status', \App\Models\Service::$sta
                 </ul>
                 <ul>
                     <li>
-                        <a href="#">
+                        <a href="javascript:void(0)">
                             <p class="txt-16">
                                 <span>Malumotlar</span>
                                 <svg
@@ -322,16 +327,15 @@ $activeServices = \App\Models\Service::where('status', \App\Models\Service::$sta
                         </a>
                         <ul class="drop-menu">
                             <li>
-                                <a>
-                                    <p class="txt-16">
-                                        <span>Yuklarni qayta ishlash tartibi</span>
-                                    </p>
-                                </a>
-                                <a v-else href="#">
-                                    <p class="txt-16">
-                                        <span>Yetkazib berish turlari</span>
-                                    </p>
-                                </a>
+
+                                <?php $__currentLoopData = $activeData; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $data): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                    <a href="<?php echo e(route('data-detail',['id'=>$data->id])); ?>">
+                                        <p class="txt-16">
+                                            <span><?php echo e($data?->getTranslation('title', app()->getLocale())); ?></span>
+                                        </p>
+                                    </a>
+                                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+
                             </li>
                         </ul>
                     </li>
@@ -440,7 +444,7 @@ $activeServices = \App\Models\Service::where('status', \App\Models\Service::$sta
                 </ul>
                 <ul>
                     <li>
-                        <a href="#">
+                        <a href="<?php echo e(route('contact')); ?>">
                             <p class="txt-16">Kontaktlar</p>
                         </a>
                     </li>

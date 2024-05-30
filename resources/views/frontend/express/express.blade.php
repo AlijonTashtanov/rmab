@@ -1,28 +1,37 @@
+<!-- MY NAVIGATION END -->
 <?php
 /**
- * @author uluGbek <muhammadjonovulugbek98@gmail.com>
+ * @author uluGbek <muhammadjonovulugbek98@gmail.com>x
  * @link https://t.me/U_Muhammadjonov
  * @date 27-May-24, 23:00
  */
-
 ?>
-@extends('layouts.frontend.main')
-@section('content')
 
-<div class="detail-page">
-    <div class="my-container">
-        <div class="detail-page-in">
-            @include('layouts.frontend._sidebar')
-            <div class="detail-content pb-[50px]">
-                @foreach($activeAutoparks as $auto)
-                <div class="my-about" >
-                    <h1 class="txt-33 nav-text">
-                        {{ $auto->getTranslation('title', app()->getLocale()) }}
-                    </h1>
-                    <img src="{{ asset($auto->getImageUrl())}}" alt="" class="base-img">
-                    <div>{!!  $auto->getTranslation('content', app()->getLocale())  !!}</div>
+
+@extends('layouts.frontend.main')
+<!-- MY NAVIGATION END -->
+
+@section('content')
+    <div class="container">
+        <div class="detail-page">
+            <div class="my-container">
+                <div class="detail-page-in">
+                    @include('layouts.frontend._sidebar')
+                    <div class="detail-content">
+                        <div class="our-services ">
+                            <div class="left-content">
+                                <div class="my-about">
+                                    <h1 class="txt-33 nav-text">{{ $activeService?->getTranslation('name', app()->getLocale()) }}</h1>
+                                    <div class="txt-18 section-text">
+                                        {!! $activeService?->getTranslation('content', app()->getLocale()) !!}
+                                    </div>
+                                </div>
+                            </div>
+                            @include('layouts.frontend._side-vacancy')
+
+                        </div>
+                    </div>
                 </div>
-                @endforeach
             </div>
         </div>
     </div>
@@ -54,12 +63,4 @@
             });
         }, 2000);
 
-        //contact maska
-        const phoneInput = document.getElementById("inputNumber");
-        const phoneMask = IMask(phoneInput, {
-            mask: "+{998}(90) 000-00-00",
-        });
-
-    </script>
 @stop
-

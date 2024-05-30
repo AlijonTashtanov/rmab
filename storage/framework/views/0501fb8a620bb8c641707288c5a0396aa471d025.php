@@ -2,7 +2,7 @@
     <p class="txt-20 nav-text">Biz haqimizda</p>
     <ul class="sidebar-menu">
         <li>
-            <a href="#">
+            <a href="<?php echo e(route('news')); ?>">
                 <p class="txt-18">
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -21,7 +21,7 @@
             </a>
         </li>
         <li>
-            <a href="#" >
+            <a href="<?php echo e(route('vacancy-front')); ?>" >
                 <p class="txt-18">
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -40,7 +40,7 @@
             </a>
         </li>
         <li>
-            <a href="#">
+            <a href="<?php echo e(route('our-advantages')); ?>">
                 <p class="txt-18">
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -59,7 +59,7 @@
             </a>
         </li>
         <li>
-            <a href="#">
+            <a href="<?php echo e(route('prop')); ?>">
                 <p class="txt-18">
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -78,7 +78,7 @@
             </a>
         </li>
         <li>
-            <a href="#" >
+            <a href="<?php echo e(route('autopark')); ?>" >
                 <p class="txt-18">
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -97,7 +97,7 @@
             </a>
         </li>
         <li>
-            <a  href="#" >
+            <a  href="<?php echo e(route('partner')); ?>" >
                 <p class="txt-18">
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -116,7 +116,7 @@
             </a>
         </li>
         <li>
-            <a href="#" >
+            <a href="<?php echo e(route('branch')); ?>" >
                 <p class="txt-18">
                     <svg
                         xmlns="http://www.w3.org/2000/svg"

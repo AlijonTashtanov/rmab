@@ -15,7 +15,7 @@
 
 {{--                        @dd($service->getImageUrl())--}}
                         <div class="xizmat-card">
-                            <a href="#">
+                            <a href="{{route('express-detail',['id'=>$service->id])}}">
                                 <div class="icon-bg center">
                                     <img src="{{$service->getImageUrl()}}" alt="">
                                 </div>

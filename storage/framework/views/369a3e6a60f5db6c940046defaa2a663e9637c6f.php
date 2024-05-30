@@ -15,7 +15,7 @@
 
 
                         <div class="xizmat-card">
-                            <a href="#">
+                            <a href="<?php echo e(route('express-detail',['id'=>$service->id])); ?>">
                                 <div class="icon-bg center">
                                     <img src="<?php echo e($service->getImageUrl()); ?>" alt="">
                                 </div>

@@ -3,19 +3,19 @@
         <div class="my-section-in">
             <div class="about-page">
                 <div class="img-bg center">
-                    <img src="template/images/about.png" alt="aboutInfo.data.title">
+                    <img src="<?php echo e($activeAbout?->getImageUrl()); ?>" alt="aboutInfo.data.title">
                 </div>
                 <div class="text-blog">
                     <p class="txt-33 nav-text">
-                        <?php echo e($activeAbout->getTranslation('title', app()->getLocale())); ?>
+                        <?php echo e($activeAbout?->getTranslation('title', app()->getLocale())); ?>
 
                     </p>
                     <p class="txt-18 sec-text">
-                        <?php echo e($activeAbout->getTranslation('description', app()->getLocale())); ?>
+                        <?php echo e($activeAbout?->getTranslation('description', app()->getLocale())); ?>
 
                     </p>
 
-                    <a href="#">
+                    <a href="<?php echo e(route('about')); ?>">
                         <button class="my-btn">Batafsil</button>
                     </a>
                 </div>

@@ -13,7 +13,7 @@
                         {{ $activeAbout?->getTranslation('description', app()->getLocale()) }}
                     </p>
 
-                    <a href="#">
+                    <a href="{{route('about')}}">
                         <button class="my-btn">Batafsil</button>
                     </a>
                 </div>

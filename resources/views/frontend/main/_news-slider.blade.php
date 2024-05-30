@@ -5,7 +5,7 @@
                 <h1 class="txt-33 nav-text">
                     Sayt <span>Yangiliklar</span>
                 </h1>
-                <a href="#">
+                <a href="{{route('news')}}">
                     <button class="my-btn1">
                         Barchasi
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25"

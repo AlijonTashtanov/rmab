@@ -84,9 +84,16 @@ Route::group(['middleware' => [ 'setLocale']], function () {
     Route::get('/autopark', [AutoparkFrontendController::class, 'index'])->name('autopark');
     Route::get('/partner', [PartnerFrontendController::class, 'index'])->name('partner');
     Route::get('/branch', [BranchFrontendController::class, 'index'])->name('branch');
+    Route::get('/about', [\App\Http\Controllers\Frontend\AboutController::class, 'index'])->name('about');
+    Route::get('/contact', [\App\Http\Controllers\Frontend\ContactController::class, 'index'])->name('contact');
 
 
-    Route::get('/express-detail/{id}', [\App\Http\Controllers\Frontend\ExpressDetailFrontendController::class, 'index'])->name('express-detail');
+    Route::get('/express', [\App\Http\Controllers\Frontend\ExpressFrontendController::class, 'index'])->name('express');
+    Route::get('/express-detail/{id}', [\App\Http\Controllers\Frontend\ExpressFrontendController::class, 'detail'])->name('express-detail');
+
+    Route::get('/data', [\App\Http\Controllers\Frontend\DataFrontendController::class, 'index'])->name('data');
+    Route::get('/data-detail/{id}', [\App\Http\Controllers\Frontend\DataFrontendController::class, 'detail'])->name('data-detail');
+
 });
 
 

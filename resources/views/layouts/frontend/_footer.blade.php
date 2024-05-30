@@ -4,10 +4,14 @@
  * @link https://t.me/U_Muhammadjonov
  * @date 27-May-24, 23:49
  */
-
+use App\Models\Information;
+use App\Models\Service;
 use App\Models\Faq;
 
 $activeFaqs = Faq::where('status', Faq::$status_active)->get();
+$activeServices = Service::where('status', Service::$status_active)->get();
+$activeData = Information::where('status', Information::$status_active)->get();
+$activeAbout = \App\Models\About::orderBy('created_at', 'desc')->first();
 ?>
 
     <!-- FAQS -->
@@ -50,9 +54,9 @@ $activeFaqs = Faq::where('status', Faq::$status_active)->get();
         <div class="footer-in">
             <div class="footer-in">
                 <div class="footer-blog logo-blog">
-                    <a href="#">
+                    <a href="{{route('index')}}">
                         <div>
-                            <img class="w-[290px]" src="template/images/logo-white.svg" alt="logo"/>
+                            <img class="w-[290px]" src="{{$activeAbout->getImageUrl()}}" alt="logo"/>
                         </div>
                     </a>
                     <div class="footer-blog logo-blog mobile-footer">
@@ -67,7 +71,7 @@ $activeFaqs = Faq::where('status', Faq::$status_active)->get();
                                 <div class="text-blog">
                                     <p class="txt-16">Bizning manzil</p>
                                     <p class="txt-12">
-                                        Toshkent shaxar, mustaqillik ko’chasi 15
+                                        {{ $activeAbout->getTranslation('address', app()->getLocale()) }}
                                     </p>
                                 </div>
                             </div>
@@ -80,8 +84,8 @@ $activeFaqs = Faq::where('status', Faq::$status_active)->get();
                                 </svg>
                                 <div class="text-blog">
                                     <p class="txt-16">Telefon raqamimiz</p>
-                                    <a href="tel:998976282882" target="_blank" class="txt-12 about-phone">
-                                        +998 97 628 28 82
+                                    <a href="tel:{{$activeAbout->phone}}" target="_blank" class="txt-12 about-phone">
+                                        {{$activeAbout->phone}}
                                     </a>
                                 </div>
                             </div>
@@ -92,7 +96,7 @@ $activeFaqs = Faq::where('status', Faq::$status_active)->get();
                                 </svg>
                                 <div class="text-blog">
                                     <p class="txt-16">Elektron pochta</p>
-                                    <a href="https://Faksa.the@gmail.com`" target="_blank" class="txt-12 about-phone">Faksa.the@gmail.com</a>
+                                    <a href="mail.to{{$activeAbout->email}}" target="_blank" class="txt-12 about-phone">{{$activeAbout->email}}</a>
                                 </div>
                             </div>
                         </div>
@@ -104,49 +108,49 @@ $activeFaqs = Faq::where('status', Faq::$status_active)->get();
                             Biz haqimizda
                         </p>
                         <li>
-                            <a href="#">
+                            <a href="{{route('news')}}">
                                 <p class="txt-16">
                                     <span>Yangiliklar</span>
                                 </p>
                             </a>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="{{route('vacancy-front')}}">
                                 <p class="txt-16">
                                     <span>Vakansiyalar</span>
                                 </p>
                             </a>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="{{'our-advantages'}}">
                                 <p class="txt-16">
                                     <span>Bizning afzalliklarimiz</span>
                                 </p>
                             </a>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="{{route('prop')}}">
                                 <p class="txt-16">
                                     <span>Rekvizitlar</span>
                                 </p>
                             </a>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="{{route('autopark')}}">
                                 <p class="txt-16">
                                     <span>Avtopark</span>
                                 </p>
                             </a>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="{{route('partner')}}">
                                 <p class="txt-16">
                                     <span>Hamkorlar</span>
                                 </p>
                             </a>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="{{route('branch')}}">
                                 <p class="txt-16">
                                     <span>Filiallar</span>
                                 </p>
@@ -160,27 +164,15 @@ $activeFaqs = Faq::where('status', Faq::$status_active)->get();
                         <p class="txt-16">
                             Bizning xizmatlar
                         </p>
-                        <li>
-                            <a href="#">
-                                <p class="txt-16">
-                                    <span>Maxsus aloqa xizmatlari</span>
-                                </p>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <p class="txt-16">
-                                    <span>Ovozni mustahkamlash xizmatlari</span>
-                                </p>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <p class="txt-16">
-                                    <span>Hujjatlar blanki</span>
-                                </p>
-                            </a>
-                        </li>
+                        @foreach($activeServices as $service)
+                            <li>
+                                <a href="{{route('express-detail',['id'=>$service->id])}}">
+                                    <p class="txt-16">
+                                        <span>{{ $service?->getTranslation('name', app()->getLocale()) }}</span>
+                                    </p>
+                                </a>
+                            </li>
+                        @endforeach
                     </ul>
                 </div>
 
@@ -189,62 +181,16 @@ $activeFaqs = Faq::where('status', Faq::$status_active)->get();
                         <p class="txt-16">
                             Ma’lumotlar
                         </p>
-                        <li>
-                            <a href="#">
-                                <p class="txt-16">
-                                    <span>Yuklarni ro'yxatdan o'tkazish</span>
-                                </p>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <p class="txt-16">
-                                    <span>Yetkazib berish turlari</span>
-                                </p>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <p class="txt-16">
-                                    <span>Ko’p berilgan savollar</span>
-                                </p>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <p class="txt-16">
-                                    <span>Qayta yo'naltirish</span>
-                                </p>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <p class="txt-16">
-                                    <span>Fuqarolarni qabul qilish jadvali</span>
-                                </p>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <p class="txt-16">
-                                    <span>Ma’lumotlar</span>
-                                </p>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <p class="txt-16">
-                                    <span>Huquqiy ong</span>
-                                </p>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <p class="txt-16">
-                                    <span>Korrupsiya</span>
-                                </p>
-                            </a>
-                        </li>
+
+                        @foreach($activeData as $data)
+                            <li>
+                                <a href="{{route('data-detail',['id'=>$data->id])}}">
+                                    <p class="txt-16">
+                                        <span>{{ $data?->getTranslation('title', app()->getLocale()) }}</span>
+                                    </p>
+                                </a>
+                            </li>
+                        @endforeach
                     </ul>
                 </div>
             </div>

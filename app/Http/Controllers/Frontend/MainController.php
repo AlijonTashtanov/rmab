@@ -21,9 +21,13 @@ class MainController extends Controller
             ->orderBy('created_at', 'desc')
             ->get();
 
-        $activeServices = Service::all();
+        $activeServices = Service::where('status', Service::$status_active)
+            ->orderBy('created_at', 'desc')
+            ->get();
 
-        $activeHomeBanners = HomeBanner::where('status', Banner::$status_active)->get();
+        $activeHomeBanners = HomeBanner::where('status', HomeBanner::$status_active)
+            ->orderBy('created_at', 'desc')
+            ->get();
 
         $activeAbout = About::orderBy('created_at', 'desc')->first();
 
