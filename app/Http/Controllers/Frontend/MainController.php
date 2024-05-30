@@ -17,15 +17,20 @@ class MainController extends Controller
 {
     public function index()
     {
-        $activeBanners = Banner::where('status', Banner::$status_active)->get();
+        $activeBanners = Banner::where('status', Banner::$status_active)
+            ->orderBy('created_at', 'desc')
+            ->get();
 
-        $activeServices = Service::where('status', Service::$status_active)->get();
+        $activeServices = Service::all();
 
         $activeHomeBanners = HomeBanner::where('status', Banner::$status_active)->get();
 
-        $activeAbout = About::first();
+        $activeAbout = About::orderBy('created_at', 'desc')->first();
 
-        $activeNews = Post::where('status', Post::$status_active)->get();
+        $activeNews = Post::where('status', Post::$status_active)
+            ->orderBy('created_at', 'desc')
+            ->limit(12)
+            ->get();
 
         $activeLinks = UsefulLink::where('status', UsefulLink::$status_active)->get();
 

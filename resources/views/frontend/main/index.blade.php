@@ -6,6 +6,7 @@
  */
 ?>
 @extends('layouts.frontend.main')
+
 @section('content')
     <!-- BANNERS -->
 @include('frontend.main._banners')
