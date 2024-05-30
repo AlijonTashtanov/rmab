@@ -16,7 +16,13 @@ use App\Http\Controllers\CorruptionTypeController;
 use App\Http\Controllers\DispatchGeographyController;
 use App\Http\Controllers\DistrictController;
 use App\Http\Controllers\FaqController;
+use App\Http\Controllers\Frontend\AutoparkFrontendController;
+use App\Http\Controllers\Frontend\BranchFrontendController;
 use App\Http\Controllers\Frontend\MainController;
+use App\Http\Controllers\Frontend\OurAdvantageFrontendController;
+use App\Http\Controllers\Frontend\PartnerFrontendController;
+use App\Http\Controllers\Frontend\PropFrontendController;
+use App\Http\Controllers\Frontend\VacancyFrontendController;
 use App\Http\Controllers\HomeBannerController;
 use App\Http\Controllers\InformationAboutShipmentController;
 use App\Http\Controllers\InformationController;
@@ -72,12 +78,12 @@ Route::group(['middleware' => [ 'setLocale']], function () {
 
     Route::get('/', [MainController::class, 'index'])->name('index');
     Route::get('/news', [NewsController::class, 'index'])->name('news');
-    Route::get('/vacancy', [\App\Http\Controllers\Frontend\VacancyFrontendController::class, 'index'])->name('vacancy-front');
-    Route::get('/our-advantages', [\App\Http\Controllers\Frontend\OurAdvantageFrontendController::class, 'index'])->name('our-advantages');
-    Route::get('/prop', [\App\Http\Controllers\Frontend\PropFrontendController::class, 'index'])->name('prop');
-    Route::get('/autopark', [\App\Http\Controllers\Frontend\AutoparkFrontendController::class, 'index'])->name('autopark');
-    Route::get('/partner', [\App\Http\Controllers\Frontend\PartnerFrontendController::class, 'index'])->name('partner');
-    Route::get('/branch', [\App\Http\Controllers\Frontend\BranchFrontendController::class, 'index'])->name('branch');
+    Route::get('/vacancy', [VacancyFrontendController::class, 'index'])->name('vacancy-front');
+    Route::get('/our-advantages', [OurAdvantageFrontendController::class, 'index'])->name('our-advantages');
+    Route::get('/prop', [PropFrontendController::class, 'index'])->name('prop');
+    Route::get('/autopark', [AutoparkFrontendController::class, 'index'])->name('autopark');
+    Route::get('/partner', [PartnerFrontendController::class, 'index'])->name('partner');
+    Route::get('/branch', [BranchFrontendController::class, 'index'])->name('branch');
 });
 
 
