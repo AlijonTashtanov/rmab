@@ -6,7 +6,7 @@
  */
 
 ?>
-@extends('layouts.frontend.vacancy')
+@extends('layouts.frontend.main')
 @section('content')
     <!-- MY NAVIGATION END -->
     <div class="detail-page">

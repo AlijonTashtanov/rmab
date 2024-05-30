@@ -5,7 +5,7 @@
  * @date 27-May-24, 23:00
  */
 ?>
-@extends('layouts.frontend.vacancy')
+@extends('layouts.frontend.main')
 @section('content')
 
 <!-- MY NAVIGATION END -->

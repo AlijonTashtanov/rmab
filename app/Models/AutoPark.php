@@ -38,7 +38,7 @@ class AutoPark extends Model implements HasMedia
             : static::query()->where('title->uz', 'like', '%' . $search . '%');
     }
 
-    /**
+    /***
      * @return mixed
      */
     public
@@ -48,4 +48,5 @@ class AutoPark extends Model implements HasMedia
 
         return isset($urlToFirstListImage[0]) ? $urlToFirstListImage[0]->getFullUrl() : '';
     }
+
 }

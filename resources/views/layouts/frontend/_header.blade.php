@@ -4,7 +4,7 @@
  * @link https://t.me/U_Muhammadjonov
  * @date 27-May-24, 23:48
  */
-
+$activeServices = \App\Models\Service::where('status', \App\Models\Service::$status_active)->get();
 ?>
 
     <!-- NAVIGATION -->
@@ -287,16 +287,13 @@
                         <ul class="drop-menu">
                             {{--                            <!-- {{store.services}} -->--}}
                             <li>
-                                <a>
-                                    <p class="txt-16">
-                                        <span>Maxsus aloqa xizmatlari</span>
-                                    </p>
-                                </a>
-                                <a v-else href="#">
-                                    <p class="txt-16">
-                                        <span>Telekamunikatsiya xizmatlari</span>
-                                    </p>
-                                </a>
+                                @foreach($activeServices as $service)
+                                    <a href="{{route('express-detail',['id'=>$service->id])}}">
+                                        <p class="txt-16">
+                                            <span>{{ $service->getTranslation('name', app()->getLocale()) }}</span>
+                                        </p>
+                                    </a>
+                                @endforeach
                             </li>
                         </ul>
                     </li>

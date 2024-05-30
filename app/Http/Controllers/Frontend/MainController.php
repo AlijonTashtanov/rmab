@@ -19,26 +19,15 @@ class MainController extends Controller
     {
         $activeBanners = Banner::where('status', Banner::$status_active)->get();
 
-        $services = Service::all();
-        $activeServices = [];
-
-        foreach ($services as $service) {
-            $media = $service->getMedia('*');
-            if ($media->isNotEmpty()) {
-                $activeServices = array_merge($activeServices, $media->toArray());
-            }
-        }
+        $activeServices = Service::where('status', Service::$status_active)->get();
 
         $activeHomeBanners = HomeBanner::where('status', Banner::$status_active)->get();
-
 
         $activeAbout = About::first();
 
         $activeNews = Post::where('status', Post::$status_active)->get();
 
         $activeLinks = UsefulLink::where('status', UsefulLink::$status_active)->get();
-
-
 
         return view('frontend.main.index',
             compact(

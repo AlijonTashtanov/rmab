@@ -1,7 +1,7 @@
 @php
-    use App\Models\Service;
 
-    $activeServices = Service::all(); @endphp
+
+   @endphp
 <div class="xizmatlar my-section">
     <div class="my-container">
         <div class="xizmatlar-in">
@@ -10,7 +10,9 @@
             </h1>
             <div class="my-cards-6 w-full flex">
                 <div class="xizmat-card">
+
                     @foreach($activeServices as $service)
+
 {{--                        @dd($service->getImageUrl())--}}
                         <div class="xizmat-card">
                             <a href="#">

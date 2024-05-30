@@ -1,7 +1,7 @@
 <?php
-    use App\Models\Service;
 
-    $activeServices = Service::all(); ?>
+
+   ?>
 <div class="xizmatlar my-section">
     <div class="my-container">
         <div class="xizmatlar-in">
@@ -10,7 +10,9 @@
             </h1>
             <div class="my-cards-6 w-full flex">
                 <div class="xizmat-card">
+
                     <?php $__currentLoopData = $activeServices; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $service): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+
 
                         <div class="xizmat-card">
                             <a href="#">
