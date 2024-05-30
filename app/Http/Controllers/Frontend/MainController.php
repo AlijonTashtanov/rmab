@@ -17,28 +17,22 @@ class MainController extends Controller
 {
     public function index()
     {
-        $activeBanners = Banner::where('status', Banner::$status_active)->get();
+        $activeBanners = Banner::where('status', Banner::$status_active)
+            ->orderBy('created_at', 'desc')
+            ->get();
 
-        $services = Service::all();
-        $activeServices = [];
-
-        foreach ($services as $service) {
-            $media = $service->getMedia('*');
-            if ($media->isNotEmpty()) {
-                $activeServices = array_merge($activeServices, $media->toArray());
-            }
-        }
+        $activeServices = Service::all();
 
         $activeHomeBanners = HomeBanner::where('status', Banner::$status_active)->get();
 
+        $activeAbout = About::orderBy('created_at', 'desc')->first();
 
-        $activeAbout = About::first();
-
-        $activeNews = Post::where('status', Post::$status_active)->get();
+        $activeNews = Post::where('status', Post::$status_active)
+            ->orderBy('created_at', 'desc')
+            ->limit(12)
+            ->get();
 
         $activeLinks = UsefulLink::where('status', UsefulLink::$status_active)->get();
-
-
 
         return view('frontend.main.index',
             compact(
