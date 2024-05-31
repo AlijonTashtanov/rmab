@@ -36,7 +36,7 @@
                     @foreach($activeNews as $news)
                     <div class="swiper-wrapper ">
                         <div class="swiper-slide">
-                            <a class="news-card">
+                            <a class="news-card" href="{{route('news-detail',['id'=>$news->id])}}">
                                 <img src="{{$news->getImageUrl()}}" alt="">
 
                                 <div class="text-blog">

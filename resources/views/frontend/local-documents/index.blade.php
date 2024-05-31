@@ -75,7 +75,7 @@
                     @endforeach
 
                 </div>
-                <div class="pagination" >
+                <div class="pagination" style="margin-bottom: 10px;">
                     <div class="pagination-item">
                         1
                     </div>

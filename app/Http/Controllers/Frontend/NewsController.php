@@ -18,4 +18,10 @@ class NewsController extends Controller
 
         return view('frontend.news.index', compact('activeNews'));
     }
+    public function detail($id)
+    {
+        $activeNews = Post::findOrFail($id);
+
+        return view('frontend.news.detail',compact('activeNews'));
+    }
 }

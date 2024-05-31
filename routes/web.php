@@ -78,6 +78,7 @@ Route::group(['middleware' => [ 'setLocale']], function () {
 
     Route::get('/', [MainController::class, 'index'])->name('index');
     Route::get('/news', [NewsController::class, 'index'])->name('news');
+    Route::get('/news-detail/{id}', [NewsController::class, 'detail'])->name('news-detail');
     Route::get('/vacancy', [VacancyFrontendController::class, 'index'])->name('vacancy-front');
     Route::get('/our-advantages', [OurAdvantageFrontendController::class, 'index'])->name('our-advantages');
     Route::get('/prop', [PropFrontendController::class, 'index'])->name('prop');

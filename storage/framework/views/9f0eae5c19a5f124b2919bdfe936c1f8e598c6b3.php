@@ -36,7 +36,7 @@
                     <?php $__currentLoopData = $activeNews; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $news): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                     <div class="swiper-wrapper ">
                         <div class="swiper-slide">
-                            <a class="news-card">
+                            <a class="news-card" href="<?php echo e(route('news-detail',['id'=>$news->id])); ?>">
                                 <img src="<?php echo e($news->getImageUrl()); ?>" alt="">
 
                                 <div class="text-blog">
