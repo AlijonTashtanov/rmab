@@ -10,6 +10,7 @@ use App\Models\Service;
 
 $activeServices = Service::where('status', Service::$status_active)->get();
 $activeData = Information::where('status', Information::$status_active)->get();
+$pages = \App\Models\Page::all();
 ?>
 
     <!-- NAVIGATION -->
@@ -365,75 +366,62 @@ $activeData = Information::where('status', Information::$status_active)->get();
                         </div>
                         </template>
                         <ul class="drop-menu">
-                            <li>
-                                <a href="#">
-                                    <p class="txt-16">
-                                        <span>Shartnoma tuzish</span>
-                                    </p>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <p class="txt-16">
-                                        <span>Sifat nazorati</span>
-                                    </p>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <p class="txt-16">
-                                        <span>Jo`natma haqida malumot olish</span>
-                                    </p>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <p class="txt-16">
-                                        <span>Xizmatdan foydalanish uchun ariza berish</span>
-                                    </p>
-                                </a>
-                            </li>
+                            <?php $__currentLoopData = $pages; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $page): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                <?php if($page?->getTranslation('title', app()->getLocale()) != ''): ?>
+                                    <?php
+                                        $route = '';
+                                        if ($page->page_type == '1'){
+                                            $route = "page-contract";
+                                        }elseif ($page->page_type == '2'){
+                                            $route = "page-quality";
+                                        }elseif ($page->page_type == '3'){
+                                            $route = "page-shipment";
+                                        }elseif ($page->page_type == '4'){
+                                            $route = "page-service";
+                                        }
+                                    ?>
+                                    <li>
+                                        <a href="<?php echo e(route($route)); ?>">
+                                            <p class="txt-16">
+                                                <span><?php echo e($page?->getTranslation('title', app()->getLocale())); ?></span>
+                                            </p>
+                                        </a>
+                                    </li>
+                                <?php endif; ?>
+                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                         </ul>
                     </li>
                 </ul>
                 <ul>
                     <li>
-                        <a href="#">
+                        <a href="javascript:void(0)">
                             <p class="txt-16">
                                 Korrupsiya
-                                <svg
-                                    xmlns="http://www.w3.org/2000/svg"
+                                <svg xmlns="http://www.w3.org/2000/svg"
                                     width="24"
                                     height="24"
                                     viewBox="0 0 24 24"
-                                    fill="none"
-                                >
-                                    <path
-                                        fill-rule="evenodd"
-                                        clip-rule="evenodd"
-                                        d="M16.5303 9.96967C16.8232 10.2626 16.8232 10.7374 16.5303 11.0303L12.5303 15.0303C12.2374 15.3232 11.7626 15.3232 11.4697 15.0303L7.4697 11.0303C7.1768 10.7374 7.1768 10.2626 7.4697 9.96967C7.7626 9.67678 8.2374 9.67678 8.5303 9.96967L12 13.4393L15.4697 9.96967C15.7626 9.67678 16.2374 9.67678 16.5303 9.96967Z"
-                                        fill="#38434E"
-                                    />
+                                    fill="none"><path fill-rule="evenodd" clip-rule="evenodd" d="M16.5303 9.96967C16.8232 10.2626 16.8232 10.7374 16.5303 11.0303L12.5303 15.0303C12.2374 15.3232 11.7626 15.3232 11.4697 15.0303L7.4697 11.0303C7.1768 10.7374 7.1768 10.2626 7.4697 9.96967C7.7626 9.67678 8.2374 9.67678 8.5303 9.96967L12 13.4393L15.4697 9.96967C15.7626 9.67678 16.2374 9.67678 16.5303 9.96967Z" fill="#38434E"/>
                                 </svg>
                             </p>
                         </a>
                         <ul class="drop-menu">
                             <li>
-                                <a href="#">
+                                <a href="<?php echo e(route('local-documents')); ?>">
                                     <p class="txt-16">
                                         <span>Ichki hujjatlar</span>
                                     </p>
                                 </a>
                             </li>
                             <li>
-                                <a href="#">
+                                <a href="<?php echo e(route('article')); ?>">
                                     <p class="txt-16">
                                         <span> Maqolalar</span>
                                     </p>
                                 </a>
                             </li>
                             <li>
-                                <a href="#">
+                                <a href="<?php echo e(route('application')); ?>">
                                     <p class="txt-16">
                                         <span> Ariza va murojatlar</span>
                                     </p>

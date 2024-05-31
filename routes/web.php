@@ -91,8 +91,20 @@ Route::group(['middleware' => [ 'setLocale']], function () {
     Route::get('/express', [\App\Http\Controllers\Frontend\ExpressFrontendController::class, 'index'])->name('express');
     Route::get('/express-detail/{id}', [\App\Http\Controllers\Frontend\ExpressFrontendController::class, 'detail'])->name('express-detail');
 
-    Route::get('/data', [\App\Http\Controllers\Frontend\DataFrontendController::class, 'index'])->name('data');
+//    Route::get('/data', [\App\Http\Controllers\Frontend\DataFrontendController::class, 'index'])->name('data');
     Route::get('/data-detail/{id}', [\App\Http\Controllers\Frontend\DataFrontendController::class, 'detail'])->name('data-detail');
+    Route::get('/page-contract', [\App\Http\Controllers\Frontend\PageController::class, 'contract'])->name('page-contract');
+    Route::get('/page-quality', [\App\Http\Controllers\Frontend\PageController::class, 'quality'])->name('page-quality');
+    Route::get('/page-shipment', [\App\Http\Controllers\Frontend\PageController::class, 'shipment'])->name('page-shipment');
+    Route::get('/page-service', [\App\Http\Controllers\Frontend\PageController::class, 'service'])->name('page-service');
+    Route::get('/local-documents', [\App\Http\Controllers\Frontend\LocalDocumentController::class, 'index'])->name('local-documents');
+    Route::get('/local-documents-detail/{id}', [\App\Http\Controllers\Frontend\LocalDocumentController::class, 'detail'])->name('local-documents-detail');
+    Route::get('/download-document/{id}', [\App\Http\Controllers\Frontend\LocalDocumentController::class, 'downloadDocument'])->name('local-download-document');
+    Route::get('/article', [\App\Http\Controllers\Frontend\ArticleController::class, 'index'])->name('article');
+    Route::get('/article-detail/{id}', [\App\Http\Controllers\Frontend\ArticleController::class, 'detail'])->name('article-detail');
+    Route::get('/corruption-application', [\App\Http\Controllers\Frontend\ArticleController::class, 'application'])->name('application');
+
+
 
 });
 
