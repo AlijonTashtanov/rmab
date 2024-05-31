@@ -440,7 +440,7 @@ $pages = \App\Models\Page::all();
             </div>
             <div class="nav-left">
                 <button class="my-btn txt-16">
-                    <a href="/interactive"> Shartnoma tuzish </a>
+                    <a href="<?php echo e(route('page-contract')); ?>"> Shartnoma tuzish </a>
                 </button>
                 <svg
                     class="search hov"
