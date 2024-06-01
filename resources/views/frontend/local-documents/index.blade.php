@@ -76,9 +76,9 @@
 
                 </div>
                 <div class="pagination" style="margin-bottom: 10px;">
-                    <div class="pagination-item">
-                        1
-                    </div>
+                    <nav aria-label="Page navigation">
+                        {{ $localDocuments->links('vendor.pagination.bootstrap-4') }}
+                    </nav>
                 </div>
             </div>
         </div>

@@ -19,4 +19,10 @@ class VacancyFrontendController extends Controller
 
        return view('frontend.vacancy.index',compact('activeVacancies'));
    }
+   public function detail($id)
+   {
+       $oneVacancy = Vacancy::findOrFail($id);
+
+       return view('frontend.vacancy.detail',compact('oneVacancy'));
+   }
 }

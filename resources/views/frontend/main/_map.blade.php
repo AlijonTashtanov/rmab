@@ -357,7 +357,7 @@
                                 </div>
                             </div>
                         </div>
-                        <a href="#"
+                        <a href="{{route('branch')}}"
                            class="mt-3  nav-text txt-16 flex items-center w-[120px] ml-auto gap-2 fw-bold"
                         >
                             <span> Barchasi </span>

@@ -22,7 +22,7 @@
                 <div class="grid-3">
                     @foreach($activeNews as $news)
                     <div >
-                        <a href="#"  class="news-card" >
+                        <a href="{{route('news-detail',['id'=>$news->id])}}"  class="news-card" >
                             <img src="{{$news->getImageUrl()}}" alt="icone" class="top news-image">
                             <div class="text-blog">
                                 <p class="txt-16 time-sec">
@@ -35,12 +35,11 @@
                         </a>
                     </div>
                     @endforeach
-                </div>
-                <div class="pagination" >
-                    <div class="pagination-item">
-                 {{$activeNews->links()}}
-                    </div>
-                </div>
+                        <div class="pagination" style="margin-bottom: 10px;">
+                            <nav aria-label="Page navigation">
+                                {{ $activeNews->links('vendor.pagination.bootstrap-4') }}
+                            </nav>
+                        </div>
             </div>
         </div>
     </div>

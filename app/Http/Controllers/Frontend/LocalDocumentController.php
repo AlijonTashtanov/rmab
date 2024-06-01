@@ -5,12 +5,14 @@ namespace App\Http\Controllers\Frontend;
 use App\Http\Controllers\Controller;
 use App\Models\LocalDocument;
 use Illuminate\Http\Request;
+use Illuminate\Pagination\Paginator;
 
 class LocalDocumentController extends Controller
 {
     public function index()
     {
-        $localDocuments = LocalDocument::where('status', LocalDocument::$status_active)->paginate(6);
+        Paginator::useBootstrap();
+        $localDocuments = LocalDocument::where('status', LocalDocument::$status_active)->paginate(10);
 
         return view('frontend.local-documents.index',compact('localDocuments'));
     }

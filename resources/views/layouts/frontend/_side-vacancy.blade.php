@@ -7,7 +7,7 @@
 <div class="right-content document-right">
     @foreach($activeVacancies as $vacancy)
         <div >
-            <a href="#"  class="vakansia-card vakansia-mini">
+            <a href=""  class="vakansia-card vakansia-mini">
                 <img src="{{$vacancy?->getImageUrl()}}" alt="image" class="top">
                 <div class="text-blog">
                     <p class="txt-14 time-sec">

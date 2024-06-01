@@ -84,10 +84,10 @@
 
                                 </div>
                             </div>
-                            <div class="pagination">
-                                <div class="pagination-item">
-                                    1
-                                </div>
+                            <div class="pagination" style="margin-bottom: 10px;">
+                                <nav aria-label="Page navigation">
+                                    {{ $articles->links('vendor.pagination.bootstrap-4') }}
+                                </nav>
                             </div>
                         </div>
                     </div>

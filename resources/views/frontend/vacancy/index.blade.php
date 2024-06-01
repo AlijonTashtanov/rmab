@@ -20,7 +20,7 @@
                                 <h1 class="txt-33 nav-text">Vakansiyalar</h1>
                                 <div class="flex flex-col gap-[20px]">
                                     @foreach($activeVacancies as $vacancy)
-                                        <a href="#" class="vakansia-card" external>
+                                        <a href="{{route('vacancy-detail',['id'=>$vacancy->id])}}" class="vakansia-card" external>
                                             <img src="{{$vacancy->getImageUrl()}}" alt="image" class="top"/>
                                             {{--                                        <img src="{{asset('/storage/'.$item->image)}}" alt="" style="width: 100px;height: 100px">--}}
                                             <div class="text-blog">

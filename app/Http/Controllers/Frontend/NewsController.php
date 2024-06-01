@@ -11,10 +11,9 @@ class NewsController extends Controller
     public function index()
     {
         Paginator::useBootstrap();
-
         $activeNews = Post::where('status', Post::$status_active)
             ->orderBy('created_at', 'desc')
-            ->paginate(10);
+            ->paginate(4);
 
         return view('frontend.news.index', compact('activeNews'));
     }

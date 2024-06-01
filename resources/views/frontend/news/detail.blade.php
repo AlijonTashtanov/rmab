@@ -20,7 +20,7 @@ $allActiveNews = \App\Models\Post::where('status', \App\Models\Post::$status_act
             <div class="left-content">
                 <img src="{{$activeNews->getImageUrl()}}" alt="image" class="base-img">
                 <p class="txt-16 time-sec NuxtClamp">
-                    <a href="{{route('news')}}">Yangiliklar</a>  >
+                    <a href="{{route('news')}}" style="color: #007bff">Yangiliklar</a>  >
                     <a href="javascript:void(0)">{{ $activeNews?->getTranslation('title', app()->getLocale()) }}
                     </a>
                 </p>
