@@ -26,10 +26,10 @@
                 <div class="detail-content">
                     <div v-if="!loader" class="my-about">
                         <h1 class="txt-33 nav-text">
-                            {{ $page->getTranslation('title', app()->getLocale()) }}
+                            {{ $page?->getTranslation('title', app()->getLocale()) }}
                         </h1>
                         <p class="txt-18 section-text">
-                            {!! $page->getTranslation('description', app()->getLocale()) !!}
+                            {!! $page?->getTranslation('description', app()->getLocale()) !!}
                         </p>
                         <img src="{{$page->getImageUrl()}}" alt="" class="base-img">
                         <form action="#" method="POST" class="interactive form">
@@ -47,7 +47,7 @@
                             </div>
                             <div class="box area">
                                 <label class="label mb-[20px] flex" for="note">Qo`shimcha izoh</label>
-                                <textarea name="note" placeholder="Izoh" id="inputFidbek"
+                                <textarea name="comment" placeholder="Izoh" id="inputFidbek"
                                           class="aplication-form__input my-input input-textAre__item"></textarea>
                             </div>
                             <button type="submit" class="my-btn aplication-btn txt-16">Yuborish</button>

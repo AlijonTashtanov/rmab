@@ -1,13 +1,17 @@
 @php
 
-    $activeVacancies = \App\Models\Vacancy::where('status', \App\Models\Vacancy::$status_active)->limit(4)->get();
+    use App\Models\Vacancy;
 
- @endphp
+    $activeVacancies = Vacancy::where('status', Vacancy::$status_active)
+    ->limit(4)
+    ->get();
+
+@endphp
 
 <div class="right-content document-right">
     @foreach($activeVacancies as $vacancy)
-        <div >
-            <a href=""  class="vakansia-card vakansia-mini">
+        <div>
+            <a href="{{route('vacancy-detail',['id'=>$vacancy->id])}}" class="vakansia-card vakansia-mini">
                 <img src="{{$vacancy?->getImageUrl()}}" alt="image" class="top">
                 <div class="text-blog">
                     <p class="txt-14 time-sec">

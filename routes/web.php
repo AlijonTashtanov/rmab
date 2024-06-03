@@ -106,6 +106,13 @@ Route::group(['middleware' => [ 'setLocale']], function () {
     Route::get('/article-detail/{id}', [\App\Http\Controllers\Frontend\ArticleController::class, 'detail'])->name('article-detail');
     Route::get('/corruption-application', [\App\Http\Controllers\Frontend\ArticleController::class, 'application'])->name('application');
 
+    Route::post('/contract-conclusion', [\App\Http\Controllers\Frontend\ContractConclusionController::class, 'store'])->name('contract.store');
+
+
+    Route::get('/region', [\App\Http\Controllers\Frontend\LocationController::class, 'getRegions']);
+    Route::get('/service-title', [\App\Http\Controllers\Frontend\LocationController::class, 'service']);
+    Route::get('/dispatch-geography', [\App\Http\Controllers\Frontend\LocationController::class, 'location']);
+    Route::get('/district/{region_id}', [\App\Http\Controllers\Frontend\LocationController::class, 'getDistricts']);
 
 
 });

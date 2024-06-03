@@ -4,7 +4,7 @@
  * @link https://t.me/U_Muhammadjonov
  * @date 27-May-24, 23:00
  */
-
+$activeServices=\App\Models\Service::where('status',\App\Models\Service::$status_active)->get();
 ?>
 @extends('layouts.frontend.main')
 @section('content')
@@ -38,9 +38,10 @@
                                 required
                                 class="block w-full p-2  text-sm  border text-dark border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500  aplication-form__input my-input">
 
-                                <option selected>Tanlang</option>
-                                <option>Fellegerni chaqirish</option>
-                                <option>Yuk tashish</option>
+                                @foreach($activeServices as $service)
+                                    <option selected value="{{$service->id}}">  {{ $service?->getTranslation('name', app()->getLocale()) }}</option>
+                                @endforeach
+
                             </select>
 
                         </div>

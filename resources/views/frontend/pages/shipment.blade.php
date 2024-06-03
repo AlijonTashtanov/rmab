@@ -15,12 +15,12 @@
             <div class="detail-content">
                 <div class="my-about" >
                     <h1 class="txt-33 nav-text">
-                        {{ $page->getTranslation('title', app()->getLocale()) }}
+                        {{ $page?->getTranslation('title', app()->getLocale()) }}
                     </h1>
                     <p class="txt-18 section-text">
-                        {!! $page->getTranslation('description', app()->getLocale()) !!}
+                        {!! $page?->getTranslation('description', app()->getLocale()) !!}
                     </p>
-                    <img src="{{$page->getImageUrl()}}" alt="" class="base-img">
+                    <img src="{{$page?->getImageUrl()}}" alt="" class="base-img">
                     <form action="" class="aplication-form">
                         <div class="aplication-form__item">
                             <label for="inputNumber" class="aplication-form__label">Yetkazib berish raqami</label>
