@@ -3,28 +3,20 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
-use App\Models\Contact;
-use App\Models\ContactUs;
-use App\Models\Post;
+use App\Models\QualityControl;
 use Illuminate\Http\Request;
-use Illuminate\Pagination\Paginator;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 
-class ContactController extends Controller
+class QualityControlController extends Controller
 {
-   public function index()
-    {
-        $contact = Contact::orderBy('created_at', 'desc')->first();
-
-        return view('frontend.contact.index', compact('contact'));
-    }
     public function store(Request $request)
     {
-//        dd($request);
+
         $rules = [
-            'full_name' => 'required|string|max:255',
-            'phone' => 'required|string|max:255',
             'comment' => 'required|string|max:255',
+            'rating' => 'string|max:255',
+//            'email' => 'required|string|max:255',
 //            'company_name' => 'required|string|max:255',
 //            'region_id' => 'required|integer|exists:regions,id',
 //            'district_id' => 'required|exists:districts,id',
@@ -34,8 +26,8 @@ class ContactController extends Controller
 
         $messages = [
             'comment.required' => 'Izoh maydoni majburiy.',
-            'phone.required' => 'Telefon raqam maydoni majburiy.',
-            'full_name.required' => 'Ism maydoni majburiy.',
+            'rating.required' => 'Telefon raqam maydoni majburiy.',
+//            'email.required' => 'Email raqam maydoni majburiy.',
 //            'company_name.required' => 'Tashkilot nomi maydoni majburiy.',
 //            'region_id.required' => 'Viloyat tanlash majburiy.',
 //            'district_id.required' => 'Shahar tanlash majburiy.',
@@ -55,15 +47,15 @@ class ContactController extends Controller
 
 
 
-        $contract = new ContactUs();
+        $contract = new QualityControl();
 
 
         $contract->comment = $request->comment;
-        $contract->phone = $request->phone;
-        $contract->full_name =  $request->full_name;
+        $contract->grade = $request->rating;
+        $contract->user_id = Auth::id();
         $contract->save();
 
 
-        return redirect()->back()->with('success', 'Contact has been saved successfully.');
+        return redirect()->back()->with('success', 'Quality control data has been saved successfully.');
     }
 }

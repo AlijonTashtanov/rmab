@@ -32,7 +32,7 @@
                             {!! $page?->getTranslation('description', app()->getLocale()) !!}
                         </p>
                         <img src="{{$page->getImageUrl()}}" alt="" class="base-img">
-                        <form action="#" method="POST" class="interactive form">
+                        <form action="{{route('quality.store')}}" method="POST" class="interactive form">
                             @csrf
                             <div class="box flex gap-2">
                                 @for ($i = 1; $i <= 5; $i++)
@@ -44,11 +44,17 @@
                                     </div>
                                 @endfor
                                 <input type="hidden" name="rating" id="rating-input" value="0">
+                                    @error('rating')
+                                    <div class="text-danger">{{ $message }}</div>
+                                    @enderror
                             </div>
                             <div class="box area">
                                 <label class="label mb-[20px] flex" for="note">Qo`shimcha izoh</label>
                                 <textarea name="comment" placeholder="Izoh" id="inputFidbek"
                                           class="aplication-form__input my-input input-textAre__item"></textarea>
+                                @error('comment')
+                                <div class="text-danger">{{ $message }}</div>
+                                @enderror
                             </div>
                             <button type="submit" class="my-btn aplication-btn txt-16">Yuborish</button>
                         </form>

@@ -88,6 +88,7 @@ Route::group(['middleware' => [ 'setLocale']], function () {
     Route::get('/branch', [BranchFrontendController::class, 'index'])->name('branch');
     Route::get('/about', [\App\Http\Controllers\Frontend\AboutController::class, 'index'])->name('about');
     Route::get('/contact', [\App\Http\Controllers\Frontend\ContactController::class, 'index'])->name('contact');
+    Route::post('/contact-store', [\App\Http\Controllers\Frontend\ContactController::class, 'store'])->name('contact.store');
 
 
     Route::get('/express', [\App\Http\Controllers\Frontend\ExpressFrontendController::class, 'index'])->name('express');
@@ -107,6 +108,9 @@ Route::group(['middleware' => [ 'setLocale']], function () {
     Route::get('/corruption-application', [\App\Http\Controllers\Frontend\ArticleController::class, 'application'])->name('application');
 
     Route::post('/contract-conclusion', [\App\Http\Controllers\Frontend\ContractConclusionController::class, 'store'])->name('contract.store');
+    Route::post('/quality-control', [\App\Http\Controllers\Frontend\QualityControlController::class, 'store'])->name('quality.store');
+    Route::post('/service-application', [\App\Http\Controllers\Frontend\ServiceApplicationController::class, 'store'])->name('application.store');
+    Route::post('/shipment', [\App\Http\Controllers\Frontend\InformationAboutShipmentController::class, 'store'])->name('shipment.store');
 
 
     Route::get('/region', [\App\Http\Controllers\Frontend\LocationController::class, 'getRegions']);

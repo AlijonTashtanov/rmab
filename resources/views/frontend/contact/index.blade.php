@@ -13,10 +13,10 @@
         <div class="contact-page">
             <div class="text-blog">
                 <h1 class="txt-33 nav-text">
-                    {{ $contact->getTranslation('title', app()->getLocale()) }}
+                    {{ $contact?->getTranslation('title', app()->getLocale()) }}
                 </h1>
                 <p class="txt-16 sec-text">
-                    {{ $contact->getTranslation('name', app()->getLocale()) }}
+                    {{ $contact?->getTranslation('name', app()->getLocale()) }}
                 </p>
                 <div class="grid-2 mt-5">
                     <div class="contact-icon">
@@ -64,30 +64,39 @@
                                 Bizning manzil:
                             </p>
                             <p class="txt-14">
-                                {{ $contact->getTranslation('address', app()->getLocale()) }}
+                                {{ $contact?->getTranslation('address', app()->getLocale()) }}
                             </p>
                         </div>
                     </div>
                 </div>
             </div>
-            <form action="" class="interactive form">
+            <form action="{{route('contact.store')}}" class="interactive form" method="POST">
+                @csrf
                 <div class="box">
                     <label class="label mb-2 flex" for="name">Ism</label>
-                    <input  class="my-input txt-16" type="text" id="name" placeholder="Ism kiriting">
+                    <input  class="my-input txt-16" type="text" id="name" name="full_name" placeholder="Ism kiriting">
+                    @error('full_name')
+                    <div class="text-danger">{{ $message }}</div>
+                    @enderror
                 </div>
                 <div class="box">
                     <label class="label mb-2 flex" for="phone">Telefon raqam</label>
-                    <input class="aplication-form__input my-input" id="inputNumber" placeholder="+998"
+                    <input class="aplication-form__input my-input" name="phone" id="inputNumber" placeholder="+998"
                     />
+                    @error('phone')
+                    <div class="text-danger">{{ $message }}</div>
+                    @enderror
                 </div>
                 <div class="box">
                     <label class="label" for="note">Qo`shimcha izoh</label>
                     <textarea placeholder="Izoh"  id="inputFidbek"
-                              class="aplication-form__input my-input input-textAre__item"></textarea>
-
+                              class="aplication-form__input my-input input-textAre__item" name="comment"></textarea>
+                    @error('comment')
+                    <div class="text-danger">{{ $message }}</div>
+                    @enderror
                 </div>
                 <div class="box submit aplication-btn">
-                    <div class="my-btn  txt-16 contact-btn">Yuborish</div>
+                    <button type="submit" class="my-btn  txt-16 contact-btn">Yuborish</button>
                 </div>
             </form>
         </div>
