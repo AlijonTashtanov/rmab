@@ -77,6 +77,7 @@ class Kernel extends HttpKernel
         'permission' => PermissionMiddleware::class,
         'role_or_permission' => RoleOrPermissionMiddleware::class,
         'api_admin' => ApiAdminMiddleware::class,
+        'user.type' => \App\Http\Middleware\UserMiddleware::class,
         'setLocale' => Locale::class,
     ];
 }

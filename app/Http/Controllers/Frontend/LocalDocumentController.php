@@ -25,7 +25,7 @@ class LocalDocumentController extends Controller
     public function downloadDocument($id)
     {
         $document = LocalDocument::findOrFail($id);
-        $filePath = storage_path('app/public/' . $document->file_path); // Adjust the path as necessary
+        $filePath = storage_path('app/public/' . $document->file_path);
 
         return response()->download('frontend.local-documents.index', $document->getTranslation('title', app()->getLocale()) . '.pdf');
     }

@@ -1,8 +1,59 @@
-<div class="sidebar">
+<style>
+    .sidebar {
+        /*background-color: #f0f0f0;*/
+        width: 250px;
+        padding: 20px;
+        box-sizing: border-box;
+        border-right: 1px solid #ddd; /* Add a border to separate it from the content */
+    }
+
+    .sidebar .nav-text {
+        color: #333;
+        font-size: 20px;
+        font-weight: bold;
+        margin-bottom: 20px;
+    }
+
+    .sidebar-menu {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .sidebar-menu li {
+        margin-bottom: 10px;
+    }
+
+    .sidebar-menu a {
+        text-decoration: none;
+        color: #555;
+        display: block;
+        padding: 10px;
+        border-radius: 4px;
+        transition: background-color 0.3s, color 0.3s;
+    }
+
+    .sidebar-menu a.active,
+    .sidebar-menu a:hover {
+        background-color: #e0e0e0;
+        color: #0162A7; /* Change color for active and hovered links */
+    }
+
+    .sidebar-menu svg {
+        vertical-align: middle;
+        margin-right: 10px;
+    }
+
+    .sidebar-menu span {
+        vertical-align: middle;
+    }
+</style>
+
+        <div class="sidebar">
     <p class="txt-20 nav-text">Biz haqimizda</p>
     <ul class="sidebar-menu">
         <li>
-            <a href="{{route('news')}}">
+            <a href="{{route('news')}} " class="{{ Route::is('news') ? 'active' : '' }}" >
                 <p class="txt-18">
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -21,7 +72,7 @@
             </a>
         </li>
         <li>
-            <a href="{{route('vacancy-front')}}" >
+            <a href="{{route('vacancy-front')}}" class="{{ Route::is('vacancy-front') ? 'active' : '' }}" >
                 <p class="txt-18">
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -40,7 +91,7 @@
             </a>
         </li>
         <li>
-            <a href="{{route('our-advantages')}}">
+            <a href="{{route('our-advantages')}}" class="{{ Route::is('our-advantages') ? 'active' : '' }}">
                 <p class="txt-18">
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -59,7 +110,7 @@
             </a>
         </li>
         <li>
-            <a href="{{route('prop')}}">
+            <a href="{{route('prop')}}" class="{{ Route::is('prop') ? 'active' : '' }}">
                 <p class="txt-18">
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -78,7 +129,7 @@
             </a>
         </li>
         <li>
-            <a href="{{route('autopark')}}" >
+            <a href="{{route('autopark')}}" class="{{ Route::is('autopark') ? 'active' : '' }}">
                 <p class="txt-18">
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -97,7 +148,7 @@
             </a>
         </li>
         <li>
-            <a  href="{{route('partner')}}" >
+            <a  href="{{route('partner')}}" class="{{ Route::is('partner') ? 'active' : '' }}">
                 <p class="txt-18">
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -116,7 +167,7 @@
             </a>
         </li>
         <li>
-            <a href="{{route('branch')}}" >
+            <a href="{{route('branch')}}" class="{{ Route::is('branch') ? 'active' : '' }}">
                 <p class="txt-18">
                     <svg
                         xmlns="http://www.w3.org/2000/svg"

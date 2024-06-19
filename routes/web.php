@@ -68,13 +68,23 @@ Route::middleware([
     config('jetstream.auth_session'),
     'verified'
 ])->group(function () {
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
+    Route::get('/', [AdminController::class, 'index'])->name('index');
 });
+Route::middleware(['user.type'])->group(function () {
+    Route::get('user-service',[\App\Http\Controllers\Frontend\UserServiceController::class,'index'])->name('user');
+    Route::get('user-quality',[\App\Http\Controllers\Frontend\UserServiceController::class,'quality'])->name('user.quality');
+    Route::get('user-quality-detail',[\App\Http\Controllers\Frontend\UserServiceController::class,'detail'])->name('user.quality.detail');
+    Route::get('user-services',[\App\Http\Controllers\Frontend\UserServiceController::class,'services'])->name('user.services');
+    Route::get('user-services-detail',[\App\Http\Controllers\Frontend\UserServiceController::class,'servicesDetail'])->name('user.services.detail');
+    Route::get('user-shipping',[\App\Http\Controllers\Frontend\UserServiceController::class,'shipping'])->name('user.shipping');
+    Route::get('user-shipping-detail',[\App\Http\Controllers\Frontend\UserServiceController::class,'shippingDetail'])->name('user.shipping.detail');
 
+});
 //Frontend
+
 Route::group(['middleware' => [ 'setLocale']], function () {
+    Route::get('change-language/{locale}', [\App\Http\Controllers\Frontend\LanguageController::class, 'changeLanguage'])
+        ->name('change.language');
 
     Route::get('/', [MainController::class, 'index'])->name('index');
     Route::get('/news', [NewsController::class, 'index'])->name('news');
@@ -87,6 +97,9 @@ Route::group(['middleware' => [ 'setLocale']], function () {
     Route::get('/partner', [PartnerFrontendController::class, 'index'])->name('partner');
     Route::get('/branch', [BranchFrontendController::class, 'index'])->name('branch');
     Route::get('/about', [\App\Http\Controllers\Frontend\AboutController::class, 'index'])->name('about');
+
+
+
     Route::get('/contact', [\App\Http\Controllers\Frontend\ContactController::class, 'index'])->name('contact');
     Route::post('/contact-store', [\App\Http\Controllers\Frontend\ContactController::class, 'store'])->name('contact.store');
 
@@ -171,6 +184,6 @@ Route::prefix('admin')->name('admin.')->middleware(['auth', 'admin'])->group(fun
     Route::get('/informationaboutshipments/{id}/cancel', [InformationAboutShipmentController::class, 'cancel'])->name('informationaboutshipments.cancel');
     Route::put('/informationaboutshipments/cancel-store/{id}', [InformationAboutShipmentController::class, 'cancalStore'])->name('informationaboutshipments.cancel-store');
 
+
+
 });
-
-
