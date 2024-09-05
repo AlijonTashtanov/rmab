@@ -29,6 +29,7 @@
                                   class="d-inline-block">
                                 @csrf
                                 @method('DELETE')
+                                
                                 <button class="btn btn-danger" type="submit" onclick="return confirm('Are you sure?')">
                                     <i class="fas fa-trash"></i> O'chirish
                                 </button>
