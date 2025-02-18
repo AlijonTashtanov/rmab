@@ -1,12 +1,3 @@
-<?php
-/**
- * @author uluGbek <muhammadjonovulugbek98@gmail.com>
- * @link https://t.me/U_Muhammadjonov
- * @date 27-May-24, 23:00
- */
-?>
-
-
 <?php $__env->startSection('content'); ?>
     <!-- BANNERS -->
 <?php echo $__env->make('frontend.main._banners', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>

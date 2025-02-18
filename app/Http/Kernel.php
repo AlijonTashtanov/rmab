@@ -28,6 +28,7 @@ class Kernel extends HttpKernel
         \App\Http\Middleware\TrimStrings::class,
         \Illuminate\Foundation\Http\Middleware\ConvertEmptyStringsToNull::class,
         \App\Http\Middleware\Locale::class,
+   
     ];
 
     /**
@@ -47,10 +48,9 @@ class Kernel extends HttpKernel
         ],
 
         'api' => [
-            // \Laravel\Sanctum\Http\Middleware\EnsureFrontendRequestsAreStateful::class,
+            \Laravel\Sanctum\Http\Middleware\EnsureFrontendRequestsAreStateful::class,
             'throttle:api',
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
-            LocaleMiddleware::class,
         ],
     ];
 
@@ -79,5 +79,6 @@ class Kernel extends HttpKernel
         'api_admin' => ApiAdminMiddleware::class,
         'user.type' => \App\Http\Middleware\UserMiddleware::class,
         'setLocale' => Locale::class,
+        'check.profile' => \App\Http\Middleware\CheckUserProfileAccess::class,
     ];
 }

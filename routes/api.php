@@ -28,7 +28,9 @@ use App\Http\Controllers\Api\UsefulLinkController;
 use App\Http\Controllers\Api\VacancyController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-
+use App\Models\ModelName;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Validator;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -147,4 +149,38 @@ Route::middleware(['auth:api', 'api_admin'])->group(function () {
     });
 
 
+});
+
+Route::post('/registration', function (Request $request) {
+    $validator = Validator::make($request->all(), [
+        'email' => 'required|email|unique:users',
+        'password' => 'required|min:6',
+        'gender' => 'required|in:male,female,other',
+    ]);
+
+    if ($validator->fails()) {
+        return response()->json(['errors' => $validator->errors()], 422);
+    }
+
+    $user = ModelName::create([
+        'email' => $request->email,
+        'password' => Hash::make($request->password),
+        'gender' => $request->gender,
+    ]);
+
+    $token = $user->createToken('API Token')->accessToken; // This is the correct way to get the token
+
+    return response()->json([
+        'user' => $user,
+        'token' => $token,
+    ], 201);
+});
+
+Route::get('/profile', function () {
+    // Get the most recently created user
+    $lastUser = ModelName::latest('id')->first();
+
+    return response()->json([
+        'user' => $lastUser
+    ]);
 });

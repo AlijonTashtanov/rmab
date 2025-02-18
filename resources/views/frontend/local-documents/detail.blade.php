@@ -1,9 +1,5 @@
 <?php
-/**
- * @author uluGbek <muhammadjonovulugbek98@gmail.com>
- * @link https://t.me/U_Muhammadjonov
- * @date 27-May-24, 23:00
- */
+
 $activeLocalDocuments = \App\Models\LocalDocument::where('status', \App\Models\LocalDocument::$status_active)->get();
 ?>
 @extends('layouts.frontend.main')

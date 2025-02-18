@@ -1,9 +1,5 @@
 <?php
-/**
- * @author uluGbek <muhammadjonovulugbek98@gmail.com>x
- * @link https://t.me/U_Muhammadjonov
- * @date 27-May-24, 23:00
- */
+
 $allActiveNews = \App\Models\Post::where('status', \App\Models\Post::$status_active)
     ->orderBy('created_at', 'desc')
     ->get();

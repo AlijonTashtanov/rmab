@@ -1,9 +1,5 @@
 <?php
-/**
- * @author uluGbek <muhammadjonovulugbek98@gmail.com>
- * @link https://t.me/U_Muhammadjonov
- * @date 27-May-24, 23:00
- */
+
 //$articles = Article::where('status', Article::$status_active)->paginate(6);
 $activeServices = \App\Models\Service::where('status', \App\Models\Service::$status_active)->get();
 $activeLocation = \App\Models\DispatchGeography::where('status', \App\Models\DispatchGeography::$status_active)->get();
